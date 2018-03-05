@@ -1,27 +1,13 @@
-
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "es2015"
-    ],
-    "rootDir": "src",
-    "outDir": "dist",
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "removeComments": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
+    "outDir": "./dist/",
     "sourceMap": true,
-    "inlineSources": true,
-    "types": [
-      "node"
-    ]
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "jsx": "react"
   },
   "include": [
-    "src/**/*"
+    "./src/**/*"
   ]
 }
