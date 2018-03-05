@@ -18,7 +18,7 @@ const babelLoaderRule = {
 
 const tsLoaderRule = {
   test: /\.tsx?$/,
-  loader: 'awesome-typescript-loader'
+  loader: 'ts-loader'
 };
 
 module.exports = {
@@ -34,9 +34,9 @@ module.exports = {
 
   module: {
     rules: [
-      sassLoaderRule,
+      tsLoaderRule,
       babelLoaderRule,
-      tsLoaderRule
+      sassLoaderRule
     ]
   },
 

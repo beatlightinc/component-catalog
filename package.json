@@ -19,8 +19,12 @@
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.7",
     "source-map-loader": "^0.2.3",
+    "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2",
-    "webpack": "^4.1.0"
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
   }
 }
