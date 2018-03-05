@@ -10,6 +10,7 @@
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
     "awesome-typescript-loader": "^3.5.0",
+    "babel-preset-env": "^1.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "source-map-loader": "^0.2.3",
