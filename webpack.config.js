@@ -16,6 +16,11 @@ const babelLoaderRule = {
   exclude: /node_modules/
 };
 
+const tsLoaderRule = {
+  test: /\.tsx?$/,
+  loader: 'awesome-typescript-loader'
+};
+
 module.exports = {
   entry: [
     jsEntryPath,
@@ -30,7 +35,8 @@ module.exports = {
   module: {
     rules: [
       sassLoaderRule,
-      babelLoaderRule
+      babelLoaderRule,
+      tsLoaderRule
     ]
   },
 
