@@ -1,8 +1,8 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const jsEntryPath = path.resolve(__dirname, 'index.ts');
-const sassEntryPath = path.resolve(__dirname, 'scss', 'style.scss');
+const jsEntryPath = path.resolve(__dirname, 'src', 'ts', 'index.ts');
+const sassEntryPath = path.resolve(__dirname, 'src', 'scss', 'style.scss');
 const outputPath = path.resolve(__dirname, 'static');
 
 const sassLoaderRule = {
