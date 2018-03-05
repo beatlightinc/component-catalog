@@ -9,6 +9,7 @@
   "dependencies": {
     "@types/react": "^16.0.40",
     "@types/react-dom": "^16.0.4",
+    "ava": "^0.25.0",
     "awesome-typescript-loader": "^3.5.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.10",
