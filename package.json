@@ -42,7 +42,7 @@
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config -w webpack.congif.js",
     "test": "ava-ts",
-    "start": "node static/js/bundle.js"
+    "start": "webpack-dev-server"
   },
   "ava": {
     "files": [
