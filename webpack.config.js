@@ -53,5 +53,15 @@ module.exports = {
     modules: false
   },
 
-  devtool: 'cheap-module-source-map'
+  devtool: 'cheap-module-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'static'),
+    compress: true,
+    host: '0.0.0.0',
+    port: 3000,
+    stats: {
+      assets: true,
+      modules: false
+    }
+  }
 };

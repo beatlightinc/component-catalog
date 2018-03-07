@@ -6,7 +6,11 @@
   "jsRules": {},
   "rules": {
     "quotemark": [true, "single", "jsx-double"],
-    "no-console": [false]
+    "no-console": [false],
+    "trailing-comma": [false],
+    "interface-name": [true, "never-prefix"],
+    "ordered-imports": false,
+    "object-literal-sort-keys": false
   },
   "rulesDirectory": []
 }
