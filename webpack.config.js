@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const jsEntryPath = path.resolve(__dirname, 'src', 'ts', 'index.ts');
+const jsEntryPath = path.resolve(__dirname, 'src', 'ts', 'index.tsx');
 const sassEntryPath = path.resolve(__dirname, 'src', 'scss', 'style.scss');
 const outputPath = path.resolve(__dirname, 'static');
 
