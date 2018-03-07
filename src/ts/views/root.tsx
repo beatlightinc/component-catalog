@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class Hello extends React.Component<{}, {}> {
+class Root extends React.Component<{}, {}> {
   public render() {
     return (
       <div>{'Component Catalog'}</div>
@@ -8,4 +8,4 @@ class Hello extends React.Component<{}, {}> {
   }
 }
 
-export default Hello;
+export default Root;
