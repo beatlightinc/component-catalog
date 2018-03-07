@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const jsEntryPath = path.resolve(__dirname, 'src', 'ts', 'index.ts');
+const jsEntryPath = path.resolve(__dirname, 'src', 'ts', 'index.tsx');
 const sassEntryPath = path.resolve(__dirname, 'src', 'scss', 'style.scss');
 const outputPath = path.resolve(__dirname, 'static');
 
@@ -53,5 +53,16 @@ module.exports = {
     modules: false
   },
 
-  devtool: 'cheap-module-source-map'
+  devtool: 'cheap-module-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'static'),
+    compress: true,
+    historyApiFallback: true,
+    host: '0.0.0.0',
+    port: 3000,
+    stats: {
+      assets: true,
+      modules: false
+    }
+  }
 };

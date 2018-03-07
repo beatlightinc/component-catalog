@@ -5,7 +5,7 @@
     "module": "commonjs",
     "target": "es5",
     "jsx": "react",
-    "lib": ["ES2015"]
+    "lib": ["ES2015", "dom"]
   },
   "include": [
     "./src/**/*"
