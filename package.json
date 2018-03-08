@@ -54,6 +54,7 @@
   "ava": {
     "files": [
       "./src/tests/**/*.ts",
+      "./src/tests/**/*.tsx",
       "!*/node_modules/*"
     ],
     "concurrency": 4,
