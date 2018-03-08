@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 class TestComponent extends React.Component<{
-  name: string
+  name?: string
 }, {}> {
   public render() {
     return (
