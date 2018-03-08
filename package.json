@@ -22,6 +22,7 @@
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "history": "^4.7.2",
     "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -40,7 +41,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config -w webpack.congif.js",
+    "watch": "webpack --config webpack.congif.js -w",
     "test": "ava-ts",
     "start": "webpack-dev-server"
   },
