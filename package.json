@@ -25,7 +25,6 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "history": "^4.7.2",
-    "jsx-test-helpers": "^3.0.0",
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.1",
     "react": "^16.2.0",
