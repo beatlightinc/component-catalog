@@ -1,10 +1,10 @@
-$pink: pink;
-$green: green;
+/* Utilities and variables */
+@import "_variables.scss";
+@import "_utilities.scss";
 
-body {
-  background: $pink;
-}
-
-.test-component-class {
-  background: $green;
-}
+/* Views */
+@import "views/buttons/_button.scss";
+@import "views/buttons/_input.scss";
+@import "views/buttons/_label.scss";
+@import "views/buttons/_menu.scss";
+@import "views/buttons/_test-widget.scss";
