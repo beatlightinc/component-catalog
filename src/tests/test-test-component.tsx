@@ -11,3 +11,12 @@ test('first test - test for css classname', (t) => {
     const wrapper = shallow(<TestComponent name={'testName'} />);
     t.true(wrapper.hasClass('test-component-class'));
 });
+
+test('tests whether children get passed in', (t) => {
+  const wrapper = shallow(
+    <TestComponent name={'testName'}>
+      <div className="child" />
+    </TestComponent>
+  );
+  t.true(wrapper.contains(<div className="child"/>));
+});
