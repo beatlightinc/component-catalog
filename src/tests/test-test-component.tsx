@@ -5,8 +5,6 @@ import { shallow, configure } from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
 import TestComponent from '../ts/views/test-component';
 
-configure({ adapter: new Adapter() });
-
 test('first test - test that test component has proper', (t) => {
     const wrapper = shallow(<TestComponent name={'testName'} />);
     t.true(wrapper.hasClass('test-component-class'));

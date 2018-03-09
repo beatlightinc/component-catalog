@@ -57,7 +57,7 @@
       "!*/node_modules/*"
     ],
     "require": [
-      "src/tests/setup-enzyme-adapter.ts"
+      "./src/setup-enzyme-adapter.js"
     ],
     "concurrency": 4,
     "failFast": true,
