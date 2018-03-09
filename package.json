@@ -7,6 +7,8 @@
   "author": "Kevin Belanger <kevinlbelanger@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/enzyme": "^3.1.9",
+    "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/history": "^4.6.2",
     "@types/mocha": "^2.2.48",
     "@types/react": "^16.0.40",
@@ -19,11 +21,14 @@
     "awesome-typescript-loader": "^3.5.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.10",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "history": "^4.7.2",
     "node-sass": "^4.7.2",
     "nodemon": "^1.17.1",
     "react": "^16.2.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
@@ -48,7 +53,11 @@
   "ava": {
     "files": [
       "./src/tests/**/*.ts",
+      "./src/tests/**/*.tsx",
       "!*/node_modules/*"
+    ],
+    "require": [
+      "./src/setup-enzyme-adapter.js"
     ],
     "concurrency": 4,
     "failFast": true,

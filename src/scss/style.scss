@@ -1,5 +1,10 @@
 $pink: pink;
+$green: green;
 
 body {
   background: $pink;
+}
+
+.test-component-class {
+  background: $green;
 }
