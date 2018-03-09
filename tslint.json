@@ -10,8 +10,7 @@
     "trailing-comma": [false],
     "interface-name": [true, "never-prefix"],
     "ordered-imports": false,
-    "object-literal-sort-keys": false,
-    "no-angle-bracket-type-assertion": false
+    "object-literal-sort-keys": false
   },
   "rulesDirectory": []
 }

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import test from 'ava';
-import { shallow, configure } from 'enzyme';
-import * as Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
 import TestComponent from '../ts/views/test-component';
 
 test('first test - test that test component has proper', (t) => {
