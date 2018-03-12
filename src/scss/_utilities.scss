@@ -1,0 +1,124 @@
+/**
+  * This is where we'll declare any common styles such as spacing,
+  * border-radius, font-size, font-boldness and stuff of that nature to be used
+  * as classnames in a pinch.
+  * Outro's is pretty good so I'll take it and refactor it a bit.
+*/
+
+
+/**
+ * Add/remove floats
+ */
+.\+float-right   { float:right!important; }
+.\+float-left    { float:left !important; }
+.\+float-none    { float:none !important; }
+.\+hundred-width { width:100% !important; }
+.\+hundred-height { height:100% !important; }
+
+/**
+ * Text alignment and decoration
+ */
+.\+text-left     { text-align:left  !important; }
+.\+text-center   { text-align:center!important; }
+.\+text-right    { text-align:right !important; }
+.\+underline { text-decoration: underline!important; }
+
+/**
+ * Misc.
+ */
+.\+inline        { display: inline-block !important; }
+.\+whitespace-pre { white-space: pre; }
+
+
+/**
+ * Text colors
+ */
+.\+black-text { color: $black!important; }
+.\+red-text    { color: $red !important; }
+.\+splash-blue-text   { color: $blue !important; }
+.\+blue-text    { color: $blue !important; }
+.\+green-text    { color: $green !important; }
+.\+orange-text   { color: $orange !important; }
+.\+white-text   { color: $white !important; }
+
+/**
+ * Container display
+ */
+.\+display-flex { display: flex }
+.\+flex-center-justify { display: flex; justify-content: center; }
+.\+flex-center-center { display: flex; justify-content: center; align-items: center; }
+.\+flex-row { display: flex; flex-direction: row }
+.\+flex-wrap { flex-wrap: wrap; }
+.\+flex-spread { display: flex; justify-content: space-between; }
+.\+flex-center-column { display: flex; align-items: center; flex-direction: column }
+.\+flex-middle-column { display: flex; justify-content: center; flex-direction: column }
+.\+middle-align { align-items: center; }
+
+
+/**
+ * Padding
+ */
+.\+soft { padding: 10px!important; }
+.\+soft-double { padding: 20px!important; }
+.\+soft-top { padding-top: 20px!important; }
+.\+soft-top-double { padding-top: 40px!important; }
+.\+no-padding { padding: 0!important; }
+
+/**
+ * Margins
+ */
+.\+push-top { margin-top: 20px!important; }
+.\+push-double-top { margin-top: 40px!important; }
+.\+push-half-top { margin-top: 10px!important; }
+.\+push-quarter-top { margin-top: 5px!important; }
+
+.\+push-bottom { margin-bottom: 20px!important; }
+.\+push-double-bottom { margin-bottom: 40px!important; }
+.\+push-half-bottom { margin-bottom: 10px!important; }
+.\+push-quarter-bottom { margin-bottom: 5px!important; }
+
+
+.\+push-left { margin-left: 20px!important; }
+.\+push-double-left { margin-left: 40px!important; }
+.\+push-half-left { margin-left: 10px!important; }
+.\+push-quarter-left { margin-left: 5px!important; }
+
+.\+push-right { margin-right: 20px!important; }
+.\+push-double-right { margin-right: 40px!important; }
+.\+push-half-right { margin-right: 10px!important; }
+.\+push-quarter-right { margin-right: 5px!important; }
+
+.\+push-self-right { margin-left: auto!important; }
+.\+push-self-left { margin-right: auto!important; }
+
+/*
+ * Cursor styles
+ */
+.\+cursor-pointer { cursor: pointer; }
+.\+cursor-default { cursor: default; }
+
+
+/*
+ * Font weight helpers
+ */
+.\+font-weight-semibold { font-weight: $font-weight-semibold!important; }
+.\+font-weight-bold { font-weight: $font-weight-bold!important; }
+
+/*
+ * Vendor prefixer mixin. Auto-prefixes the rule with the appropriate vendor
+ * prefixes for major browsers.
+ *
+ * Usage:
+ * @include vendor(user-select, none);
+ */
+@mixin vendor($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+.\+no-select {
+  @include vendor(user-select, none);
+}
