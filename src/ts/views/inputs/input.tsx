@@ -1,11 +1,14 @@
 import * as React from 'react';
 
-class Input extends React.Component<{}, {}> {
-  public render() {
-    return (
-      <div>{'Test input'}</div>
-    );
-  }
-}
+const Input = (props: {
+  inputType: string
+}) => {
+  return (
+      <div>
+        <div>{'Generic input component'}</div>
+        <input type={props.inputType} />
+      </div>
+  );
+};
 
 export default Input;
