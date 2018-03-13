@@ -1,5 +1,5 @@
 import Button from './views/buttons/button';
 
-module.exports = {
+export default {
   Button
 };
