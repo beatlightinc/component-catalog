@@ -1,11 +1,9 @@
 import * as React from 'react';
 
-class TestWidget extends React.Component<{}, {}> {
-  public render() {
-    return (
-      <div>{'Test widget'}</div>
-    );
-  }
-}
+const TestWidget = (props: {
+  widgetTitle: string
+}) => {
+  return <div>{props.widgetTitle}</div>;
+};
 
 export default TestWidget;
