@@ -55,8 +55,8 @@
   },
   "ava": {
     "files": [
-      "./src/tests/**/*.ts",
-      "./src/tests/**/*.tsx",
+      "./src/tests/**/*.test.ts",
+      "./src/tests/**/*.test.tsx",
       "!*/node_modules/*"
     ],
     "require": [
