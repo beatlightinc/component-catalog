@@ -1,8 +1,9 @@
 {
-  "name": "component-catalog",
-  "version": "1.0.0",
+  "name": "sundiata-component-catalog",
+  "version": "0.0.1",
   "description": "A style guide for all of Outro's components",
   "main": "index.js",
+  "types": "dist/types/index.d.ts",
   "repository": "https://github.com/beatlightinc/component-catalog",
   "author": "Kevin Belanger <kevinlbelanger@gmail.com>",
   "license": "MIT",
@@ -45,10 +46,11 @@
     "webpack-dev-server": "^3.1.0"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch",
+    "build-view": "webpack --config webpack.config.js",
+    "watch-view": "webpack --config webpack.config.js -w",
     "test": "ava-ts",
-    "start": "webpack-dev-server"
+    "start-view": "webpack-dev-server",
+    "build": "tsc"
   },
   "ava": {
     "files": [
