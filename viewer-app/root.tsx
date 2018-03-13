@@ -5,7 +5,7 @@ class Root extends React.Component<{}, {}> {
   public render() {
     return (
       <div>
-        <Components.Button />
+        <Components.Button buttonText={'something cool'} />
       </div>
     );
   }

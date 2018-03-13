@@ -1,8 +1,10 @@
 import * as React from 'react';
 
-const Button = ({}) => {
+const Button = (props: {
+  buttonText: string
+}) => {
     return (
-        <div>{'Button component'}</div>
+        <div>{props.buttonText}</div>
     );
 };
 
