@@ -55,6 +55,10 @@ module.exports = {
 
   mode: "development",
 
+  watchOptions: {
+    poll: true
+  },
+
   devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'static'),

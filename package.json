@@ -46,7 +46,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js -w",
+    "watch": "webpack --config webpack.config.js --watch",
     "test": "ava-ts",
     "start": "webpack-dev-server"
   },
