@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-class Button extends React.Component<{}, {}> {
-  public render() {
+const Button = (props: {
+  buttonText: string
+}) => {
     return (
-      <div>{'Test button'}</div>
+        <div>{props.buttonText}</div>
     );
-  }
-}
+};
 
 export default Button;

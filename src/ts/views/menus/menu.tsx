@@ -1,11 +1,9 @@
 import * as React from 'react';
 
-class Menu extends React.Component<{}, {}> {
-  public render() {
-    return (
-      <div>{'Test menu'}</div>
-    );
-  }
-}
+const Menu = (props: {
+  options?: any
+}) => {
+  return <div>{'Generic menu component'}</div>;
+};
 
 export default Menu;
