@@ -45,10 +45,11 @@
     "webpack-dev-server": "^3.1.0"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js -w",
+    "build-view": "webpack --config webpack.config.js",
+    "watch-view": "webpack --config webpack.config.js -w",
     "test": "ava-ts",
-    "start": "webpack-dev-server"
+    "start-view": "webpack-dev-server",
+    "build": "tsc"
   },
   "ava": {
     "files": [
