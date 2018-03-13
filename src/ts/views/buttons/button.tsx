@@ -1,10 +1,11 @@
 import * as React from 'react';
 
 const Button = (props: {
-  buttonText: string
+  buttonText: string,
+  onClick?: () => void
 }) => {
     return (
-        <div>{props.buttonText}</div>
+        <button onClick={props.onClick}>{props.buttonText}</button>
     );
 };
 
