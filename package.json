@@ -1,8 +1,9 @@
 {
   "name": "component-catalog",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A style guide for all of Outro's components",
   "main": "index.js",
+  "types": "dist/types/index.d.ts",
   "repository": "https://github.com/beatlightinc/component-catalog",
   "author": "Kevin Belanger <kevinlbelanger@gmail.com>",
   "license": "MIT",
