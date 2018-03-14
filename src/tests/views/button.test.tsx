@@ -12,3 +12,16 @@ test('button onclick and text work if passed in', (t) => {
   t.is(onClickSpy.called, true);
   t.is(wrapper.text(), 'something');
 });
+
+test('button onclick will not fire if disabled prop, classname gets passed in', (t) => {
+  const onClickSpy = sinon.spy();
+  const wrapper = shallow(
+    <Button buttonText="something else"
+      onClick={onClickSpy}
+      disabled={true}
+      className="button-class-name"/>
+    );
+  wrapper.simulate('click');
+  t.is(onClickSpy.called, false);
+  t.is(wrapper.hasClass('button-class-name'), true);
+});

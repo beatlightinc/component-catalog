@@ -2,10 +2,15 @@ import * as React from 'react';
 
 const Button = (props: {
   buttonText: string,
-  onClick?: () => void
+  onClick?: () => void,
+  disabled?: boolean,
+  className?: string
 }) => {
     return (
-        <button onClick={props.onClick}>{props.buttonText}</button>
+        <button onClick={props.disabled ? null : props.onClick}
+          className={props.className}>
+          {props.buttonText}
+        </button>
     );
 };
 
