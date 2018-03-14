@@ -17,6 +17,7 @@
     "@types/react-redux": "^5.0.15",
     "@types/react-router-dom": "^4.2.4",
     "@types/redux-thunk": "^2.1.0",
+    "@types/sinon": "^4.3.0",
     "ava": "^0.25.0",
     "ava-ts": "^0.24.2",
     "awesome-typescript-loader": "^3.5.0",
