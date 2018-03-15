@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as classnames from 'classnames';
 
 const Input = (props: {
   inputType?: string,
@@ -8,8 +9,11 @@ const Input = (props: {
   disabled?: boolean,
   pattern?: string
 }) => {
+  const buttonClass = classnames('button', {
+    disabled: props.disabled
+  });
   return (
-      <div>
+      <div className={buttonClass}>
         <input type={props.inputType}
           value={props.inputValue}
           onChange={props.disabled ? null : props.onHandleChange}
