@@ -9,11 +9,11 @@ const Input = (props: {
   disabled?: boolean,
   pattern?: string
 }) => {
-  const buttonClass = classnames('button', {
+  const inputClass = classnames('input', {
     disabled: props.disabled
   });
   return (
-      <div className={buttonClass}>
+      <div className={inputClass}>
         <input type={props.inputType}
           value={props.inputValue}
           onChange={props.disabled ? null : props.onHandleChange}
