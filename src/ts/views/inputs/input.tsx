@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const Input = (props: {
-  inputType: string,
+  inputType?: string,
   autoFocus?: boolean,
   inputValue: string,
   onHandleChange: () => {},

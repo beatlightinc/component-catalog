@@ -4,7 +4,8 @@ import test from 'ava';
 import * as sinon from 'sinon';
 import { shallow } from 'enzyme';
 import Input from '../../../ts/views/inputs/input';
+import Button from '../../../ts/views/buttons/button';
 
-test('input works properly', (t) => {
-  
+test('<Input /> gets props passed in properly', (t) => {
+  const wrapper = shallow(<Input />);
 });
