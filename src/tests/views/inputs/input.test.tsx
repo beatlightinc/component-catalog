@@ -6,14 +6,14 @@ import { shallow } from 'enzyme';
 import Input from '../../../ts/views/inputs/input';
 import Button from '../../../ts/views/buttons/button';
 
-test('<Input /> gets props passed in properly', (t) => {
+test('<Input /> onChange does not get called if disabled', (t) => {
   const handleChange = sinon.spy();
   const wrapper = shallow(<Input
     inputType="text"
     autoFocus={false}
     inputValue=""
     onHandleChange={handleChange}
-    disabled={false}/>);
+    disabled={true}/>);
   wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
-  t.is(handleChange.called, true);
+  t.is(handleChange.called, false);
 });

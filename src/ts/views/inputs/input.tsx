@@ -12,7 +12,7 @@ const Input = (props: {
       <div>
         <input type={props.inputType}
           value={props.inputValue}
-          onChange={props.onHandleChange}
+          onChange={props.disabled ? null : props.onHandleChange}
           maxLength={150}
           disabled={props.disabled}
           pattern={props.pattern}/>
