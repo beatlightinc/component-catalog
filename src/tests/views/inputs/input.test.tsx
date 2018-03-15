@@ -11,9 +11,28 @@ test('<Input /> onChange does not get called if disabled', (t) => {
   const wrapper = shallow(<Input
     inputType="text"
     autoFocus={false}
-    inputValue=""
     onHandleChange={handleChange}
     disabled={true}/>);
   wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
   t.is(handleChange.called, false);
 });
+
+test('<Input /> gets correct classname if disabled', (t) => {
+  const inputSpy = sinon.spy();
+  const wrapper = shallow(<Input
+    inputType="text"
+    autoFocus={true}
+    onHandleChange={inputSpy}
+    disabled={true}
+    />);
+  t.is(wrapper.hasClass('input disabled'), true);
+});
+
+// test('<Input /> passed in function gets called if not disabled', (t) => {
+//   const inputSpy = sinon.spy();
+//   const wrapper = shallow(<Input
+//     inputType="text"
+//     autoFocus={false}
+//     onHandleChange={inputSpy}
+//     />);
+// });
