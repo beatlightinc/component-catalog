@@ -28,11 +28,14 @@ test('<Input /> gets correct classname if disabled', (t) => {
   t.is(wrapper.hasClass('input disabled'), true);
 });
 
-// test('<Input /> passed in function gets called if not disabled', (t) => {
-//   const inputSpy = sinon.spy();
-//   const wrapper = shallow(<Input
-//     inputType="text"
-//     autoFocus={false}
-//     onHandleChange={inputSpy}
-//     />);
-// });
+test('<Input /> passed in function gets called if not disabled', (t) => {
+  const inputSpy = sinon.spy();
+  const wrapper = shallow(<Input
+    inputType="text"
+    autoFocus={false}
+    onHandleChange={inputSpy}
+    disabled={false}
+    />);
+  wrapper.find('input').simulate('change', {target: {value: 'My new value'}});
+  t.is(inputSpy.called, true);
+});
