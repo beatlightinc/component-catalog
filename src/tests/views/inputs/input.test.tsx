@@ -37,5 +37,4 @@ test('<Input /> container and input get correct classname if disabled', (t) => {
     disabled={true}
     />);
   t.is(wrapper.hasClass('input-container disabled'), true);
-  t.is(wrapper.find('input').hasClass('input disabled'), true);
 });
