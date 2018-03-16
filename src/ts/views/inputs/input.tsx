@@ -8,11 +8,14 @@ const Input = (props: {
   disabled?: boolean,
   pattern?: string
 }) => {
+  const inputContainerClass = classnames('input-container', {
+    disabled: props.disabled
+  });
   const inputClass = classnames('input', {
     disabled: props.disabled
   });
   return (
-      <div className={inputClass}>
+      <div className={inputContainerClass}>
         <input type={props.inputType}
           onChange={props.disabled ? null : props.onHandleChange}
           maxLength={150}
