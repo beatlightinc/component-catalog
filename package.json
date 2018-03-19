@@ -8,6 +8,7 @@
   "author": "Kevin Belanger <kevinlbelanger@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/classnames": "^2.2.3",
     "@types/enzyme": "^3.1.9",
     "@types/enzyme-adapter-react-16": "^1.0.2",
     "@types/history": "^4.6.2",
@@ -22,6 +23,7 @@
     "ava-ts": "^0.24.2",
     "awesome-typescript-loader": "^3.5.0",
     "babel-preset-env": "^1.6.1",
+    "classnames": "^2.2.5",
     "css-loader": "^0.28.10",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
