@@ -31,7 +31,7 @@ test('<Input /> passed in function gets called if not disabled', (t) => {
   t.is(inputSpy.called, true);
 });
 
-test('<Input /> wrapper and children get proper classnames if props disabled', (t) => {
+test('<Input /> wrapper and children elements get proper classnames if disabled', (t) => {
   const wrapper = shallow(<Input
     inputType="text"
     autoFocus={true}
