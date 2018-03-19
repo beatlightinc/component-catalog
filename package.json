@@ -32,7 +32,7 @@
     "extract-text-webpack-plugin": "4.0.0-beta.0",
     "history": "^4.7.2",
     "node-sass": "^4.7.2",
-    "nodemon": "^1.17.1",
+    "nodemon": "^1.17.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
@@ -55,7 +55,7 @@
     "build-view": "webpack --config webpack.config.js",
     "watch-view": "webpack --config webpack.config.js -w",
     "test": "ava-ts",
-    "start-view": "ts-node ./server/src/index.ts",
+    "start-view": "nodemon",
     "build": "tsc"
   },
   "ava": {

@@ -19,4 +19,4 @@ RUN yarn install
 COPY ./ ./
 
 # expose the API port to the host
-EXPOSE 3000
+EXPOSE 9002
