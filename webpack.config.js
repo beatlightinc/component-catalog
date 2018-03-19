@@ -57,16 +57,5 @@ module.exports = {
 
   mode: "development",
 
-  devtool: 'cheap-module-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'static'),
-    compress: true,
-    historyApiFallback: true,
-    host: '0.0.0.0',
-    port: 9002,
-    stats: {
-      assets: true,
-      modules: false
-    }
-  }
+  devtool: 'cheap-module-source-map'
 };
