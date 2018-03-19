@@ -3,8 +3,6 @@ import * as ReactDOM from 'react-dom';
 import test from 'ava';
 import * as sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
-import * as jsdom from 'jsdom';
-const { JSDOM } = jsdom;
 import Input from '../../../ts/views/inputs/input';
 import Button from '../../../ts/views/buttons/button';
 
