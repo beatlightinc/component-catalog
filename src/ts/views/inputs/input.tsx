@@ -8,6 +8,13 @@ const Input = (props: {
   disabled?: boolean,
   pattern?: string
 }) => {
+  const {
+    inputType,
+    autoFocus,
+    onHandleChange,
+    disabled,
+    pattern
+  } = props;
   const inputContainerClass = classnames('input-container', {
     disabled: props.disabled
   });
@@ -16,12 +23,12 @@ const Input = (props: {
   });
   return (
       <div className={inputContainerClass}>
-        <input type={props.inputType}
-          onChange={props.disabled ? null : props.onHandleChange}
+        <input type={inputType}
+          onChange={disabled ? null : onHandleChange}
           className={inputClass}
           maxLength={150}
-          disabled={props.disabled}
-          pattern={props.pattern}/>
+          disabled={disabled}
+          pattern={pattern}/>
       </div>
   );
 };
