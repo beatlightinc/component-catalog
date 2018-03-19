@@ -13,6 +13,14 @@ const indexHandler = (req: any, res: any) => {
 app.use('/css', express.static(path.join(__dirname, '..', '..', 'static', 'css')));
 app.use('/js', express.static(path.join(__dirname, '..', '..', 'static', 'js')));
 
+const frontendRoutes = [
+  { route: '*', handler: indexHandler }
+];
+
+frontendRoutes.forEach((routeObj: any) => {
+  app.get(`${routeObj.route}`, routeObj.handler);
+});
+
 app.listen(9002, () => {
   console.log('Static server is UP and running on port 9002');
 });
