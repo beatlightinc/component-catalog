@@ -2,7 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import test from 'ava';
 import * as sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import * as jsdom from 'jsdom';
+const { JSDOM } = jsdom;
 import Input from '../../../ts/views/inputs/input';
 import Button from '../../../ts/views/buttons/button';
 
@@ -29,12 +31,14 @@ test('<Input /> passed in function gets called if not disabled', (t) => {
   t.is(inputSpy.called, true);
 });
 
-test('<Input /> container and input get correct classname if disabled', (t) => {
+test('<Input /> wrapper and children get proper classnames if props disabled', (t) => {
   const wrapper = shallow(<Input
     inputType="text"
     autoFocus={true}
     onHandleChange={inputSpy}
     disabled={true}
     />);
+  // Test the wrapper
   t.is(wrapper.hasClass('input-container disabled'), true);
+  t.is(wrapper.containsMatchingElement(<input className="input disabled"/>), true);
 });

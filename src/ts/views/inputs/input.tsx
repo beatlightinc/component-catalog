@@ -18,6 +18,7 @@ const Input = (props: {
       <div className={inputContainerClass}>
         <input type={props.inputType}
           onChange={props.disabled ? null : props.onHandleChange}
+          className={inputClass}
           maxLength={150}
           disabled={props.disabled}
           pattern={props.pattern}/>
