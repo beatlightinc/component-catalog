@@ -42,3 +42,13 @@ test('<Input /> wrapper and children elements get proper classnames if disabled'
   t.is(wrapper.hasClass('input-container disabled'), true);
   t.is(wrapper.containsMatchingElement(<input className="input disabled"/>), true);
 });
+
+test('<Input /> wrapper and children elements get proper classnames if NOT disabled', (t) => {
+  const wrapper = shallow(<Input
+    inputType="text"
+    autoFocus={false}
+    onHandleChange={inputSpy}
+    />);
+  t.is(wrapper.hasClass('input-container disabled'), false);
+  t.is(wrapper.containsMatchingElement(<input className="input disabled" />), false);
+});
