@@ -11,8 +11,7 @@
     "interface-name": [true, "never-prefix"],
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "one-line": false,
-    "prefer-const": false
+    "one-line": false
   },
   "rulesDirectory": []
 }

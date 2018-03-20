@@ -9,7 +9,7 @@ const Pagination = (props: {
 }) => {
     const { activePage, totalPages, pageChanged } = props;
     const breakElement = <div className="pagination-break">{'...'}</div>;
-    let allPageElements = [];
+    const allPageElements = [];
     let pageRangeArr = [];
     let pageRange;
 
