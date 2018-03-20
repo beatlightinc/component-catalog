@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PageButton from '../buttons/page-button';
 
 const Pagination = (props: {
   activePage: number,
@@ -6,6 +7,9 @@ const Pagination = (props: {
   pageChanged?: (pageNumber: number) => void
 }) => {
     const { activePage, totalPages, pageChanged } = props;
+    let allPageElements = [];
+    let pageRangeArr = [];
+    let pageRange;
     return (<div></div>);
 };
 
