@@ -76,9 +76,11 @@ const Pagination = (props: {
 
     return (
     <div className="pagination-container">
-      {activePage === 0 ? <div className="pagination-button empty"></div> : <div></div>}
+      {activePage === 0 ? null
+        : <div className="pagination-button" onClick={pageChanged.bind(this, activePage - 1)}>{'<'}</div>}
       {pageRange}
-      {activePage === totalPages - 1 ? null : <div></div>}
+      {activePage === totalPages - 1 ? null
+        : <div className="pagination-button" onClick={pageChanged.bind(this, activePage + 1)}>{'>'}</div>}
     </div>
   );
 };
