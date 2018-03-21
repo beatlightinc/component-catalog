@@ -5,9 +5,9 @@ import * as classnames from 'classnames';
 const Pagination = (props: {
   activePage: number,
   totalPages: number,
-  pageChanged?: (pageNumber: number) => void
+  onClick?: () => void
 }) => {
-    const { activePage, totalPages, pageChanged } = props;
+    const { activePage, totalPages, onClick } = props;
     const breakElement = <div className="pagination-break">{'...'}</div>;
     const allPageElements = [];
     let pageRangeArr = [];
@@ -19,7 +19,7 @@ const Pagination = (props: {
         '(isActive)': isActive
       });
       allPageElements.push(
-        <PageButton onClick={pageChanged.bind(this, i)} buttonNumber={i} className={pageClass} key={i} />
+        <PageButton onClick={onClick} buttonNumber={i} className={pageClass} key={i} />
       );
     }
 
@@ -77,10 +77,10 @@ const Pagination = (props: {
     return (
     <div className="pagination-container">
       {activePage === 0 ? null
-        : <div className="pagination-button" onClick={pageChanged.bind(this, activePage - 1)}>{'<'}</div>}
+        : <div className="pagination-button" onClick={onClick}>{'<'}</div>}
       {pageRange}
       {activePage === totalPages - 1 ? null
-        : <div className="pagination-button" onClick={pageChanged.bind(this, activePage + 1)}>{'>'}</div>}
+        : <div className="pagination-button" onClick={onClick}>{'>'}</div>}
     </div>
   );
 };

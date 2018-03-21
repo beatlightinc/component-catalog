@@ -12,5 +12,6 @@ test('<Pagination /> contains the right amount of children based on totalPages',
       totalPages={32}
     />);
   const wrapperLength = wrapper.find('PageButton').length;
+  console.log(wrapperLength);
   t.is(2, 2);
 });
