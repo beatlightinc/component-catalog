@@ -77,6 +77,5 @@ test('<Pagination/> render correct # of buttons if active page is > 3 and < tota
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
-  console.log(buttonAmount);
   t.is(buttonAmount, 5);
 });

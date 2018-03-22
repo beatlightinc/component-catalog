@@ -5,7 +5,7 @@ class Root extends React.Component<{}, {}> {
   public render() {
     return (
       <div>
-        <Components.Button buttonText={'something cool'} />
+        <Components.Pagination activePage={8} totalPages={12} />
       </div>
     );
   }
