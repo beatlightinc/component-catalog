@@ -66,11 +66,12 @@ const Pagination = (props: {
 
     else if (activePage > 3 && activePage < totalPages - 4) {
       pageRangeArr = allPageElements.slice(activePage - 1, activePage + 2);
-      pageRange = <div>
+      pageRange = <div className="pagination-element-wrapper">
         {allPageElements[0]}
         {breakElement}
         {pageRangeArr}
-        {allPageElements}
+        {breakElement}
+        {allPageElements[totalPages - 1]}
       </div>;
     }
 
