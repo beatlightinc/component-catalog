@@ -43,5 +43,40 @@ test('<Pagination/> will render correct # of buttons when activePage !== 0 && <=
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
+  t.is(buttonAmount, 5);
+});
+
+test('<Pagination/> will render correct # of buttons if active page is last page', (t) => {
+  const wrapper = shallow(
+    <Pagination
+      activePage={10}
+      totalPages={11}
+    />
+  );
+  const buttonAmount = wrapper.find('PageButton').length;
+  t.is(buttonAmount, 5);
+});
+
+test('<Pagination/> renders corrent # of buttons when active page is not last page to 4th to last', (t) => {
+  const wrapper = shallow(
+    <Pagination
+      activePage={8}
+      totalPages={12}
+    />
+  );
+  const buttonAmount = wrapper.find('PageButton').length;
   console.log(buttonAmount);
+  t.is(buttonAmount, 6);
+});
+
+test('<Pagination/> render correct # of buttons if active page is > 3 and < total pages minus 4', (t) => {
+  const wrapper = shallow(
+    <Pagination
+      activePage={6}
+      totalPages={12}
+    />
+  );
+  const buttonAmount = wrapper.find('PageButton').length;
+  console.log(buttonAmount);
+  t.is(buttonAmount, 5);
 });
