@@ -21,7 +21,7 @@ const Pagination = (props: {
       allPageElements.push(
         <PageButton
           onClick={onClick}
-          buttonNumber={i}
+          pageNumber={i}
           className={pageClass}
           key={i} />
       );
