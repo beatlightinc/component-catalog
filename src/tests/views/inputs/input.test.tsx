@@ -13,6 +13,7 @@ test('<Input /> onChange does not get called if disabled', (t) => {
     <Input
       inputType="text"
       autoFocus={false}
+      value="something"
       onHandleChange={inputSpy}
       disabled={true}
     />);
@@ -24,6 +25,7 @@ test('<Input /> passed in function gets called if not disabled', (t) => {
   const wrapper = shallow(
     <Input
       inputType="text"
+      value="something"
       autoFocus={false}
       onHandleChange={inputSpy}
       disabled={false}
@@ -36,6 +38,7 @@ test('<Input /> wrapper and children elements get proper classnames if disabled'
   const wrapper = shallow(
     <Input
       inputType="text"
+      value="something"
       autoFocus={true}
       onHandleChange={inputSpy}
       disabled={true}
@@ -49,6 +52,7 @@ test('<Input /> wrapper and children elements get proper classnames if NOT disab
   const wrapper = shallow(
     <Input
       inputType="text"
+      value="something"
       autoFocus={false}
       onHandleChange={inputSpy}
     />);
