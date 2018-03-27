@@ -32,10 +32,7 @@ const Input = (props: {
     value
   } = props;
 
-  let isValid = null;
-  if (validationFunction) {
-    isValid = validationFunction;
-  }
+  const isValid = validationFunction ? validationFunction() : true;
 
   const inputContainerClass = classnames('input-container', wrapperClassName, {
     disabled: props.disabled,
