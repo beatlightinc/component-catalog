@@ -4,7 +4,11 @@ import * as classnames from 'classnames';
 const Input = (props: {
   inputType?: string,
   autoFocus?: boolean,
+  onSubmission?: () => void
   onHandleChange: () => {},
+  validationFunction?: () => boolean,
+  className?: string,
+  wrapperClassName?: string,
   disabled?: boolean,
   pattern?: string
 }) => {
@@ -13,12 +17,16 @@ const Input = (props: {
     autoFocus,
     onHandleChange,
     disabled,
-    pattern
+    pattern,
+    wrapperClassName,
+    className,
+    validationFunction,
+    onSubmission
   } = props;
-  const inputContainerClass = classnames('input-container', {
+  const inputContainerClass = classnames('input-container', wrapperClassName, {
     disabled: props.disabled
   });
-  const inputClass = classnames('input', {
+  const inputClass = classnames('input-component', className, {
     disabled: props.disabled
   });
   return (

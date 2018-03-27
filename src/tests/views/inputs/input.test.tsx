@@ -42,7 +42,7 @@ test('<Input /> wrapper and children elements get proper classnames if disabled'
     />);
   // Test the wrapper
   t.is(wrapper.hasClass('input-container disabled'), true);
-  t.is(wrapper.containsMatchingElement(<input className="input disabled"/>), true);
+  t.is(wrapper.containsMatchingElement(<input className="input-component disabled"/>), true);
 });
 
 test('<Input /> wrapper and children elements get proper classnames if NOT disabled', (t) => {
@@ -53,5 +53,5 @@ test('<Input /> wrapper and children elements get proper classnames if NOT disab
       onHandleChange={inputSpy}
     />);
   t.is(wrapper.hasClass('input-container disabled'), false);
-  t.is(wrapper.containsMatchingElement(<input className="input disabled" />), false);
+  t.is(wrapper.containsMatchingElement(<input className="input-component disabled" />), false);
 });
