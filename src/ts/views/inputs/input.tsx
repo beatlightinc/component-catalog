@@ -23,12 +23,15 @@ const Input = (props: {
     validationFunction,
     onSubmission
   } = props;
+
+  const isValid = validationFunction ? validationFunction() : true;
   const inputContainerClass = classnames('input-container', wrapperClassName, {
     disabled: props.disabled
   });
   const inputClass = classnames('input-component', className, {
     disabled: props.disabled
   });
+
   return (
       <div className={inputContainerClass}>
         <input type={inputType}
