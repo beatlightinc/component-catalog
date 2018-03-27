@@ -2,7 +2,21 @@
   font-size: 12px;
   padding: 5px;
   background-color: $white;
+  color: $black;
   @include vendor(transition, border 0.4s ease);
+
+  &.invalid {
+    border: 2px solid $red;
+  }
+
+  &.valid {
+    border: 2px solid green;
+  }
+
+  &:focus {
+    border: 2px solid $blue;
+    box-shadow: 0px 0px 5px 3px rgba(46, 142, 255, 0.50);
+  }
 
   ::placeholder {
     color: $grey;
@@ -10,5 +24,5 @@
 }
 
 .input-container {
-
+  position: relative;
 }
