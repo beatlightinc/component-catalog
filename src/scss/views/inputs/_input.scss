@@ -1,0 +1,14 @@
+.input-component {
+  font-size: 12px;
+  padding: 5px;
+  background-color: $white;
+  @include vendor(transition, border 0.4s ease);
+
+  ::placeholder {
+    color: $grey;
+  }
+}
+
+.input-container {
+
+}

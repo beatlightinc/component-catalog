@@ -7,10 +7,12 @@ const Input = (props: {
   onSubmission?: () => void
   onHandleChange: () => {},
   validationFunction?: () => boolean,
+  value?: string,
   className?: string,
   wrapperClassName?: string,
   disabled?: boolean,
-  pattern?: string
+  pattern?: string,
+  placeholder?: string
 }) => {
   const {
     inputType,
@@ -21,7 +23,9 @@ const Input = (props: {
     wrapperClassName,
     className,
     validationFunction,
-    onSubmission
+    onSubmission,
+    placeholder,
+    value
   } = props;
 
   const isValid = validationFunction ? validationFunction() : true;
@@ -39,7 +43,9 @@ const Input = (props: {
           className={inputClass}
           maxLength={150}
           disabled={disabled}
-          pattern={pattern}/>
+          pattern={pattern}
+          value={value}
+          placeholder={placeholder ? placeholder : null}/>
       </div>
   );
 };
