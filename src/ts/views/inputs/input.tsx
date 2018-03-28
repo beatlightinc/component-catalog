@@ -29,7 +29,8 @@ const Input = (props: {
     validationFunction,
     onSubmission,
     placeholder,
-    value
+    value,
+    iconType
   } = props;
 
   const isValid = validationFunction ? validationFunction() : true;
@@ -56,7 +57,7 @@ const Input = (props: {
           pattern={pattern}
           value={value}
           placeholder={placeholder ? placeholder : null}/>
-        {inputType ? inputIcon : null}
+        {iconType ? inputIcon : null}
       </div>
   );
 };
