@@ -33,13 +33,12 @@
 /**
  * Text colors
  */
-.\+black-text { color: $black!important; }
-.\+red-text    { color: $red !important; }
-.\+splash-blue-text   { color: $blue !important; }
-.\+blue-text    { color: $blue !important; }
-.\+green-text    { color: $green !important; }
-.\+orange-text   { color: $orange !important; }
-.\+white-text   { color: $white !important; }
+.\+black-text { color: $color-black!important; }
+.\+blue-text    { color: $color-blue !important; }
+.\+green-text    { color: $color-green !important; }
+.\+grey-text    { color: $color-grey !important; }
+.\+red-text    { color: $color-red !important; }
+.\+white-text   { color: $color-white !important; }
 
 /**
  * Container display

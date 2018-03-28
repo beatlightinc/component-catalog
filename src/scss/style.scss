@@ -2,6 +2,9 @@
 @import "_variables.scss";
 @import "_utilities.scss";
 
+/* General layout */
+@import "_layout.scss";
+
 /* Views */
 @import "views/buttons/_button.scss";
 @import "views/inputs/_input.scss";

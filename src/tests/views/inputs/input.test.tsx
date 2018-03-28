@@ -13,6 +13,7 @@ test('<Input /> onChange does not get called if disabled', (t) => {
     <Input
       inputType="text"
       autoFocus={false}
+      value="something"
       onHandleChange={inputSpy}
       disabled={true}
     />);
@@ -24,6 +25,7 @@ test('<Input /> passed in function gets called if not disabled', (t) => {
   const wrapper = shallow(
     <Input
       inputType="text"
+      value="something"
       autoFocus={false}
       onHandleChange={inputSpy}
       disabled={false}
@@ -36,22 +38,24 @@ test('<Input /> wrapper and children elements get proper classnames if disabled'
   const wrapper = shallow(
     <Input
       inputType="text"
+      value="something"
       autoFocus={true}
       onHandleChange={inputSpy}
       disabled={true}
     />);
   // Test the wrapper
   t.is(wrapper.hasClass('input-container disabled'), true);
-  t.is(wrapper.containsMatchingElement(<input className="input disabled"/>), true);
+  t.is(wrapper.containsMatchingElement(<input className="input-component disabled"/>), true);
 });
 
 test('<Input /> wrapper and children elements get proper classnames if NOT disabled', (t) => {
   const wrapper = shallow(
     <Input
       inputType="text"
+      value="something"
       autoFocus={false}
       onHandleChange={inputSpy}
     />);
   t.is(wrapper.hasClass('input-container disabled'), false);
-  t.is(wrapper.containsMatchingElement(<input className="input disabled" />), false);
+  t.is(wrapper.containsMatchingElement(<input className="input-component disabled" />), false);
 });
