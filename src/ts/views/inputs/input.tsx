@@ -14,21 +14,27 @@ const Input = (props: {
   value?: string,
   disabled?: boolean,
   pattern?: string,
-  placeholder?: string
+  placeholder?: string,
+  maxLength?: number,
+  containerStyle?: any,
+  inputStyle?: any
 }) => {
 
   const {
     inputType,
     autoFocus,
+    iconType,
+    onSubmission,
     onHandleChange,
-    disabled,
-    pattern,
     hasValidationState,
     validationState,
-    onSubmission,
-    placeholder,
     value,
-    iconType
+    disabled,
+    pattern,
+    placeholder,
+    maxLength,
+    containerStyle,
+    inputStyle
   } = props;
 
   const inputContainerClass = classnames('input-container', {
@@ -44,7 +50,7 @@ const Input = (props: {
   const inputIcon = <div>{'ICON'}</div>;
 
   return (
-      <div className={inputContainerClass}>
+      <div className={inputContainerClass} style={containerStyle}>
         <input type={inputType}
           onChange={disabled ? null : onHandleChange}
           className={inputClass}
@@ -52,7 +58,8 @@ const Input = (props: {
           disabled={disabled}
           pattern={pattern}
           value={value}
-          placeholder={placeholder ? placeholder : null}/>
+          placeholder={placeholder ? placeholder : null}
+          style={inputStyle}/>
         {iconType ? inputIcon : null}
       </div>
   );
