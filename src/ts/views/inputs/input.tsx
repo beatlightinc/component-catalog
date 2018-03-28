@@ -8,8 +8,8 @@ const Input = (props: {
   // Will eventually have to figure out icon logic
   iconType?: string,
   onSubmission?: () => void
-  onHandleChange: () => {},
-  validationFunction?: () => boolean,
+  onHandleChange?: () => {},
+  validationState?: boolean,
   value?: string,
   className?: string,
   wrapperClassName?: string,
@@ -26,22 +26,20 @@ const Input = (props: {
     pattern,
     wrapperClassName,
     className,
-    validationFunction,
+    validationState,
     onSubmission,
     placeholder,
     value,
     iconType
   } = props;
 
-  const isValid = validationFunction ? validationFunction() : true;
-
   const inputContainerClass = classnames('input-container', wrapperClassName, {
     disabled: props.disabled,
-    valid: isValid && value.length > 0,
-    invalid: !isValid && value.length > 0
   });
   const inputClass = classnames('input-component', className, {
-    disabled: props.disabled
+    disabled: props.disabled,
+    valid: validationState && value.length > 0,
+    invalid: !validationState && value.length > 0
   });
 
   // TODO: Icon logic and implementation

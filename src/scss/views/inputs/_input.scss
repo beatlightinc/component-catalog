@@ -6,16 +6,16 @@
   @include vendor(transition, border 0.4s ease);
 
   &.invalid {
-    border: 2px solid $red;
+    border: 1px solid $red;
   }
 
   &.valid {
-    border: 2px solid green;
+    border: 1px solid green;
   }
 
   &:focus {
-    border: 2px solid $blue;
-    box-shadow: 0px 0px 5px 3px rgba(46, 142, 255, 0.50);
+    border: 1px solid $blue;
+    outline: none;
   }
 
   ::placeholder {
