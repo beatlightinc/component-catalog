@@ -9,10 +9,9 @@ const Input = (props: {
   iconType?: string,
   onSubmission?: () => void
   onHandleChange?: () => {},
+  hasValidationState?: boolean,
   validationState?: boolean,
   value?: string,
-  className?: string,
-  wrapperClassName?: string,
   disabled?: boolean,
   pattern?: string,
   placeholder?: string
@@ -24,8 +23,7 @@ const Input = (props: {
     onHandleChange,
     disabled,
     pattern,
-    wrapperClassName,
-    className,
+    hasValidationState,
     validationState,
     onSubmission,
     placeholder,
@@ -33,13 +31,13 @@ const Input = (props: {
     iconType
   } = props;
 
-  const inputContainerClass = classnames('input-container', wrapperClassName, {
-    disabled: props.disabled,
+  const inputContainerClass = classnames('input-container', {
+    disabled: props.disabled
   });
-  const inputClass = classnames('input-component', className, {
+  const inputClass = classnames('input-component', {
     disabled: props.disabled,
-    valid: validationState && value.length > 0,
-    invalid: !validationState && value.length > 0
+    valid: hasValidationState && validationState && value.length > 0,
+    invalid: hasValidationState && validationState === false && value.length > 0
   });
 
   // TODO: Icon logic and implementation
