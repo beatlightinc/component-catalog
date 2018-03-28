@@ -1,15 +1,17 @@
+/* TODO: Add a reset.css module to normalize elements across browsers */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: $black;
+  background-color: $color-black;
 }
 
 html {
   font-size: 100%;
+  /* TODO: get proxima nova from adobe typekit */
   font-family: "proxima-nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: $white;
+  color: $color-white;
 }
 
 body {

@@ -5,12 +5,14 @@
   * so we don't end up with like 50 variations of each color when some
   * might only be used once.
 */
-$blue: #1983FF;
-$black: #000000;
-$green: #50D0AC;
-$grey: #878992;
-$red: #EA465A;
-$white: #FFFFFF;
+$color-blue: #1983FF;
+$color-black: #000000;
+$color-green: #50D0AC;
+$color-grey: #878992;
+$color-red: #EA465A;
+$color-white: #FFFFFF;
+
+$semi-transparent-blue: rgba(46, 142, 255, 0.5);
 
 
 $font-weight-semibold: 600;

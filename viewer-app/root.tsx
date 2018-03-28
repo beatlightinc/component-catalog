@@ -6,7 +6,7 @@ class Root extends React.Component<{}, {}> {
     return (
       <div>
         <Components.Pagination activePage={8} totalPages={12} />
-        <Components.Input placeholder="cool" hasValidationState={true} validationState={true} value="too short" />
+        <Components.Input placeholder="cool" hasValidationState={true} validationState={false} value="too short" />
       </div>
     );
   }
