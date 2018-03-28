@@ -1,19 +1,34 @@
 /**
-  * This is where we'll declare all of our color variables
+  * This is where we'll declare all of our colors and variables
   * I think it's a good idea if we don't just copy direct from Outro,
   * but rather we start clean with the freshest in mocks of new projects
   * so we don't end up with like 50 variations of each color when some
   * might only be used once.
 */
+
+/*
+ * Colors
+ */
 $color-blue: #1983FF;
 $color-black: #000000;
 $color-green: #50D0AC;
 $color-grey: #878992;
 $color-red: #EA465A;
 $color-white: #FFFFFF;
-
 $semi-transparent-blue: rgba(46, 142, 255, 0.5);
 
-
+/*
+ * Font weights
+ */
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+
+/*
+ * Font sizes
+ */
+$text-normal: 12px;
+$text-medium: 14px;
+$text-large: 16px;
+$header-small: 20px;
+$header-medium: 25px;
+$header-large: 40px;
