@@ -7,14 +7,17 @@
 
   &.invalid {
     border: 1px solid $red;
+    box-shadow: inset 0px 0px 1px $red;
   }
 
   &.valid {
-    border: 1px solid green;
+    border: 1px solid $green;
+    box-shadow: inset 0px 0px 1px $green;
   }
 
   &:focus {
     border: 1px solid $blue;
+    box-shadow: inset 0px 0px 1px rgba(46, 142, 255, 0.5);
     outline: none;
   }
 
