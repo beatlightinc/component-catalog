@@ -56,7 +56,8 @@
     "watch-view": "webpack --config webpack.config.js -w",
     "test": "ava-ts",
     "start-view": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "ava": {
     "files": [
