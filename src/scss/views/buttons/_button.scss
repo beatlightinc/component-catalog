@@ -23,11 +23,10 @@
   }
 
   &.disabled {
-    cursor: default;
     opacity: 0.4;
 
     &:hover {
-      cursor: default;
+      cursor: not-allowed;
       border: 1px solid $color-blue;
     }
   }
