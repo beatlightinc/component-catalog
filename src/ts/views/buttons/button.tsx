@@ -2,17 +2,32 @@ import * as React from 'react';
 import * as classnames from 'classnames';
 
 const Button = (props: {
-  buttonText: string,
   onClick?: () => void,
   disabled?: boolean,
-  className?: string
+  className?: string,
+  style?: any,
+  children?: any
 }) => {
-    return (
-        <button onClick={props.disabled ? null : props.onClick}
-          className={props.className}>
-          {props.buttonText}
-        </button>
-    );
+
+  const {
+    onClick,
+    disabled,
+    className,
+    style,
+    children,
+  } = props;
+
+  const buttonClass = classnames('button-component', className, {
+    disabled: props.disabled
+  });
+
+  return (
+      <button
+        onClick={props.disabled ? null : props.onClick}
+        className={buttonClass}>
+        {children}
+      </button>
+  );
 };
 
 export default Button;

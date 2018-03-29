@@ -1,0 +1,32 @@
+.button-component {
+  color: $color-white;
+  background-color: $color-blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-semibold;
+  border: 1px solid $color-blue;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 10px 25px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    border: 1px solid $color-white;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+
+    &:hover {
+      cursor: not-allowed;
+      border: 1px solid $color-blue;
+    }
+  }
+}

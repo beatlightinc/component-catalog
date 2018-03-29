@@ -7,6 +7,7 @@ class Root extends React.Component<{}, {}> {
       <div>
         <Components.Pagination activePage={8} totalPages={12} />
         <Components.Input placeholder="cool" hasValidationState={true} validationState={false} value="too short" />
+        <Components.Button disabled={false}>{'Continue'}</Components.Button>
       </div>
     );
   }
