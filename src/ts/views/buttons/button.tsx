@@ -6,7 +6,7 @@ const Button = (props: {
   disabled?: boolean,
   className?: string,
   style?: any,
-  children?: any[]
+  children?: any
 }) => {
 
   const {
@@ -14,17 +14,16 @@ const Button = (props: {
     disabled,
     className,
     style,
-    children
+    children,
   } = props;
 
   const buttonClass = classnames('button-component', className, {
     disabled: props.disabled
   });
 
-  // TODO: Eventually wire in logic for icons or children
-
   return (
-      <button onClick={props.disabled ? null : props.onClick}
+      <button
+        onClick={props.disabled ? null : props.onClick}
         className={buttonClass}>
         {children}
       </button>
