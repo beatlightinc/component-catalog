@@ -24,3 +24,10 @@ test('button onclick will not fire if disabled prop, classname gets passed in', 
   t.is(onClickSpy.called, false);
   t.is(wrapper.hasClass('button-component button-class-name disabled'), true);
 });
+
+test('<Button /> gets children passed in properly', (t) => {
+  const wrapper = shallow(
+    <Button>{'Continue'}</Button>
+  );
+  t.is(wrapper.text(), 'Continue');
+});
