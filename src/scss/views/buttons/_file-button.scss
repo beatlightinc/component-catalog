@@ -1,5 +1,16 @@
 .file-button {
-
+  color: $color-white;
+  background-color: $color-blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-semibold;
+  border: 1px solid $color-blue;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 10px 25px;
+  
   input[type=file] {
     position:absolute;
     @include vendor(transform, scale(100));
