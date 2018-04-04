@@ -10,7 +10,13 @@
   opacity: 0.9;
   font-size: 14px;
   padding: 10px 25px;
-  
+
+  &:hover {
+    border: 1px solid $color-white;
+    opacity: 1;
+    cursor: pointer;
+  }
+
   input[type=file] {
     position:absolute;
     @include vendor(transform, scale(100));
@@ -20,6 +26,11 @@
   }
 
   &.disabled {
+    opacity: 0.4;
 
+    &:hover {
+      cursor: not-allowed;
+      border: 1px solid $color-blue;
+    }
   }
 }
