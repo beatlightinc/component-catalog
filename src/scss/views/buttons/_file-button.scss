@@ -1,0 +1,14 @@
+.file-button {
+
+  input[type=file] {
+    position:absolute;
+    @include vendor(transform, scale(100));
+    transform-origin:10px 10px 10px;
+    opacity:0;
+    z-index:2;
+  }
+
+  &.disabled {
+
+  }
+}
