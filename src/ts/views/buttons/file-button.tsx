@@ -30,3 +30,5 @@ const FileButton = (props: {
     </div>
   );
 };
+
+export default FileButton;
