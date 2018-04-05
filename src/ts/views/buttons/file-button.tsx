@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
+import Button from './button';
 
 const FileButton = (props: {
   children?: any,
@@ -18,16 +19,15 @@ const FileButton = (props: {
     disabled: props.disabled
   });
   return (
-    <div className={wrapperClass}>
+    <Button className={wrapperClass} disabled={disabled}>
       {children}
       <input className={inputClass}
         type="file"
-        ref="ref-input"
         multiple={single ? false : true}
         onChange={disabled ? null : onChange}
         onClick={disabled ? null : onClick}
         accept={accept}/>
-    </div>
+    </Button>
   );
 };
 

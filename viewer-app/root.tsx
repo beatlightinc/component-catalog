@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pagination, Input, FileButton } from '../src/ts/index';
+import { Pagination, Input, FileButton, Button } from '../src/ts/index';
 
 class Root extends React.Component<{}, {}> {
   public render() {
@@ -7,6 +7,10 @@ class Root extends React.Component<{}, {}> {
       <div>
         <Pagination activePage={8} totalPages={12} />
         <Input placeholder="cool" hasValidationState={true} validationState={false} value="too short" />
+        <br/>
+        <br/>
+        <br/>
+        <Button>{'Regular Button'}</Button>
         <br/>
         <br/>
         <br/>
