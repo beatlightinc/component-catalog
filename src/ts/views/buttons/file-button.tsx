@@ -18,6 +18,7 @@ const FileButton = (props: {
   const inputClass = classnames('file-button-input', {
     disabled: props.disabled
   });
+
   return (
     <label htmlFor="load-file" className={wrapperClass}>
       <div>{children}</div>
