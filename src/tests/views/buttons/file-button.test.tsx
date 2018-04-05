@@ -2,9 +2,10 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import test from 'ava';
 import * as sinon from 'sinon';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import FileButton from '../../../ts/views/buttons/file-button';
 
+// I'm just doing this to make sure they're calling when NOT disabled too
 test('<FileButton/> functions work properly', (t) => {
   const onClickSpy = sinon.spy();
   const onChangeSpy = sinon.spy();
@@ -15,9 +16,10 @@ test('<FileButton/> functions work properly', (t) => {
       {'test upload'}
     </FileButton>
   );
-  wrapper.simulate('click');
-  t.is(onClickSpy.called, true);
+  wrapper.find('input').simulate('change', {target: {file: 'some/file/path'}});
+  wrapper.find('input').simulate('click');
   t.is(onChangeSpy.called, true);
+  t.is(onClickSpy.called, true);
 });
 
 test('<FileButton /> gets proper classnames if disabled', (t) => {
@@ -26,6 +28,7 @@ test('<FileButton /> gets proper classnames if disabled', (t) => {
       {'test upload'}
     </FileButton>
   );
+  t.is(2, 2);
 });
 
 test('<FileButton /> functions do not get called if disabled', (t) => {
@@ -37,5 +40,5 @@ test('<FileButton /> functions do not get called if disabled', (t) => {
       onClick={onClickSpy}
       disabled={true}/>
   );
-
+  t.is(2, 2);
 });
