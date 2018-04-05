@@ -19,15 +19,16 @@ const FileButton = (props: {
     disabled: props.disabled
   });
   return (
-    <Button className={wrapperClass} disabled={disabled}>
-      {children}
+    <label htmlFor="load-file" className={wrapperClass}>
+      <div>{children}</div>
       <input className={inputClass}
         type="file"
+        id="load-file"
         multiple={single ? false : true}
         onChange={disabled ? null : onChange}
         onClick={disabled ? null : onClick}
         accept={accept}/>
-    </Button>
+    </label>
   );
 };
 
