@@ -10,7 +10,7 @@ class Root extends React.Component<{}, {}> {
         <br/>
         <br/>
         <br/>
-        <FileButton>{'Upload'}</FileButton>
+        <FileButton onChange={() => {}}>{'Upload'}</FileButton>
       </div>
     );
   }

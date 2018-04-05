@@ -7,10 +7,10 @@ const FileButton = (props: {
   single?: boolean,
   disabled?: boolean,
 
-  onChange?: (files: File[]) =>  void,
-  onClick?: (event: Event) => void
+  onChange?: () =>  void,
+  onClick?: () => void
 }) => {
-  const { children, accept, single, onChange, onClick, disabled } = this.props;
+  const { children, accept, single, onChange, onClick, disabled } = props;
   const wrapperClass = classnames('file-button', {
     disabled: props.disabled
   });
