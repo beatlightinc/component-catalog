@@ -1,9 +1,9 @@
 .file-button {
   color: $color-white;
   background-color: $color-blue;
-  position:relative;
-  overflow:hidden;
-  display:inline-block;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   font-weight: $font-weight-semibold;
@@ -21,12 +21,12 @@
   }
 
   input[type=file] {
-    position:absolute;
+    position: absolute;
     overflow: hidden;
     width: 0.1px;
     height: 0.1px;
-    opacity:0;
-    z-index:2;
+    opacity: 0;
+    z-index: 2;
 
     &:hover {
       cursor: pointer;
