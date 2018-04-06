@@ -1,0 +1,44 @@
+.file-button {
+  color: $color-white;
+  background-color: $color-blue;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-semibold;
+  border: 1px solid $color-blue;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 10px 25px;
+  z-index: 4;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $color-white;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  input[type=file] {
+    position: absolute;
+    overflow: hidden;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    z-index: 2;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &.disabled {
+    opacity: 0.4;
+
+    &:hover {
+      cursor: not-allowed;
+      border: 1px solid $color-blue;
+    }
+  }
+}
