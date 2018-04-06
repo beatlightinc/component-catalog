@@ -28,7 +28,8 @@ test('<FileButton /> gets proper classnames if disabled', (t) => {
       {'test upload'}
     </FileButton>
   );
-  t.is(2, 2);
+  t.is(wrapper.hasClass('file-button disabled'), true);
+  t.is(wrapper.containsMatchingElement(<input className="file-button-input disabled" />), true);
 });
 
 test('<FileButton /> functions do not get called if disabled', (t) => {
@@ -40,5 +41,8 @@ test('<FileButton /> functions do not get called if disabled', (t) => {
       onClick={onClickSpy}
       disabled={true}/>
   );
-  t.is(2, 2);
+  wrapper.find('input').simulate('change', {target: {file: 'some/file/path'}});
+  wrapper.find('input').simulate('click');
+  t.is(onChangeSpy.called, false);
+  t.is(onClickSpy.called, false);
 });
