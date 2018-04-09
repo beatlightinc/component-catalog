@@ -1,8 +1,10 @@
 import * as React from 'react';
+import * as classnames from 'classnames';
 import 'wavesurfer.js';
 import Wavesurfer from 'react-wavesurfer';
 
 const AudioPlayer = (props: {
+  className?: string,
   playing: boolean,
   audioURL: string,
   pos: number,
@@ -10,6 +12,7 @@ const AudioPlayer = (props: {
 }) => {
 
   const {
+    className,
     audioURL,
     playing,
     pos,
@@ -22,7 +25,7 @@ const AudioPlayer = (props: {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className={classnames('audio-player-wrapper', className)}>
       <Wavesurfer
         volume={1}
         responsive={true}
