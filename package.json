@@ -38,6 +38,7 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-wavesurfer": "^0.8.6",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.7",
@@ -47,6 +48,7 @@
     "ts-node": "^4.0.1",
     "tslint": "^5.9.1",
     "typescript": "^2.7.2",
+    "wavesurfer.js": "^1.1.11",
     "webpack": "^4.1.0",
     "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0"
