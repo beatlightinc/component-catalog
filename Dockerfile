@@ -18,5 +18,7 @@ RUN yarn install
 #copy over sourcefiles (will not need this when we use volumes)
 COPY ./ ./
 
+RUN yarn build-view
+
 # expose the API port to the host
 EXPOSE 9002
