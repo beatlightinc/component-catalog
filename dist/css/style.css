@@ -1,0 +1,332 @@
+/* Utilities and variables */
+/**
+  * This is where we'll declare all of our colors and variables
+  * I think it's a good idea if we don't just copy direct from Outro,
+  * but rather we start clean with the freshest in mocks of new projects
+  * so we don't end up with like 50 variations of each color when some
+  * might only be used once.
+*/
+/*
+ * Colors
+ */
+/*
+ * Font weights
+ */
+/*
+ * Font sizes
+ */
+/**
+  * This is where we'll declare any common styles such as spacing,
+  * border-radius, font-size, font-boldness and stuff of that nature to be used
+  * as classnames in a pinch.
+  * Outro's is pretty good so I'll take it and refactor it a bit.
+*/
+/**
+ * Add/remove floats
+ */
+.\+float-right {
+  float: right !important; }
+
+.\+float-left {
+  float: left !important; }
+
+.\+float-none {
+  float: none !important; }
+
+.\+hundred-width {
+  width: 100% !important; }
+
+.\+hundred-height {
+  height: 100% !important; }
+
+/**
+ * Text alignment and decoration
+ */
+.\+text-left {
+  text-align: left  !important; }
+
+.\+text-center {
+  text-align: center !important; }
+
+.\+text-right {
+  text-align: right !important; }
+
+.\+underline {
+  text-decoration: underline !important; }
+
+/**
+ * Misc.
+ */
+.\+inline {
+  display: inline-block !important; }
+
+.\+whitespace-pre {
+  white-space: pre; }
+
+/**
+ * Text colors
+ */
+.\+black-text {
+  color: #000000 !important; }
+
+.\+blue-text {
+  color: #1983FF !important; }
+
+.\+green-text {
+  color: #50D0AC !important; }
+
+.\+grey-text {
+  color: #878992 !important; }
+
+.\+red-text {
+  color: #EA465A !important; }
+
+.\+white-text {
+  color: #FFFFFF !important; }
+
+/**
+ * Container display
+ */
+.\+display-flex {
+  display: flex; }
+
+.\+flex-center-justify {
+  display: flex;
+  justify-content: center; }
+
+.\+flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.\+flex-row {
+  display: flex;
+  flex-direction: row; }
+
+.\+flex-wrap {
+  flex-wrap: wrap; }
+
+.\+flex-spread {
+  display: flex;
+  justify-content: space-between; }
+
+.\+flex-center-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.\+flex-middle-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.\+middle-align {
+  align-items: center; }
+
+/**
+ * Padding
+ */
+.\+soft {
+  padding: 10px !important; }
+
+.\+soft-double {
+  padding: 20px !important; }
+
+.\+soft-top {
+  padding-top: 20px !important; }
+
+.\+soft-top-double {
+  padding-top: 40px !important; }
+
+.\+no-padding {
+  padding: 0 !important; }
+
+/**
+ * Margins
+ */
+.\+push-top {
+  margin-top: 20px !important; }
+
+.\+push-double-top {
+  margin-top: 40px !important; }
+
+.\+push-half-top {
+  margin-top: 10px !important; }
+
+.\+push-quarter-top {
+  margin-top: 5px !important; }
+
+.\+push-bottom {
+  margin-bottom: 20px !important; }
+
+.\+push-double-bottom {
+  margin-bottom: 40px !important; }
+
+.\+push-half-bottom {
+  margin-bottom: 10px !important; }
+
+.\+push-quarter-bottom {
+  margin-bottom: 5px !important; }
+
+.\+push-left {
+  margin-left: 20px !important; }
+
+.\+push-double-left {
+  margin-left: 40px !important; }
+
+.\+push-half-left {
+  margin-left: 10px !important; }
+
+.\+push-quarter-left {
+  margin-left: 5px !important; }
+
+.\+push-right {
+  margin-right: 20px !important; }
+
+.\+push-double-right {
+  margin-right: 40px !important; }
+
+.\+push-half-right {
+  margin-right: 10px !important; }
+
+.\+push-quarter-right {
+  margin-right: 5px !important; }
+
+.\+push-self-right {
+  margin-left: auto !important; }
+
+.\+push-self-left {
+  margin-right: auto !important; }
+
+/*
+ * Cursor styles
+ */
+.\+cursor-pointer {
+  cursor: pointer; }
+
+.\+cursor-default {
+  cursor: default; }
+
+/*
+ * Font weight helpers
+ */
+.\+font-weight-semibold {
+  font-weight: 600 !important; }
+
+.\+font-weight-bold {
+  font-weight: 700 !important; }
+
+/*
+ * Vendor prefixer mixin. Auto-prefixes the rule with the appropriate vendor
+ * prefixes for major browsers.
+ *
+ * Usage:
+ * @include vendor(user-select, none);
+ */
+.\+no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
+/* General layout */
+/* TODO: Add a reset.css module to normalize elements across browsers */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000000; }
+
+html {
+  font-size: 100%;
+  /* TODO: get proxima nova from adobe typekit */
+  font-family: "proxima-nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #FFFFFF; }
+
+body {
+  font-size: 0.75rem; }
+
+/* Views */
+.button-component {
+  color: #FFFFFF;
+  background-color: #1983FF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: 1px solid #1983FF;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 10px 25px; }
+  .button-component:focus {
+    outline: none; }
+  .button-component:hover {
+    border: 1px solid #FFFFFF;
+    opacity: 1;
+    cursor: pointer; }
+  .button-component.disabled {
+    opacity: 0.4; }
+    .button-component.disabled:hover {
+      cursor: not-allowed;
+      border: 1px solid #1983FF; }
+
+.file-button {
+  color: #FFFFFF;
+  background-color: #1983FF;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: 1px solid #1983FF;
+  opacity: 0.9;
+  font-size: 14px;
+  padding: 10px 25px;
+  z-index: 4;
+  cursor: pointer; }
+  .file-button:hover {
+    border: 1px solid #FFFFFF;
+    opacity: 1;
+    cursor: pointer; }
+  .file-button input[type=file] {
+    position: absolute;
+    overflow: hidden;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    z-index: 2; }
+    .file-button input[type=file]:hover {
+      cursor: pointer; }
+  .file-button.disabled {
+    opacity: 0.4; }
+    .file-button.disabled:hover {
+      cursor: not-allowed;
+      border: 1px solid #1983FF; }
+
+.input-component {
+  font-size: 12px;
+  padding: 5px;
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 1px solid transparent; }
+  .input-component.invalid {
+    border: 1px solid #EA465A; }
+  .input-component.valid {
+    border: 1px solid #50D0AC; }
+  .input-component:focus {
+    border: 1px solid #1983FF;
+    box-shadow: 0px 0px 5px 2px rgba(46, 142, 255, 0.5);
+    outline: none; }
+  .input-component ::placeholder {
+    color: #878992; }
+
+.input-container {
+  position: relative; }
+
+.audio-player-wrapper {
+  max-width: 600px;
+  padding: 20px; }
