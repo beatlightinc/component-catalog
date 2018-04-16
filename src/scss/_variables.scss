@@ -7,15 +7,43 @@
 */
 
 /*
- * Colors
+ * Core Colors
  */
-$color-blue: #1983FF;
-$color-black: #000000;
-$color-green: #50D0AC;
-$color-grey: #878992;
-$color-red: #EA465A;
+$color-blue: #0076FF;
+$color-black: #14151A;
+$color-dark-grey: #1F2025;
+$color-lightest-grey: #F7F8FA;
 $color-white: #FFFFFF;
-$semi-transparent-blue: rgba(46, 142, 255, 0.5);
+
+/*
+ * Extended Colors
+ */
+$color-grey: #878992;
+$color-red: #D91434;
+$color-pink: #FB1D50;
+$color-mid-grey: #40454E;
+$color-green: #50D0AC;
+$color-light-grey: #E5E5E5;
+
+/*
+ * State Colors
+ */
+$color-blue-hover: #0C6EE0;
+$color-blue-active: #1163C2;
+$color-grey-hover: #F0F2F5;
+$color-grey-active: #E3E5E8;
+$color-white-hover: #F5F6F7;
+$color-white-active: #EDEEF0;
+$color-red-hover: #C41230;
+$color-red-active: #AD102A;
+
+
+/*
+ * Gradients Colors
+ */
+$gradient-blue: linear-gradient(180deg, #4D9BF5 0%, #2974CA 100%);
+$gradient-grey: linear-gradient(180deg, #FFFFFF 0%, #F3F3F3 100%);
+
 
 /*
  * Font weights
