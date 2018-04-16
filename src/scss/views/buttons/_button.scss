@@ -25,7 +25,7 @@
     border: 1px solid $color-red;
 
     &.disabled {
-
+      opacity: 0.5;
     }
 
     &:hover {
@@ -50,7 +50,7 @@
     border: 1px solid $color-light-grey;
 
     &.disabled {
-
+      opacity: 0.5;
     }
 
     &:hover {
@@ -75,7 +75,7 @@
     border: 1px solid $color-light-grey;
 
     &.disabled {
-
+      opacity: 0.5;
     }
 
     &:hover {
@@ -94,7 +94,7 @@
     opacity: 0.1;
 
     &.disabled {
-
+      opacity: 0.5;
     }
 
     &:hover {
