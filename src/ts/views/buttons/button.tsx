@@ -6,7 +6,9 @@ const Button = (props: {
   disabled?: boolean,
   className?: string,
   style?: any,
-  children?: any
+  children?: any,
+  type?: string, // medium, minimal
+  color?: string // red, white, grey (don't use for blue(default) or minimal)
 }) => {
 
   const {
@@ -15,9 +17,11 @@ const Button = (props: {
     className,
     style,
     children,
+    type,
+    color
   } = props;
 
-  const buttonClass = classnames('button-component', className, {
+  const buttonClass = classnames('button-component', className, type, color, {
     disabled: props.disabled
   });
 
