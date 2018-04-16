@@ -24,12 +24,24 @@
     background-color: $color-red;
     border: 1px solid $color-red;
 
-    &:hover {
+    &.disabled {
 
     }
 
-    &:focus {
+    &:hover {
+      background-color: $color-red-hover;
+      border: 1px solid $color-red-hover;
+    }
 
+    &:focus {
+      background-color: $color-red-active;
+      border: 1px solid $color-red-active;
+    }
+
+    &.active {
+      // This will be the same as the class for focus, might be used for something else though.
+      background-color: $color-red-active;
+      border: 1px solid $color-red-active;
     }
   }
 
@@ -37,12 +49,24 @@
     background-color: $color-white;
     border: 1px solid $color-light-grey;
 
-    &:hover {
+    &.disabled {
 
     }
 
-    &:focus {
+    &:hover {
+      background-color: $color-white-hover;
+      border: 1px solid $color-light-grey;
+    }
 
+    &:focus {
+      background-color: $color-white-active;
+      border: 1px solid $color-light-grey;
+    }
+
+    &.active {
+      // This will be the same as the class for focus, might be used for something else though.
+      background-color: $color-white-active;
+      border: 1px solid $color-light-grey;
     }
   }
 
@@ -50,12 +74,18 @@
     background-color: $color-lightest-grey;
     border: 1px solid $color-light-grey;
 
-    &:hover {
+    &.disabled {
 
     }
 
-    &:focus {
+    &:hover {
+      background-color: $color-grey-hover;
+      border: 1px solid $color-light-grey;
+    }
 
+    &:focus {
+      background-color: $color-grey-active;
+      border:
     }
   }
 
@@ -63,12 +93,20 @@
     background-color: $color-blue;
     opacity: 0.1;
 
+    &.disabled {
+
+    }
+
     &:hover {
 
     }
 
     &:focus {
 
+    }
+
+    &.active {
+      // This will be the same as the class for focus, might be used for something else though.
     }
   }
 
