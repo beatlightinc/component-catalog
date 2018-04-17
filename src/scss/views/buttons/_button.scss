@@ -11,6 +11,7 @@
   height: 32px;
   padding-left: 24px;
   padding-right: 24px;
+  border-radius: $border-radius-small;
 
   &.medium {
     height: 40px;
@@ -25,6 +26,12 @@
 
     &.disabled {
       opacity: 0.5;
+
+      &:hover {
+        background-color: $color-red;
+        cursor: not-allowed;
+        border: 1px solid $color-red;
+      }
     }
 
     &:hover {
@@ -45,11 +52,18 @@
   }
 
   &.white {
+    color: $color-mid-grey;
     background-color: $color-white;
     border: 1px solid $color-light-grey;
 
     &.disabled {
       opacity: 0.5;
+
+      &:hover {
+        background-color: $color-white;
+        cursor: not-allowed;
+        border: 1px solid $color-light-grey;
+      }
     }
 
     &:hover {
@@ -70,6 +84,7 @@
   }
 
   &.grey {
+    color: $color-mid-grey;
     background-color: $color-lightest-grey;
     border: 1px solid $color-light-grey;
 
