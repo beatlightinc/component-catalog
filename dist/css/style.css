@@ -327,28 +327,48 @@ body {
       border: 1px solid #0076FF; }
 
 .input-component {
-  width: 262px;
-  height: 40px;
+  width: 245px;
+  height: 36px;
   font-size: 12px;
-  padding: 5px;
+  padding-left: 17px;
   background-color: #FFFFFF;
   color: #14151A;
-  border: 1px solid transparent; }
+  border: 1px solid #E5E5E5;
+  border-radius: 2px;
+  margin: 1px; }
   .input-component.invalid {
-    border: 1px solid #D91434; }
+    border: 2px solid #D91434;
+    margin: 0px; }
+    .input-component.invalid :focus {
+      border: 2px solid #0076FF;
+      outline: none;
+      margin: 0px; }
   .input-component.valid {
-    border: 1px solid #50D0AC; }
+    border: 2px solid #50D0AC;
+    margin: 0px; }
+  .input-component.disabled {
+    opacity: 0.5; }
+    .input-component.disabled ::placeholder {
+      opacity: 0.3; }
   .input-component:focus {
-    border: 1px solid #0076FF;
-    box-shadow: 0px 0px 5px 2px #0C6EE0;
-    outline: none; }
-  .input-component ::placeholder {
-    color: #878992; }
+    border: 2px solid #0076FF;
+    outline: none;
+    margin: 0px; }
+    .input-component:focus.valid {
+      border: 2px solid #50D0AC;
+      margin: 0px; }
+  .input-component.round {
+    border-radius: 36px; }
+
+input::placeholder {
+  color: #878992;
+  opacity: 0.6; }
+
+input:hover::placeholder {
+  opacity: 0.8; }
 
 .input-container {
   position: relative; }
-  .input-container.round {
-    border-radius: 50%; }
 
 .audio-player-wrapper {
   max-width: 600px;
