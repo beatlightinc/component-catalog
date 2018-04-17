@@ -38,6 +38,7 @@
 
     &.active {
       // This will be the same as the class for focus, might be used for something else though.
+      outline: none;
       background-color: $color-red-active;
       border: 1px solid $color-red-active;
     }
@@ -62,6 +63,7 @@
 
     &.active {
       // This will be the same as the class for focus, might be used for something else though.
+      outline: none;
       background-color: $color-white-active;
       border: 1px solid $color-light-grey;
     }
@@ -81,6 +83,7 @@
     }
 
     &.active {
+      outline: none;
       background-color: $color-grey-active;
       border: 1px solid $color-light-grey;
     }
@@ -90,6 +93,8 @@
     }
   }
 
+  // note on all the rgba values here, they are the color-blue variation rgba equivalents with opacity applied
+  // you can't just apply opacity to the background-color in css, it'll hit the text-color too
   &.minimal {
     background-color: rgba(0, 118, 255, 0.01);
     border: 1px solid rgba(0, 118, 225, 0.01);
@@ -110,12 +115,12 @@
 
     &.active {
       // This will be the same as the class for focus, might be used for something else though.
+      outline: none;
       background-color: rgba(17, 99, 194, 0.16);
       border: 1px solid rgba(17, 99, 194, 0.16);
     }
   }
 
-  //Keep this here for now just in case
   &:focus {
     outline: none;
   }
