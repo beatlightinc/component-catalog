@@ -91,16 +91,17 @@
   }
 
   &.minimal {
-    background-color: $color-blue;
+    background-color: rgba(0, 118, 255, 0.01);
+    border: 1px solid rgba(0, 118, 225, 0.01);
     color: $color-blue;
-    opacity: 0.1;
 
     &.disabled {
       opacity: 0.5;
     }
 
     &:hover {
-
+      background-color: rgba(12, 110, 224, 0.08);
+      border: 1px solid rgba(12, 110, 224, 0.08);
     }
 
     &:focus {
@@ -109,6 +110,8 @@
 
     &.active {
       // This will be the same as the class for focus, might be used for something else though.
+      background-color: rgba(17, 99, 194, 0.16);
+      border: 1px solid rgba(17, 99, 194, 0.16);
     }
   }
 
