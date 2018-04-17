@@ -39,10 +39,17 @@ class Root extends React.Component<{}, {
     return (
       <div style={wrapperStyle}>
         <Pagination activePage={8} totalPages={12} />
-        <Input placeholder="I'm default" patternString="\b[A-z]{1,2}\b" value={this.state.inputValue} onHandleChange={this.onInputChange.bind(this)} />
+        <Input placeholder="I'm default"
+          patternString="\b[A-z]{1,2}\b"
+          value={this.state.inputValue}
+          onHandleChange={this.onInputChange.bind(this)} />
         <br/>
         <br/>
-        <Input onHandleChange={this.onRoundInputChange.bind(this)} patternString="\b[A-z]{1,3}\b" placeholder="I'm round" value={this.state.roundInputValue} round={true}/>
+        <Input onHandleChange={this.onRoundInputChange.bind(this)}
+          patternString="\b[A-z]{1,3}\b"
+          placeholder="I'm round"
+          value={this.state.roundInputValue}
+          round={true}/>
         <br/>
         <br/>
         <br/>
@@ -50,7 +57,25 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
-        <Button>{'Regular Button'}</Button>
+        <Button color="grey" disabled={false}>{'Upload'}</Button>
+        <br/>
+        <Button color="white" disabled={false}>{'Upload'}</Button>
+        <br/>
+        <Button disabled={false}>{'Upload'}</Button>
+        <br/>
+        <Button color="red" disabled={false}>{'Upload'}</Button>
+        <br/>
+        <Button color="minimal" disabled={false}>{'Upload'}</Button>
+        <br/>
+        <Button color="grey" disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button color="white" disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button color="red" disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button color="minimal" disabled={true}>{'Upload'}</Button>
         <br/>
         <br/>
         <br/>

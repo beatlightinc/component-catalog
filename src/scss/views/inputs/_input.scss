@@ -6,7 +6,7 @@
   background-color: $color-white;
   color: $color-black;
   border: 1px solid $color-light-grey;
-  border-radius: 2px;
+  border-radius: $border-radius-small;
   // margin is set to counteract the different border widths (same applies to all the margin: 0)
   margin: 1px;
 

@@ -7,24 +7,168 @@
   justify-content: center;
   font-weight: $font-weight-semibold;
   border: 1px solid $color-blue;
-  opacity: 0.9;
   font-size: 14px;
-  padding: 10px 25px;
+  height: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: $border-radius-small;
+
+  &.medium {
+    height: 40px;
+    font-size: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  &.red {
+    background-color: $color-red;
+    border: 1px solid $color-red;
+
+    &.disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: $color-red;
+        cursor: not-allowed;
+        border: 1px solid $color-red;
+      }
+    }
+
+    &:hover {
+      background-color: $color-red-hover;
+      border: 1px solid $color-red-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      // This will be the same as the class for focus, might be used for something else though.
+      outline: none;
+      background-color: $color-red-active;
+      border: 1px solid $color-red-active;
+    }
+  }
+
+  &.white {
+    color: $color-mid-grey;
+    background-color: $color-white;
+    border: 1px solid $color-light-grey;
+
+    &.disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: $color-white;
+        cursor: not-allowed;
+        border: 1px solid $color-light-grey;
+      }
+    }
+
+    &:hover {
+      background-color: $color-white-hover;
+      border: 1px solid $color-light-grey;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      // This will be the same as the class for focus, might be used for something else though.
+      outline: none;
+      background-color: $color-white-active;
+      border: 1px solid $color-light-grey;
+    }
+  }
+
+  &.grey {
+    color: $color-mid-grey;
+    background-color: $color-lightest-grey;
+    border: 1px solid $color-light-grey;
+
+    &.disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: $color-lightest-grey;
+        cursor: not-allowed;
+        border: 1px solid $color-light-grey;
+      }
+    }
+
+    &:hover {
+      background-color: $color-grey-hover;
+      border: 1px solid $color-light-grey;
+    }
+
+    &.active {
+      outline: none;
+      background-color: $color-grey-active;
+      border: 1px solid $color-light-grey;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // note on all the rgba values here, they are the color-blue variation rgba equivalents with opacity applied
+  // you can't just apply opacity to the background-color in css, it'll hit the text-color too
+  &.minimal {
+    background-color: rgba(0, 118, 255, 0.01);
+    border: 1px solid rgba(0, 118, 225, 0.01);
+    color: $color-blue;
+
+    &.disabled {
+      opacity: 0.5;
+
+      &:hover {
+        cursor: not-allowed;
+        background-color: rgba(0, 118, 255, 0.01);
+        border: 1px solid rgba(0, 118, 225, 0.01);
+      }
+    }
+
+    &:hover {
+      background-color: rgba(12, 110, 224, 0.08);
+      border: 1px solid rgba(12, 110, 224, 0.08);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.active {
+      // This will be the same as the class for focus, might be used for something else though.
+      outline: none;
+      background-color: rgba(17, 99, 194, 0.16);
+      border: 1px solid rgba(17, 99, 194, 0.16);
+    }
+  }
 
   &:focus {
     outline: none;
   }
 
+  &.active {
+    outline: none;
+    background-color: $color-blue-active;
+    border: 1px solid $color-blue-active;
+  }
+
   &:hover {
-    border: 1px solid $color-white;
-    opacity: 1;
+    border: 1px solid $color-blue-hover;
+    background-color: $color-blue-hover;
     cursor: pointer;
   }
 
   &.disabled {
-    opacity: 0.4;
+    opacity: 0.5;
 
     &:hover {
+      background-color: $color-blue;
       cursor: not-allowed;
       border: 1px solid $color-blue;
     }

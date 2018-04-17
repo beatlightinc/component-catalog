@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: $color-black;
+  background-color: $color-white;
 }
 
 html {
@@ -19,21 +19,26 @@ body {
 
   h1 {
     font-size: 48px;
+    font-weight: $font-weight-semibold;
   }
 
   h2 {
     font-size: 28px;
+    font-weight: $font-weight-semibold;
   }
 
   h3 {
     font-size: 20px;
+    font-weight: $font-weight-semibold;
   }
 
   h4 {
     font-size: 16px;
+    font-weight: $font-weight-semibold;
   }
 
   h5 {
     font-size: 14px;
+    font-weight: $font-weight-semibold;
   }
 }
