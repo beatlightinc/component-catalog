@@ -90,6 +90,12 @@
 
     &.disabled {
       opacity: 0.5;
+
+      &:hover {
+        background-color: $color-lightest-grey;
+        cursor: not-allowed;
+        border: 1px solid $color-light-grey;
+      }
     }
 
     &:hover {
@@ -117,6 +123,12 @@
 
     &.disabled {
       opacity: 0.5;
+
+      &:hover {
+        cursor: not-allowed;
+        background-color: rgba(0, 118, 255, 0.01);
+        border: 1px solid rgba(0, 118, 225, 0.01);
+      }
     }
 
     &:hover {

@@ -67,6 +67,16 @@ class Root extends React.Component<{}, {
         <br/>
         <Button color="minimal" disabled={false}>{'Upload'}</Button>
         <br/>
+        <Button color="grey" disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button color="white" disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button color="red" disabled={true}>{'Upload'}</Button>
+        <br/>
+        <Button color="minimal" disabled={true}>{'Upload'}</Button>
+        <br/>
         <br/>
         <br/>
         <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
