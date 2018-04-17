@@ -3,14 +3,18 @@ import { Pagination, Input, FileButton, Button, AudioPlayer } from '../src/ts/in
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
-  audioPos?: number
+  audioPos?: number,
+  inputValue?: string,
+  roundInputValue?: string,
 }> {
 
   constructor(props: any) {
     super(props);
     this.state = {
       audioPlaying: true,
-      audioPos: 0
+      audioPos: 0,
+      inputValue: '',
+      roundInputValue: ''
     };
   }
 
@@ -18,11 +22,38 @@ class Root extends React.Component<{}, {
     this.setState({ audioPos });
   }
 
+  public onInputChange(e: React.FormEvent<HTMLInputElement>) {
+    this.setState({ inputValue: e.currentTarget.value });
+  }
+
+  public onRoundInputChange(e: React.FormEvent<HTMLInputElement>) {
+    this.setState({ roundInputValue: e.currentTarget.value });
+  }
+
   public render() {
+    const wrapperStyle = {
+      padding: '15px',
+      backgroundColor: '#E5E5E5'
+    };
+
     return (
-      <div>
+      <div style={wrapperStyle}>
         <Pagination activePage={8} totalPages={12} />
-        <Input placeholder="cool" hasValidationState={true} validationState={false} value="too short" />
+        <Input placeholder="I'm default"
+          patternString="\b[A-z]{1,2}\b"
+          value={this.state.inputValue}
+          onHandleChange={this.onInputChange.bind(this)} />
+        <br/>
+        <br/>
+        <Input onHandleChange={this.onRoundInputChange.bind(this)}
+          patternString="\b[A-z]{1,3}\b"
+          placeholder="I'm round"
+          value={this.state.roundInputValue}
+          round={true}/>
+        <br/>
+        <br/>
+        <br/>
+        <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
         <br/>
         <br/>
