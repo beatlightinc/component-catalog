@@ -9,15 +9,15 @@ const Input = (props: {
   iconType?: string,
   onSubmission?: () => void
   onHandleChange?: () => {},
-  hasValidationState?: boolean,
-  validationState?: boolean,
   value?: string,
   disabled?: boolean,
-  pattern?: string,
+  patternString?: string,
+  validationState?: boolean,
   placeholder?: string,
   maxLength?: number,
   containerStyle?: any,
-  inputStyle?: any
+  inputStyle?: any,
+  round?: boolean
 }) => {
 
   const {
@@ -26,24 +26,37 @@ const Input = (props: {
     iconType,
     onSubmission,
     onHandleChange,
-    hasValidationState,
-    validationState,
     value,
     disabled,
-    pattern,
+    patternString,
+    validationState,
     placeholder,
     maxLength,
     containerStyle,
-    inputStyle
+    inputStyle,
+    round
   } = props;
 
+  // If a pattern AND a validation state get passed in the pattern takes priority. (Shouldnt ever pass it both)
+  const pattern = patternString ? new RegExp(patternString) : null;
+  let isValid: boolean;
+  if (patternString) {
+    isValid = pattern.test(value);
+  }
+  else if (validationState) {
+    isValid = validationState;
+  }
   const inputContainerClass = classnames('input-container', {
     disabled: props.disabled
   });
+
+
+  // TODO go over when we want the input to show is validity state vs active state.
   const inputClass = classnames('input-component', {
     disabled: props.disabled,
-    valid: hasValidationState && validationState && value.length > 0,
-    invalid: hasValidationState && validationState === false && value.length > 0
+    valid: isValid && value.length > 0,
+    invalid: isValid === false && value.length > 0,
+    round: props.round
   });
 
   // TODO: Icon logic and implementation
@@ -56,7 +69,7 @@ const Input = (props: {
           className={inputClass}
           maxLength={150}
           disabled={disabled}
-          pattern={pattern}
+          pattern={patternString}
           value={value}
           placeholder={placeholder ? placeholder : null}
           style={inputStyle}/>

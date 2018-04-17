@@ -1,27 +1,51 @@
 .input-component {
+  width: 245px;
+  height: 36px;
   font-size: $text-normal;
-  padding: 5px;
+  padding-left: 17px;
   background-color: $color-white;
   color: $color-black;
-  border: 1px solid transparent;
+  border: 1px solid $color-light-grey;
+  border-radius: 2px;
+  // margin is set to counteract the different border widths (same applies to all the margin: 0)
+  margin: 1px;
 
   &.invalid {
-    border: 1px solid $color-red;
+    border: 2px solid $color-red;
+    margin: 0px;
   }
 
   &.valid {
-    border: 1px solid $color-green;
+    border: 2px solid $color-green;
+    margin: 0px;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+
+    ::placeholder {
+      opacity: 0.3;
+    }
   }
 
   &:focus {
-    border: 1px solid $color-blue;
-    box-shadow: 0px 0px 5px 2px $color-blue-hover;
+    border: 2px solid $color-blue;
     outline: none;
+    margin: 0px;
   }
 
-  ::placeholder {
-    color: $color-grey;
+  &.round {
+    border-radius: 36px;
   }
+}
+
+input::placeholder {
+  color: $color-grey;
+  opacity: 0.6;
+}
+
+input:hover::placeholder {
+  opacity: 0.8;
 }
 
 .input-container {

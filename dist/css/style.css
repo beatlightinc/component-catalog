@@ -7,7 +7,16 @@
   * might only be used once.
 */
 /*
- * Colors
+ * Core Colors
+ */
+/*
+ * Extended Colors
+ */
+/*
+ * State Colors
+ */
+/*
+ * Gradients Colors
  */
 /*
  * Font weights
@@ -67,10 +76,10 @@
  * Text colors
  */
 .\+black-text {
-  color: #000000 !important; }
+  color: #14151A !important; }
 
 .\+blue-text {
-  color: #1983FF !important; }
+  color: #0076FF !important; }
 
 .\+green-text {
   color: #50D0AC !important; }
@@ -79,7 +88,7 @@
   color: #878992 !important; }
 
 .\+red-text {
-  color: #EA465A !important; }
+  color: #D91434 !important; }
 
 .\+white-text {
   color: #FFFFFF !important; }
@@ -236,7 +245,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #000000; }
+  background-color: #14151A; }
 
 html {
   font-size: 100%;
@@ -246,18 +255,28 @@ html {
   color: #FFFFFF; }
 
 body {
-  font-size: 0.75rem; }
+  font-size: 14px; }
+  body h1 {
+    font-size: 48px; }
+  body h2 {
+    font-size: 28px; }
+  body h3 {
+    font-size: 20px; }
+  body h4 {
+    font-size: 16px; }
+  body h5 {
+    font-size: 14px; }
 
 /* Views */
 .button-component {
   color: #FFFFFF;
-  background-color: #1983FF;
+  background-color: #0076FF;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  border: 1px solid #1983FF;
+  border: 1px solid #0076FF;
   opacity: 0.9;
   font-size: 14px;
   padding: 10px 25px; }
@@ -271,18 +290,18 @@ body {
     opacity: 0.4; }
     .button-component.disabled:hover {
       cursor: not-allowed;
-      border: 1px solid #1983FF; }
+      border: 1px solid #0076FF; }
 
 .file-button {
   color: #FFFFFF;
-  background-color: #1983FF;
+  background-color: #0076FF;
   position: relative;
   overflow: hidden;
   display: inline-block;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  border: 1px solid #1983FF;
+  border: 1px solid #0076FF;
   opacity: 0.9;
   font-size: 14px;
   padding: 10px 25px;
@@ -305,27 +324,31 @@ body {
     opacity: 0.4; }
     .file-button.disabled:hover {
       cursor: not-allowed;
-      border: 1px solid #1983FF; }
+      border: 1px solid #0076FF; }
 
 .input-component {
+  width: 262px;
+  height: 40px;
   font-size: 12px;
   padding: 5px;
   background-color: #FFFFFF;
-  color: #000000;
+  color: #14151A;
   border: 1px solid transparent; }
   .input-component.invalid {
-    border: 1px solid #EA465A; }
+    border: 1px solid #D91434; }
   .input-component.valid {
     border: 1px solid #50D0AC; }
   .input-component:focus {
-    border: 1px solid #1983FF;
-    box-shadow: 0px 0px 5px 2px rgba(46, 142, 255, 0.5);
+    border: 1px solid #0076FF;
+    box-shadow: 0px 0px 5px 2px #0C6EE0;
     outline: none; }
   .input-component ::placeholder {
     color: #878992; }
 
 .input-container {
   position: relative; }
+  .input-container.round {
+    border-radius: 50%; }
 
 .audio-player-wrapper {
   max-width: 600px;
