@@ -54,7 +54,7 @@ const Input = (props: {
   // TODO go over when we want the input to show is validity state vs active state.
   const inputClass = classnames('input-component', {
     disabled: props.disabled,
-    valid: isValid && value.length > 0,
+    valid: isValid,
     invalid: isValid === false && value.length > 0,
     round: props.round
   });

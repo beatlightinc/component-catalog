@@ -13,6 +13,12 @@
   &.invalid {
     border: 2px solid $color-red;
     margin: 0px;
+
+    :focus {
+      border: 2px solid $color-blue;
+      outline: none;
+      margin: 0px;
+    }
   }
 
   &.valid {
@@ -32,6 +38,11 @@
     border: 2px solid $color-blue;
     outline: none;
     margin: 0px;
+
+    &.valid {
+      border: 2px solid $color-green;
+      margin: 0px;
+    }
   }
 
   &.round {
