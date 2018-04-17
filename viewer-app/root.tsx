@@ -26,7 +26,7 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
-        <Button>{'Regular Button'}</Button>
+        <Button size={'medium'} color="minimal">{'Regular Button'}</Button>
         <br/>
         <br/>
         <br/>

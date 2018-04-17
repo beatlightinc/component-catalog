@@ -7,7 +7,6 @@
   justify-content: center;
   font-weight: $font-weight-semibold;
   border: 1px solid $color-blue;
-  opacity: 0.9;
   font-size: 14px;
   height: 32px;
   padding-left: 24px;
@@ -34,8 +33,7 @@
     }
 
     &:focus {
-      background-color: $color-red-active;
-      border: 1px solid $color-red-active;
+      outline: none;
     }
 
     &.active {
@@ -59,8 +57,7 @@
     }
 
     &:focus {
-      background-color: $color-white-active;
-      border: 1px solid $color-light-grey;
+      outline: none;
     }
 
     &.active {
@@ -83,14 +80,19 @@
       border: 1px solid $color-light-grey;
     }
 
-    &:focus {
+    &.active {
       background-color: $color-grey-active;
       border: 1px solid $color-light-grey;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
   &.minimal {
     background-color: $color-blue;
+    color: $color-blue;
     opacity: 0.1;
 
     &.disabled {
@@ -102,7 +104,7 @@
     }
 
     &:focus {
-
+      outline: none;
     }
 
     &.active {
@@ -110,20 +112,28 @@
     }
   }
 
+  //Keep this here for now just in case
   &:focus {
     outline: none;
   }
 
+  &.active {
+    outline: none;
+    background-color: $color-blue-active;
+    border: 1px solid $color-blue-active;
+  }
+
   &:hover {
-    border: 1px solid $color-white;
-    opacity: 1;
+    border: 1px solid $color-blue-hover;
+    background-color: $color-blue-hover;
     cursor: pointer;
   }
 
   &.disabled {
-    opacity: 0.4;
+    opacity: 0.5;
 
     &:hover {
+      background-color: $color-blue;
       cursor: not-allowed;
       border: 1px solid $color-blue;
     }
