@@ -4,14 +4,16 @@ import { Pagination,
   FileButton,
   Button,
   AudioPlayer,
-  Textarea } from '../src/ts/index';
+  Textarea,
+  ProgressDots } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
   audioPos?: number,
   inputValue?: string,
   roundInputValue?: string,
-  textareaValue?: string
+  textareaValue?: string,
+  currentStep?: number
 }> {
 
   constructor(props: any) {
@@ -21,7 +23,8 @@ class Root extends React.Component<{}, {
       audioPos: 0,
       inputValue: '',
       roundInputValue: '',
-      textareaValue: ''
+      textareaValue: '',
+      currentStep: 0
     };
   }
 
@@ -41,6 +44,9 @@ class Root extends React.Component<{}, {
     this.setState({ textareaValue: e.currentTarget.value });
   }
 
+  public onStepClick(i: number) {
+    this.setState({ currentStep: i });
+  }
   public render() {
     const wrapperStyle = {
       padding: '15px',
@@ -69,6 +75,8 @@ class Root extends React.Component<{}, {
         <br/>
         <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
+        <br/>
+        <ProgressDots totalSteps={5} currentStep={this.state.currentStep} stepOnClick={this.onStepClick.bind(this)} />
         <br/>
         <br/>
         <Button color="grey" disabled={false}>{'Upload'}</Button>
@@ -107,3 +115,7 @@ class Root extends React.Component<{}, {
 }
 
 export default Root;
+
+
+
+
