@@ -20,6 +20,7 @@ class IconLoader {
       success: onSuccess,
       error: onError
     };
+
     const iconRequest = new Request(`/icons/${url}`, requestInit);
     fetch(iconRequest);
   }

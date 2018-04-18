@@ -22,6 +22,11 @@ const Icon = (props: {
     onClick
   } = props;
 
+  const iconPath = `ic-${size}-${name}`;
+  IconLoader.load(iconPath).then((svg: any) => {
+
+  });
+
   return (
     <div>
     </div>
