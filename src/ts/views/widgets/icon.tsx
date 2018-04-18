@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import iconLoader from "../../lib/icons/icon-loader";
+import IconLoader from "../../lib/icons/icon-loader";
 
 const Icon = (props: {
   name: string,
