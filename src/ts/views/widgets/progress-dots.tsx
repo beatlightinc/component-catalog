@@ -21,7 +21,11 @@ const ProgressDots = (props: {
       "final": i === totalSteps - 1
     });
     dotElements.push(
-      <div className={dotClass} key={i} onClick={()=>stepOnClick(i)}></div>
+      <div
+        className={dotClass}
+        key={i}
+        onClick={i === currentStep ? null : ()=>stepOnClick(i)}
+      ></div>
     );
   };
 
