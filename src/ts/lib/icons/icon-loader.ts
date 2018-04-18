@@ -33,3 +33,5 @@ class IconLoader {
     });
   }
 }
+
+export default IconLoader;
