@@ -14,6 +14,14 @@ class IconLoader {
 
       delete IconLoader.loadCallbacks[url];
     };
+
+    const requestInit = {
+      method: 'GET',
+      success: onSuccess,
+      error: onError
+    };
+    const iconRequest = new Request(`/icons/${url}`, requestInit);
+    fetch(iconRequest);
   }
 
   public load(url: string) {
