@@ -4,11 +4,7 @@ import * as classnames from 'classnames';
 const Input = (props: {
   inputType?: string,
   autoFocus?: boolean,
-
-  // Will eventually have to figure out icon logic
-  iconType?: string,
-  onSubmission?: () => void
-  onHandleChange?: () => {},
+  iconType?: string, // Will eventually have to figure out icon logic
   value?: string,
   disabled?: boolean,
   patternString?: string,
@@ -17,7 +13,10 @@ const Input = (props: {
   maxLength?: number,
   containerStyle?: any,
   inputStyle?: any,
-  round?: boolean
+  round?: boolean,
+
+  onSubmission?: () => void,
+  onHandleChange?: () => {}
 }) => {
 
   const {
@@ -46,17 +45,13 @@ const Input = (props: {
   else if (validationState) {
     isValid = validationState;
   }
-  const inputContainerClass = classnames('input-container', {
-    disabled: props.disabled
-  });
+  const inputContainerClass = classnames('input-container', { disabled });
 
-
-  // TODO go over when we want the input to show is validity state vs active state.
   const inputClass = classnames('input-component', {
-    disabled: props.disabled,
+    disabled,
     valid: isValid,
     invalid: isValid === false && value.length > 0,
-    round: props.round
+    round
   });
 
   // TODO: Icon logic and implementation

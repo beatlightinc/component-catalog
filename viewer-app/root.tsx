@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { Pagination, Input, FileButton, Button, AudioPlayer } from '../src/ts/index';
+import { Pagination,
+  Input,
+  FileButton,
+  Button,
+  AudioPlayer,
+  Textarea } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
   audioPos?: number,
   inputValue?: string,
   roundInputValue?: string,
+  textareaValue?: string
 }> {
 
   constructor(props: any) {
@@ -14,7 +20,8 @@ class Root extends React.Component<{}, {
       audioPlaying: true,
       audioPos: 0,
       inputValue: '',
-      roundInputValue: ''
+      roundInputValue: '',
+      textareaValue: ''
     };
   }
 
@@ -30,11 +37,17 @@ class Root extends React.Component<{}, {
     this.setState({ roundInputValue: e.currentTarget.value });
   }
 
+  public onTextareaChange(e: React.FormEvent<HTMLTextAreaElement>) {
+    this.setState({ textareaValue: e.currentTarget.value });
+  }
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
       backgroundColor: '#E5E5E5'
     };
+
+    const { textareaValue } = this.state;
 
     return (
       <div style={wrapperStyle}>
@@ -52,6 +65,7 @@ class Root extends React.Component<{}, {
           round={true}/>
         <br/>
         <br/>
+        <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} disabled/>
         <br/>
         <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
