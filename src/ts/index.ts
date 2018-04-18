@@ -6,3 +6,4 @@ export { default as Pagination } from './views/widgets/pagination';
 export { default as AudioPlayer } from './views/widgets/audio-player';
 export { default as Textarea } from './views/inputs/textarea';
 export { default as ProgressDots } from './views/widgets/progress-dots';
+export { default as ProgressTabs } from './views/widgets/progress-tabs';

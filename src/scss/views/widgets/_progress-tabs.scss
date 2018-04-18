@@ -1,0 +1,29 @@
+.progress-tabs-wrapper {
+  display: flex;
+
+  .tab {
+    padding: 24px;
+    border-bottom: 2px solid $color-light-grey;
+    font-size: $text-large;
+    color: $color-mid-grey;
+    opacity: 0.4;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.6px;
+    line-height: 20px;
+
+    &:hover {
+      opacity: 0.5;
+      border-bottom: 2px solid $color-mid-grey;
+    }
+
+    &.clickable {
+      cursor: pointer;
+    }
+
+    &.active {
+      color: $color-blue;
+      opacity: 1;
+      border-bottom: 2px solid $color-blue;
+    }
+  }
+}
