@@ -26,7 +26,7 @@ const IconWrapper = (props: {
     isActive
   } = props;
 
-  const iconWrapperClass = classnames('icon-wrapper-class', size, className, {
+  const iconWrapperClass = classnames('icon-wrapper-class', size, color, className, {
     round,
     disabled,
     active: isActive

@@ -6,46 +6,59 @@
   justify-content: center;
   font-weight: $font-weight-semibold;
   border: 1px solid $color-blue;
+  padding: 8px;
+  // height: 32px;
+  // width: 32px;
 
   &:hover {
     background-color: $color-blue-hover;
+    border: 1px solid $color-blue-hover;
+  }
+
+  &.active {
+    background-color: $color-blue-active;
+    border: 1px solid $color-blue-active;
   }
 
   &.round {
     border-radius: 50%;
   }
 
-  &.small {
-
+  &.white {
+    background-color: $color-white;
+    border: 1px solid $color-light-grey;
 
     &:hover {
-
+      background-color: $color-white-hover;
     }
 
-    &.round {
-
+    &.active {
+      background-color: $color-white-active;
     }
   }
 
-  &.med {
+  &.grey {
+    background-color: $color-lightest-grey;
+    border: 1px solid $color-light-grey;
 
     &:hover {
-
+      background-color: $color-grey-hover;
     }
 
-    &.round {
-
+    &.active {
+      background-color: $color-grey-active;
     }
+  }
+
+  &.small {
+    // height: 24px;
+    // width: 24px;
+    padding: 4px;
   }
 
   &.large {
-
-    &:hover {
-
-    }
-
-    &.round {
-
-    }
+    // height: 48px;
+    // width: 48px;
+    padding: 16px;
   }
 }
