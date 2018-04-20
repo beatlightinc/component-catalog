@@ -23,16 +23,10 @@ const Textarea = (props: {
   } = props;
 
   const inputContainerClass = classnames('input-container', { disabled });
-
-
-  // TODO go over when we want the input to show is validity state vs active state.
   const textareaClassname = classnames('input-component', {
     disabled,
     fixedSize
   });
-
-  // TODO: Icon logic and implementation
-  const inputIcon = <div>{'ICON'}</div>;
 
   return (
       <div className={inputContainerClass}>

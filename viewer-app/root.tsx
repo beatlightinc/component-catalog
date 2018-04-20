@@ -4,14 +4,18 @@ import { Pagination,
   FileButton,
   Button,
   AudioPlayer,
-  Textarea } from '../src/ts/index';
+  Textarea,
+  ProgressDots,
+  ProgressTabs } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
   audioPos?: number,
   inputValue?: string,
   roundInputValue?: string,
-  textareaValue?: string
+  textareaValue?: string,
+  currentStep?: number,
+  tabStep?: number
 }> {
 
   constructor(props: any) {
@@ -21,7 +25,9 @@ class Root extends React.Component<{}, {
       audioPos: 0,
       inputValue: '',
       roundInputValue: '',
-      textareaValue: ''
+      textareaValue: '',
+      currentStep: 0,
+      tabStep: 0
     };
   }
 
@@ -41,13 +47,23 @@ class Root extends React.Component<{}, {
     this.setState({ textareaValue: e.currentTarget.value });
   }
 
+  public onStepClick(i: number) {
+    this.setState({ currentStep: i });
+  }
+
+  public onTabClick(i: number) {
+    this.setState({ tabStep: i });
+  }
+
+  tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
-      backgroundColor: '#E5E5E5'
+      backgroundColor: '#F7F7F8'
     };
 
-    const { textareaValue } = this.state;
+    const { textareaValue, tabStep, currentStep } = this.state;
 
     return (
       <div style={wrapperStyle}>
@@ -65,10 +81,15 @@ class Root extends React.Component<{}, {
           round={true}/>
         <br/>
         <br/>
-        <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} disabled/>
+        <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
         <br/>
         <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
+        <br/>
+        <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
+        <br/>
+        <br/>
+        <ProgressTabs tabNames={this.tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
         <br/>
         <br/>
         <Button color="grey" disabled={false}>{'Upload'}</Button>
@@ -107,3 +128,7 @@ class Root extends React.Component<{}, {
 }
 
 export default Root;
+
+
+
+
