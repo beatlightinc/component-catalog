@@ -4,7 +4,8 @@ import { Pagination,
   FileButton,
   Button,
   AudioPlayer,
-  Textarea } from '../src/ts/index';
+  Textarea,
+  IconWrapper } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
