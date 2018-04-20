@@ -8,7 +8,9 @@ const IconWrapper = (props: {
   color?: string,
   round?: boolean,
   children?: any,
-  className?: any
+  className?: any,
+  isActive?: boolean,
+  disabled?: boolean
 
   onClick?: () => void
 }) => {
@@ -18,11 +20,15 @@ const IconWrapper = (props: {
     round,
     children,
     onClick,
-    className
+    className,
+    disabled,
+    isActive
   } = props;
 
   const iconWrapperClass = classnames('icon-wrapper-class', size, className, {
-    round
+    round,
+    disabled,
+    active: isActive
   });
 
   return (
