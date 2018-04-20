@@ -1,14 +1,13 @@
 .icon-wrapper-class {
+  border: 1px solid $color-blue;
   background-color: $color-blue;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-weight: $font-weight-semibold;
-  border: 1px solid $color-blue;
   padding: 8px;
-  // height: 32px;
-  // width: 32px;
+  height: 32px;
+  width: 32px;
 
   &:hover {
     background-color: $color-blue-hover;
@@ -51,14 +50,14 @@
   }
 
   &.small {
-    // height: 24px;
-    // width: 24px;
+    height: 24px;
+    width: 24px;
     padding: 4px;
   }
 
   &.large {
-    // height: 48px;
-    // width: 48px;
+    height: 48px;
+    width: 48px;
     padding: 16px;
   }
 }
