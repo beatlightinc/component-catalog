@@ -1,8 +1,14 @@
 .icon-wrapper-class {
   background-color: $color-blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-semibold;
+  border: 1px solid $color-blue;
 
   &:hover {
-
+    background-color: $color-blue-hover;
   }
 
   &.round {

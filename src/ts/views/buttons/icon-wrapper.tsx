@@ -14,6 +14,7 @@ const IconWrapper = (props: {
 
   onClick?: () => void
 }) => {
+
   const {
     size,
     color,
