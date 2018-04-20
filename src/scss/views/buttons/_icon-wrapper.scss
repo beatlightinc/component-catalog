@@ -1,0 +1,44 @@
+.icon-wrapper-class {
+  background-color: $color-blue;
+
+  &:hover {
+
+  }
+
+  &.round {
+    border-radius: 50%;
+  }
+
+  &.small {
+
+    &:hover {
+
+    }
+
+    &.round {
+
+    }
+  }
+
+  &.med {
+
+    &:hover {
+
+    }
+
+    &.round {
+
+    }
+  }
+
+  &.large {
+
+    &:hover {
+
+    }
+
+    &.round {
+
+    }
+  }
+}
