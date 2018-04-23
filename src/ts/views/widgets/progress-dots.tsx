@@ -16,7 +16,7 @@ const ProgressDots = (props: {
   const dotElements = [];
   for (let i = 0; i < totalSteps; i++) {
     const dotClass = classnames("dot", {
-      "current": i === currentStep,
+      "active": i === currentStep,
       "clickable": i != currentStep,
       "final": i === totalSteps - 1
     });
