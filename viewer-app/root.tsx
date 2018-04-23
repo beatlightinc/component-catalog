@@ -93,7 +93,6 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
-        <Icon name="upload-single" size="min" color="#14151A" />
       </div>
     );
   }
