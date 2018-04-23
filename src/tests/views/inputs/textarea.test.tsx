@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import test from 'ava';
 import * as sinon from 'sinon';
-import { shallow, EnzymeAdapter } from 'enzyme';
+import { shallow } from 'enzyme';
 import Textarea from '../../../ts/views/inputs/textarea';
 
 const handleChangeSpy = sinon.spy();

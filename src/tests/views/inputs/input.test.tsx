@@ -4,7 +4,6 @@ import test from 'ava';
 import * as sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 import Input from '../../../ts/views/inputs/input';
-import Button from '../../../ts/views/buttons/button';
 
 const inputSpy = sinon.spy();
 
