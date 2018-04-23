@@ -46,7 +46,7 @@ const Icon = (props: {
       width={width}
       fill={color}
       >
-      <path d={pathName} onMouseOver={} onMouseOut={}/>
+      <path d={pathName}/>
     </svg>
   );
 };
