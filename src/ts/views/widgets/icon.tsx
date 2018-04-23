@@ -4,7 +4,7 @@ import { assign } from 'lodash';
 import * as ICONS from '../../icons/icon-constants.json';
 
 const Icon = (props: {
-  name: string,
+  pathName: string,
   size: string,
   className?: string,
   style?: any,
@@ -14,56 +14,40 @@ const Icon = (props: {
 }) => {
 
   const {
-    name,
+    pathName,
     size,
     className,
     style,
     color,
-    hoverColor,
-    onClick
+    hoverColor
   } = props;
 
-  const iconPath = `ic-${size}-${name}`;
-
-  let pixelSize;
+  let height;
+  let width;
   switch (size) {
     case 'min':
-      pixelSize = 16;
+      height = 16;
+      width = 16;
       break;
-
     case 'reg':
-      pixelSize = 40;
+      height = 24;
+      width = 24;
       break;
-
     case 'big':
-      pixelSize = 80;
+      height = 32;
+      width = 32;
       break;
-
-    case  'mob':
-      pixelSize = 25;
-      break;
-
     default:
-      pixelSize = 16;
+      break;
   }
 
-  const customStyle = style || {};
-  const iconClassName = classnames('icon', className);
-  const iconStyle = assign({}, {
-    display: 'inline-block',
-    vericalAlign: 'middle',
-    position: 'relative',
-    width: pixelSize,
-    height: pixelSize
-  }, customStyle);
-
   return (
-    <div
-      className={iconClassName}
-      style={iconStyle}
-      onClick={onClick}
-      ref="wrapper"
-    />
+    <svg height={height}
+      width={width}
+      fill={color}
+      >
+      <path d={pathName} onMouseOver={} onMouseOut={}/>
+    </svg>
   );
 };
 
