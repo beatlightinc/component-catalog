@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pagination, Input, FileButton, Button, AudioPlayer } from '../src/ts/index';
+import { Pagination, Input, FileButton, Button, AudioPlayer, Icon } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -87,6 +87,13 @@ class Root extends React.Component<{}, {
           pos={this.state.audioPos}
           handlePosChange={this.onAudioPositionChange.bind(this)}
         />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <Icon name="upload-single" size="min" color="#14151A" />
       </div>
     );
   }
