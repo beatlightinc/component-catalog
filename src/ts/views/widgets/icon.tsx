@@ -41,13 +41,23 @@ const Icon = (props: {
       break;
   }
 
+  function mouseOver(e: any) {
+    e.target.fillColor = hoverColor ? hoverColor : color;
+  }
+
+  function mouseOut(e: any) {
+    e.target.fillColor = color;
+  }
+
   return (
     <svg height={height}
       width={width}
       fill={color}
       viewBox={`0 0 ${width} ${height}`}
+      onMouseOver={mouseOver}
+      onMouseOut={mouseOut}
       >
-      <path d={pathName}/>
+      <path d={pathName} onMouseOver={mouseOver} onMouseOut={mouseOut} />
     </svg>
   );
 };
