@@ -45,6 +45,7 @@ const Icon = (props: {
     <svg height={height}
       width={width}
       fill={color}
+      viewBox={`0 0 ${width} ${height}`}
       >
       <path d={pathName}/>
     </svg>
