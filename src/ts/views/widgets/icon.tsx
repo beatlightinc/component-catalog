@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import { assign } from 'lodash';
-import * as ICONS from '../../icons/icon-constants.json';
+import ICONS from '../../icons/icon-constants';
 
 const Icon = (props: {
-  pathName: any,
+  pathName: string,
   size: string,
   className?: string,
   style?: any,

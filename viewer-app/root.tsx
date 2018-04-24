@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Pagination, Input, FileButton, Button, AudioPlayer, Icon } from '../src/ts/index';
-import * as ICONS from '../src/ts/icons/icon-constants.json';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
