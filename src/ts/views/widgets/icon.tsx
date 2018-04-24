@@ -4,7 +4,7 @@ import { assign } from 'lodash';
 import * as ICONS from '../../icons/icon-constants.json';
 
 const Icon = (props: {
-  pathName: string,
+  pathName: any,
   size: string,
   className?: string,
   style?: any,
@@ -52,12 +52,9 @@ const Icon = (props: {
   return (
     <svg height={height}
       width={width}
-      fill={color}
       viewBox={`0 0 ${width} ${height}`}
-      onMouseOver={mouseOver}
-      onMouseOut={mouseOut}
       >
-      <path d={pathName} onMouseOver={mouseOver} onMouseOut={mouseOut} />
+      <path d={ICONS[pathName]} fill={color} onMouseOver={mouseOver} onMouseOut={mouseOut}/>
     </svg>
   );
 };

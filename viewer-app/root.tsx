@@ -94,7 +94,7 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
-        <Icon pathName={ICONS.MIN_UPLOAD_SINGLE} color="#14151A" hoverColor="#0076FF" size="min"/>
+        <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
       </div>
     );
   }
