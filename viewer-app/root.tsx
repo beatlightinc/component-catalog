@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Pagination, Input, FileButton, Button, AudioPlayer, Icon } from '../src/ts/index';
+import * as ICONS from '../src/ts/icons/icon-constants.json';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -93,6 +94,7 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
+        <Icon pathName={ICONS.MIN_UPLOAD_SINGLE} color="#14151A" hoverColor="#0076FF" size="min"/>
       </div>
     );
   }
