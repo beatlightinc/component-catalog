@@ -42,11 +42,11 @@ const Icon = (props: {
   }
 
   function mouseOver(e: any) {
-    e.target.fillColor = hoverColor ? hoverColor : color;
+    e.target.style.fill = hoverColor ? hoverColor : color;
   }
 
   function mouseOut(e: any) {
-    e.target.fillColor = color;
+    e.target.style.fill = color;
   }
 
   return (
