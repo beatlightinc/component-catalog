@@ -55,8 +55,6 @@ class Root extends React.Component<{}, {
     this.setState({ tabStep: i });
   }
 
-  tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
-
   public render() {
     const wrapperStyle = {
       padding: '15px',
@@ -64,6 +62,8 @@ class Root extends React.Component<{}, {
     };
 
     const { textareaValue, tabStep, currentStep } = this.state;
+
+    const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
     return (
       <div style={wrapperStyle}>
@@ -89,7 +89,7 @@ class Root extends React.Component<{}, {
         <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
         <br/>
         <br/>
-        <ProgressTabs tabNames={this.tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
+        <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
         <br/>
         <br/>
         <Button color="grey" disabled={false}>{'Upload'}</Button>
@@ -128,7 +128,3 @@ class Root extends React.Component<{}, {
 }
 
 export default Root;
-
-
-
-
