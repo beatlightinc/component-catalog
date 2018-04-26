@@ -21,6 +21,7 @@ const ToggleSwitch = (props: {
   } = props;
 
   const wrapperClass = classnames('toggle-switch-wrapper', className);
+  const handleStyle = classnames('react-switch-handle', { active });
 
   return (
     <div className={wrapperClass}>
@@ -34,6 +35,7 @@ const ToggleSwitch = (props: {
         height={16}
         width={32}
         boxShadow={'1px 1px 2px 0 rgba(0,0,0,0.13)'}
+        activeBoxShadow={'1px 1px 2px 0 rgba(0,0,0,)'}
       />
     </div>
   );

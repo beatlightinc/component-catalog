@@ -5,7 +5,16 @@
   }
 
   .react-switch-handle {
-    
+    border: 1px solid $color-light-grey;
+
+    &.active {
+      border: 1px solid $color-blue;
+      
+      &:hover {
+
+      }
+    }
+
     &:hover {
       box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.13);
     }
