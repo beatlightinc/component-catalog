@@ -33,6 +33,7 @@ const ToggleSwitch = (props: {
         handleDiameter={16}
         height={16}
         width={32}
+        boxShadow={'1px 1px 2px 0 rgba(0,0,0,0.13)'}
       />
     </div>
   );
