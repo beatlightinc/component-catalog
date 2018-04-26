@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pagination, Input, FileButton, Button, AudioPlayer, Icon } from '../src/ts/index';
+import { Pagination, Input, FileButton, Button, AudioPlayer, Icon, IconWrapper } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
