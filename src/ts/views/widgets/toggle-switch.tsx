@@ -20,6 +20,7 @@ const ToggleSwitch = (props: {
     className
   } = props;
 
+  // These give us the option to customize a bit more, but they won't override the defaults for now
   const wrapperClass = classnames('toggle-switch-wrapper', className);
   const handleStyle = classnames('react-switch-handle', { active });
 
