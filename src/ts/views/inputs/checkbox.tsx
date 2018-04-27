@@ -18,7 +18,7 @@ const Checkbox = (props: {
   const checkBoxStyle = classnames('checkbox-inner-wrapper');
 
   return (
-      <span>
+      <span onClick={onClick}>
         <input type="checkbox" checked={checked} className="hidden-checkbox" />
         <span></span>
       </span>
