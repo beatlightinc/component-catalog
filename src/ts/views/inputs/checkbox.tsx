@@ -5,22 +5,26 @@ import * as classnames from 'classnames';
 const Checkbox = (props: {
   onClick?: () => void,
   checked?: boolean,
-  classname?: string
+  intermediate?: boolean,
+  classname?: string,
+  disabled?: boolean
 }) => {
 
   const {
     onClick,
     checked,
-    classname
+    classname,
+    disabled,
+    intermediate
   } = props;
 
   const wrapperStyle = classnames('checkbox-wrapper', classname);
-  const checkBoxStyle = classnames('checkbox-inner-wrapper');
+  const checkBoxStyle = classnames('checkbox-inner-wrapper', { disabled, checked, intermediate });
 
   return (
       <span onClick={onClick}>
         <input type="checkbox" checked={checked} className="hidden-checkbox" />
-        <span></span>
+        <span className={checkBoxStyle}></span>
       </span>
   );
 };
