@@ -6,7 +6,8 @@ import { Pagination,
   AudioPlayer,
   Textarea,
   ProgressDots,
-  ProgressTabs } from '../src/ts/index';
+  ProgressTabs,
+  ToggleSwitch} from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
