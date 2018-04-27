@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   width: 265px;
+  display: flex;
 
   .input-icon {
     position: absolute;
@@ -65,6 +66,10 @@
     &.round {
       border-radius: 36px;
     }
+
+    &.number {
+      width: 230px;
+    }
   }
 
   input {
@@ -100,6 +105,31 @@
 
     &.fixedSize {
       resize: none;
+    }
+  }
+
+  .number-input-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1px;
+
+    .number-input-button {
+      width: 32px;
+      height: 20px;
+      padding: 0px;
+      border: 1px solid $color-light-grey;
+      background-color: $color-lightest-grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.up {
+        border-radius: 0 2px 0 0;
+      }
+
+      &.down {
+        border-radius: 0 0 2px 0;
+      }
     }
   }
 }
