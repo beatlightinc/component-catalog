@@ -7,14 +7,15 @@ const Checkbox = (props: {
   checked?: boolean,
   classname?: string
 }) => {
-  
+
   const {
     onClick,
     checked,
     classname
   } = props;
 
-  const checkBoxStyle = classnames('checkbox-wrapper', classname);
+  const wrapperStyle = classnames('checkbox-wrapper', classname);
+  const checkBoxStyle = classnames('checkbox-inner-wrapper');
 
   return (
       <span>
