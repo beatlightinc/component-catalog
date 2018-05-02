@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
-import { assign } from 'lodash';
 import ICONS from '../../icons/icon-constants';
 
 const Icon = (props: {

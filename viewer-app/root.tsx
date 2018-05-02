@@ -1,11 +1,25 @@
 import * as React from 'react';
-import { Pagination, Input, FileButton, Button, AudioPlayer, Icon, IconWrapper } from '../src/ts/index';
+import { Pagination,
+  Input,
+  FileButton,
+  Button,
+  AudioPlayer,
+  Textarea,
+  ProgressDots,
+  ProgressTabs,
+  ToggleSwitch,
+  Icon
+  } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
   audioPos?: number,
   inputValue?: string,
   roundInputValue?: string,
+  textareaValue?: string,
+  currentStep?: number,
+  tabStep?: number,
+  toggleValue?: boolean
 }> {
 
   constructor(props: any) {
@@ -14,8 +28,17 @@ class Root extends React.Component<{}, {
       audioPlaying: true,
       audioPos: 0,
       inputValue: '',
-      roundInputValue: ''
+      roundInputValue: '',
+      textareaValue: '',
+      currentStep: 0,
+      tabStep: 0,
+      toggleValue: false
     };
+  }
+
+  public toggleSwitch() {
+    const { toggleValue } = this.state;
+    this.setState({ toggleValue: !toggleValue });
   }
 
   public onAudioPositionChange(audioPos: number) {
@@ -30,11 +53,27 @@ class Root extends React.Component<{}, {
     this.setState({ roundInputValue: e.currentTarget.value });
   }
 
+  public onTextareaChange(e: React.FormEvent<HTMLTextAreaElement>) {
+    this.setState({ textareaValue: e.currentTarget.value });
+  }
+
+  public onStepClick(i: number) {
+    this.setState({ currentStep: i });
+  }
+
+  public onTabClick(i: number) {
+    this.setState({ tabStep: i });
+  }
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
-      backgroundColor: '#E5E5E5'
+      backgroundColor: '#F7F7F8'
     };
+
+    const { textareaValue, tabStep, currentStep, toggleValue } = this.state;
+
+    const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
     return (
       <div style={wrapperStyle}>
@@ -52,9 +91,15 @@ class Root extends React.Component<{}, {
           round={true}/>
         <br/>
         <br/>
+        <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
         <br/>
         <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
+        <br/>
+        <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
+        <br/>
+        <br/>
+        <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
         <br/>
         <br/>
         <Button color="grey" disabled={false}>{'Upload'}</Button>

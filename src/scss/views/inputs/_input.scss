@@ -1,64 +1,87 @@
-.input-component {
-  width: 245px;
-  height: 36px;
-  font-size: $text-normal;
-  padding-left: 17px;
-  background-color: $color-white;
-  color: $color-black;
-  border: 1px solid $color-light-grey;
-  border-radius: $border-radius-small;
-  // margin is set to counteract the different border widths (same applies to all the margin: 0)
-  margin: 1px;
+.input-container {
+  position: relative;
 
-  &.invalid {
-    border: 2px solid $color-red;
-    margin: 0px;
-
-    :focus {
-      border: 2px solid $color-blue;
-      outline: none;
+  .input-component {
+    font-size: $text-normal;
+    padding-left: 17px;
+    background-color: $color-white;
+    color: $color-black;
+    border: 1px solid $color-light-grey;
+    border-radius: $border-radius-small;
+    // margin is set to counteract the different border widths (same applies to all the margin: 0)
+    margin: 1px;
+  
+    &.invalid {
+      border: 2px solid $color-red;
       margin: 0px;
+  
+      :focus {
+        border: 2px solid $color-blue;
+        outline: none;
+        margin: 0px;
+      }
     }
-  }
-
-  &.valid {
-    border: 2px solid $color-green;
-    margin: 0px;
-  }
-
-  &.disabled {
-    opacity: 0.5;
-
-    ::placeholder {
-      opacity: 0.3;
-    }
-  }
-
-  &:focus {
-    border: 2px solid $color-blue;
-    outline: none;
-    margin: 0px;
-
+  
     &.valid {
       border: 2px solid $color-green;
       margin: 0px;
     }
+  
+    &.disabled {
+      opacity: 0.5;
+  
+      ::placeholder {
+        opacity: 0.3;
+      }
+    }
+  
+    &:focus {
+      border: 2px solid $color-blue;
+      outline: none;
+      margin: 0px;
+  
+      &.valid {
+        border: 2px solid $color-green;
+        margin: 0px;
+      }
+    }
+  
+    &.round {
+      border-radius: 36px;
+    }
   }
 
-  &.round {
-    border-radius: 36px;
+  input {
+    width: 245px;
+    height: 36px;
+
+    &::placeholder {
+      color: $color-grey;
+      opacity: 0.6;
+    }
+  
+    &:hover::placeholder {
+      opacity: 0.8;
+    }
   }
-}
 
-input::placeholder {
-  color: $color-grey;
-  opacity: 0.6;
-}
 
-input:hover::placeholder {
-  opacity: 0.8;
-}
+  textarea {
+    padding-top: 10px;
+    height: 120px;
+    width: 262px;
 
-.input-container {
-  position: relative;
+    &::placeholder {
+      color: $color-grey;
+      opacity: 0.6;
+    }
+
+    &:hover::placeholder {
+      opacity: 0.8;
+    }
+
+    &.fixedSize {
+      resize: none;
+    }
+  }
 }

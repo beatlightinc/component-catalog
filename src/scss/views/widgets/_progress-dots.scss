@@ -1,0 +1,29 @@
+.progress-dots-wrapper {
+  display: flex;
+
+  .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    margin-right: 24px;
+    background-color: $color-mid-grey;
+
+    &.active {
+      opacity: 1;
+      background-color: $color-blue;
+    }
+
+    &.clickable {
+      opacity: 0.15;
+
+      &:hover {
+        opacity: 0.4;
+        cursor: pointer;
+      }
+    }
+
+    &.final {
+      margin-right: 0px;
+    }
+  }
+}
