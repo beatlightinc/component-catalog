@@ -6,7 +6,10 @@ import { Pagination,
   AudioPlayer,
   Textarea,
   ProgressDots,
-  ProgressTabs } from '../src/ts/index';
+  ProgressTabs,
+  ToggleSwitch,
+  Icon
+  } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -15,7 +18,8 @@ class Root extends React.Component<{}, {
   roundInputValue?: string,
   textareaValue?: string,
   currentStep?: number,
-  tabStep?: number
+  tabStep?: number,
+  toggleValue?: boolean
 }> {
 
   constructor(props: any) {
@@ -27,8 +31,14 @@ class Root extends React.Component<{}, {
       roundInputValue: '',
       textareaValue: '',
       currentStep: 0,
-      tabStep: 0
+      tabStep: 0,
+      toggleValue: false
     };
+  }
+
+  public toggleSwitch() {
+    const { toggleValue } = this.state;
+    this.setState({ toggleValue: !toggleValue });
   }
 
   public onAudioPositionChange(audioPos: number) {
@@ -55,15 +65,15 @@ class Root extends React.Component<{}, {
     this.setState({ tabStep: i });
   }
 
-  tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
-
   public render() {
     const wrapperStyle = {
       padding: '15px',
       backgroundColor: '#F7F7F8'
     };
 
-    const { textareaValue, tabStep, currentStep } = this.state;
+    const { textareaValue, tabStep, currentStep, toggleValue } = this.state;
+
+    const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
     return (
       <div style={wrapperStyle}>
@@ -89,7 +99,7 @@ class Root extends React.Component<{}, {
         <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
         <br/>
         <br/>
-        <ProgressTabs tabNames={this.tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
+        <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
         <br/>
         <br/>
         <Button color="grey" disabled={false}>{'Upload'}</Button>
@@ -101,7 +111,7 @@ class Root extends React.Component<{}, {
         <Button color="red" disabled={false}>{'Upload'}</Button>
         <br/>
         <Button color="minimal" disabled={false}>{'Upload'}</Button>
-        <br/>
+        <br/>arn
         <Button color="grey" disabled={true}>{'Upload'}</Button>
         <br/>
         <Button color="white" disabled={true}>{'Upload'}</Button>
@@ -122,13 +132,16 @@ class Root extends React.Component<{}, {
           pos={this.state.audioPos}
           handlePosChange={this.onAudioPositionChange.bind(this)}
         />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
       </div>
     );
   }
 }
 
 export default Root;
-
-
-
-

@@ -8,6 +8,7 @@
 /* Views */
 @import "views/buttons/_button.scss";
 @import "views/buttons/_file-button.scss";
+@import "views/buttons/_icon-wrapper.scss";
 @import "views/inputs/_input.scss";
 @import "views/inputs/_checkbox.scss";
 @import "views/labels/_label.scss";
@@ -16,3 +17,4 @@
 @import "views/widgets/_audio-player.scss";
 @import "views/widgets/_progress-dots.scss";
 @import "views/widgets/_progress-tabs.scss";
+@import "views/widgets/_toggle-switch.scss";
