@@ -19,14 +19,14 @@ const Checkbox = (props: {
     intermediate
   } = props;
 
-  const wrapperStyle = classnames('checkbox-wrapper', classname);
-  const checkBoxStyle = classnames('checkbox-inner-wrapper', { disabled, checked, intermediate });
+  // const wrapperStyle = classnames('checkbox-wrapper', classname);
+  // const checkBoxStyle = classnames('checkbox-inner-wrapper', { disabled, checked, intermediate });
   // const checkBoxIcon = checked ? <Icon /> : null;
 
   return (
-      <span onClick={onClick}>
+      <span>
         <input type="checkbox" checked={checked} className="hidden-checkbox" />
-        <span className={checkBoxStyle}></span>
+        <span className={checkBoxStyle} onClick={onClick}></span>
       </span>
   );
 };
