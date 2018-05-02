@@ -1,0 +1,67 @@
+.radio-button-wrapper {
+  height: 20px;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+
+  .label {
+    font-size: 14px;
+    opacity: 0.7;
+    color: $color-mid-grey;
+
+    &.checked {
+      opacity: 0.8;
+    }
+  }
+
+  .outer-circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid $color-light-grey;
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+
+    &.checked {
+      margin-right: 14px;
+      border: 2px solid $color-blue;
+
+      &.disabled {
+        border: 2px solid $color-light-grey;
+        opacity: 0.5;
+      }
+    }
+
+    .inner-circle {
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background-color: $color-blue;
+      z-index: -1;
+
+      &.checked {
+        z-index: 2;
+
+        &.disabled {
+          background-color: $color-light-grey;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .label {
+      opacity: 0.8;
+    }
+
+    &.disabled {
+      cursor: default;
+    }
+  }
+}
