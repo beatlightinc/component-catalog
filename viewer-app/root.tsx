@@ -7,7 +7,8 @@ import { Pagination,
   Textarea,
   ProgressDots,
   ProgressTabs,
-  ToggleSwitch} from '../src/ts/index';
+  ToggleSwitch,
+  RadioButton  } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -17,7 +18,8 @@ class Root extends React.Component<{}, {
   textareaValue?: string,
   currentStep?: number,
   tabStep?: number,
-  toggleValue?: boolean
+  toggleValue?: boolean,
+  activeRadioButtonID?: string
 }> {
 
   constructor(props: any) {
@@ -30,7 +32,8 @@ class Root extends React.Component<{}, {
       textareaValue: '',
       currentStep: 0,
       tabStep: 0,
-      toggleValue: false
+      toggleValue: false,
+      activeRadioButtonID: 'One'
     };
   }
 
@@ -63,19 +66,25 @@ class Root extends React.Component<{}, {
     this.setState({ tabStep: i });
   }
 
+  public radioOnClick(key: string) {
+    key === this.state.activeRadioButtonID
+    ? this.setState({ activeRadioButtonID: null })
+    : this.setState({ activeRadioButtonID: key });
+  }
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
       backgroundColor: '#F7F7F8'
     };
 
-    const { textareaValue, tabStep, currentStep, toggleValue } = this.state;
+    const { textareaValue, tabStep, currentStep, toggleValue, activeRadioButtonID } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
     return (
       <div style={wrapperStyle}>
-        <Pagination activePage={8} totalPages={12} />
+        {/* <Pagination activePage={8} totalPages={12} />
         <Input placeholder="I'm default"
           patternString="\b[A-z]{1,2}\b"
           value={this.state.inputValue}
@@ -92,6 +101,15 @@ class Root extends React.Component<{}, {
         <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
         <br/>
         <Input placeholder="I'm disabled" disabled round={true}/>
+        <br/> */}
+        <br/>
+        <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')} activeLabel={activeRadioButtonID} label='One'/>
+        <br/>
+        <br/>
+        <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')} activeLabel={activeRadioButtonID} label='Two' disabled />
+        <br/>
+        <br/>
+        <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')} activeLabel={activeRadioButtonID} label='Three' />
         <br/>
         <br/>
         <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
