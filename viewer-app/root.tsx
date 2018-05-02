@@ -8,7 +8,9 @@ import { Pagination,
   ProgressDots,
   ProgressTabs,
   ToggleSwitch,
-  RadioButton  } from '../src/ts/index';
+  RadioButton,
+  Icon
+  } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -84,7 +86,7 @@ class Root extends React.Component<{}, {
 
     return (
       <div style={wrapperStyle}>
-        {/* <Pagination activePage={8} totalPages={12} />
+        <Pagination activePage={8} totalPages={12} />
         <Input placeholder="I'm default"
           patternString="\b[A-z]{1,2}\b"
           value={this.state.inputValue}
@@ -101,7 +103,7 @@ class Root extends React.Component<{}, {
         <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
         <br/>
         <Input placeholder="I'm disabled" disabled round={true}/>
-        <br/> */}
+        <br/>
         <br/>
         <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')} activeLabel={activeRadioButtonID} label='One'/>
         <br/>
@@ -127,7 +129,7 @@ class Root extends React.Component<{}, {
         <Button color="red" disabled={false}>{'Upload'}</Button>
         <br/>
         <Button color="minimal" disabled={false}>{'Upload'}</Button>
-        <br/>
+        <br/>arn
         <Button color="grey" disabled={true}>{'Upload'}</Button>
         <br/>
         <Button color="white" disabled={true}>{'Upload'}</Button>
@@ -151,7 +153,10 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
-        <ToggleSwitch onClick={this.toggleSwitch.bind(this)} active={toggleValue} disabled={false} />
+        <br/>
+        <br/>
+        <br/>
+        <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
       </div>
     );
   }

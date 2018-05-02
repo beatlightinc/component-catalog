@@ -1,4 +1,5 @@
 export { default as Button } from './views/buttons/button';
+export { default as IconWrapper } from './views/buttons/icon-wrapper';
 export { default as FileButton } from './views/buttons/file-button';
 export { default as Label } from './views/labels/label';
 export { default as Input } from './views/inputs/input';
@@ -9,3 +10,4 @@ export { default as Textarea } from './views/inputs/textarea';
 export { default as ProgressDots } from './views/widgets/progress-dots';
 export { default as ProgressTabs } from './views/widgets/progress-tabs';
 export { default as ToggleSwitch } from './views/widgets/toggle-switch';
+export { default as Icon } from './views/widgets/icon';
