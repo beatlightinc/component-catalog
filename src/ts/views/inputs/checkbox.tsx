@@ -26,7 +26,7 @@ const Checkbox = (props: {
   return (
       <span>
         <input type="checkbox" checked={checked} className="hidden-checkbox" />
-        <span className={checkBoxStyle} onClick={onClick}></span>
+        <span onClick={onClick}></span>
       </span>
   );
 };
