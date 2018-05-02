@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PageButton from '../buttons/page-button';
 import * as classnames from 'classnames';
+// import Icon from '../widgets/icon';
 
 const Checkbox = (props: {
   onClick?: () => void,
@@ -20,6 +21,7 @@ const Checkbox = (props: {
 
   const wrapperStyle = classnames('checkbox-wrapper', classname);
   const checkBoxStyle = classnames('checkbox-inner-wrapper', { disabled, checked, intermediate });
+  // const checkBoxIcon = checked ? <Icon /> : null;
 
   return (
       <span onClick={onClick}>
