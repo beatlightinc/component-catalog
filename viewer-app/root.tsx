@@ -105,13 +105,19 @@ class Root extends React.Component<{}, {
         <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
         <br/>
-        <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')} activeLabel={activeRadioButtonID} label='One'/>
+        <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
+          activeLabel={activeRadioButtonID}
+          label="One"/>
         <br/>
         <br/>
-        <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')} activeLabel={activeRadioButtonID} label='Two' disabled />
+        <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')}
+          activeLabel={activeRadioButtonID}
+          label="Two" disabled />
         <br/>
         <br/>
-        <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')} activeLabel={activeRadioButtonID} label='Three' />
+        <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')}
+          activeLabel={activeRadioButtonID}
+          label="Three" />
         <br/>
         <br/>
         <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
