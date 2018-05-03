@@ -9,7 +9,8 @@ import { Pagination,
   ProgressTabs,
   ToggleSwitch,
   RadioButton,
-  Icon
+  Icon,
+  Checkbox
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -21,7 +22,8 @@ class Root extends React.Component<{}, {
   currentStep?: number,
   tabStep?: number,
   toggleValue?: boolean,
-  activeRadioButtonID?: string
+  activeRadioButtonID?: string,
+  checkboxValue?: boolean
 }> {
 
   constructor(props: any) {
@@ -37,6 +39,11 @@ class Root extends React.Component<{}, {
       toggleValue: false,
       activeRadioButtonID: 'One'
     };
+  }
+
+  public toggleCheckbox() {
+    const { checkboxValue } = this.state;
+    this.setState({ checkboxValue: !checkboxValue });
   }
 
   public toggleSwitch() {
@@ -80,7 +87,7 @@ class Root extends React.Component<{}, {
       backgroundColor: '#F7F7F8'
     };
 
-    const { textareaValue, tabStep, currentStep, toggleValue, activeRadioButtonID } = this.state;
+    const { textareaValue, tabStep, currentStep, toggleValue, activeRadioButtonID, checkboxValue } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
@@ -105,13 +112,19 @@ class Root extends React.Component<{}, {
         <Input placeholder="I'm disabled" disabled round={true}/>
         <br/>
         <br/>
-        <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')} activeLabel={activeRadioButtonID} label='One'/>
+        <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
+          activeLabel={activeRadioButtonID}
+          label="One"/>
         <br/>
         <br/>
-        <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')} activeLabel={activeRadioButtonID} label='Two' disabled />
+        <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')}
+          activeLabel={activeRadioButtonID}
+          label="Two" disabled />
         <br/>
         <br/>
-        <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')} activeLabel={activeRadioButtonID} label='Three' />
+        <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')}
+          activeLabel={activeRadioButtonID}
+          label="Three" />
         <br/>
         <br/>
         <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
@@ -153,10 +166,11 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <br/>
         <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
+        <br/>
+        <br/>
+        <br/>
+        <Checkbox label="test checkbox:" onClick={this.toggleCheckbox} checked={checkboxValue}/>
       </div>
     );
   }

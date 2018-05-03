@@ -1,0 +1,12 @@
+.checkbox-component-wrapper {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+
+  .checkbox-label {
+    font-weight: $font-weight-semibold;
+    color: $color-dark-grey;
+    margin-right: 5px;
+  }
+}
