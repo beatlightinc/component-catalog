@@ -18,8 +18,8 @@ const Checkbox = (props: {
   } = props;
 
   return (
-      <div>
-        <span>{label}</span>
+      <div className="checkbox-component-wrapper">
+        <span className="checkbox-label">{label}</span>
         <input type="checkbox" checked={checked} onClick={!disabled ? onClick : null} />
       </div>
   );
