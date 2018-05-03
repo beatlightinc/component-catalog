@@ -6,19 +6,21 @@ import * as classnames from 'classnames';
 const Checkbox = (props: {
   onClick?: () => void,
   checked?: boolean,
-  label?: string
+  label?: string,
+  disabled?: boolean
 }) => {
 
   const {
     onClick,
     checked,
-    label
+    label,
+    disabled
   } = props;
 
   return (
       <div>
         <span>{label}</span>
-        <input type="checkbox" checked={checked} onClick={onClick} />
+        <input type="checkbox" checked={checked} onClick={!disabled ? onClick : null} />
       </div>
   );
 };
