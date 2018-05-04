@@ -2,9 +2,28 @@
   height: 32px;
   border-radius: $border-radius-large;
   padding: 0px 16px;
+  font-size: 14px;
+  font-weight: $font-weight-semibold;
+  color: $color-white;
+
+  &.removeable {
+    position: relative;
+    
+    &:hover {
+
+    }
+  }
 
   &.red {
+    background-color: $color-red;
 
+    &:hover {
+      background-color: $color-red-hover;
+    }
+
+    &.active {
+      background-color: $color-red-active;
+    }
   }
 
   &.blue {
@@ -15,7 +34,7 @@
     }
 
     &.active {
-      
+
     }
   }
 }
