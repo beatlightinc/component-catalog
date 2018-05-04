@@ -5,6 +5,7 @@
   font-size: 14px;
 
   .pill-title {
+    display: inline;
     font-weight: $font-weight-semibold;
     color: $color-white;
   }
@@ -14,7 +15,12 @@
 
     &:hover {
       cursor: pointer;
-      padding: 0px 8px;
+      color: $color-white;
+      font-weight: $font-weight-semibold;
+
+      .pill-title {
+        left: 4px;
+      }
 
       &::after {
         content: 'X';
