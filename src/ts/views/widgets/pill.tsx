@@ -6,16 +6,17 @@ const Pill = (props: {
   removeable?: boolean,
   children?: any,
   onClick?: () => void,
+  active?: boolean,
   className?: string
 }) => {
-  const { type, removeable, children, onClick, className } = props;
+  const { type, removeable, children, onClick, className, active } = props;
 
-  const pillWrapperClass = classnames('tag', type, className, { removeable });
+  const pillWrapperClass = classnames('tag', type, className, { removeable, active });
 
   return (
-    <div className={pillWrapperClass}>
+    <button className={pillWrapperClass}>
       <span className="pill-title">{children}</span>
-    </div>
+    </button>
   );
 };
 
