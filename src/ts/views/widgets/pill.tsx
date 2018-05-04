@@ -11,7 +11,7 @@ const Pill = (props: {
 }) => {
   const { type, removeable, children, onClick, className, active } = props;
 
-  const pillWrapperClass = classnames('tag', type, className, { removeable, active });
+  const pillWrapperClass = classnames('pill', type, className, { removeable, active });
 
   return (
     <button className={pillWrapperClass}>
