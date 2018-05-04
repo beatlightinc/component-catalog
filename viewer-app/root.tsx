@@ -10,7 +10,8 @@ import { Pagination,
   ToggleSwitch,
   RadioButton,
   Icon,
-  Checkbox
+  Checkbox,
+  Pill
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
