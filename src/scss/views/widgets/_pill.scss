@@ -35,11 +35,11 @@
     background-color: $color-blue;
 
     &:hover {
-
+      background-color: $color-blue-hover;
     }
 
     &.active {
-
+      background-color: $color-blue-active;
     }
   }
 }
