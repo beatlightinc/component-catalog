@@ -1,6 +1,11 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 
+// TODO:
+// - Replace '^' with correct icons when theyre ready
+// - Handle active logic for the icons
+// - Handle logic for people typing in it, not sure how we want to yet. Dont let anything but numbers be typed? red border for invalid?
+
 const NumberInput = (props: {
   value?: number,
   disabled?: boolean,
@@ -53,7 +58,6 @@ const NumberInput = (props: {
     handleChange(newValue);
   }
 
-  //TODO use correct icons instead of ^ once theyre ready
   return (
     <div className={inputContainerClass}>
       <input
