@@ -1,11 +1,11 @@
 .pill {
+  width: fit-content;
   height: 32px;
   border-radius: $border-radius-large;
   padding: 0px 16px;
   font-size: 14px;
 
   .pill-title {
-    display: inline;
     font-weight: $font-weight-semibold;
     color: $color-white;
   }
