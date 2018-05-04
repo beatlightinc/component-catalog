@@ -10,7 +10,9 @@
     position: relative;
 
     &:hover {
+      cursor: pointer;
       padding: 0px 8px;
+      
       &::after {
         content: 'X';
         position: absolute;
