@@ -8,9 +8,14 @@
 
   &.removeable {
     position: relative;
-    
-    &:hover {
 
+    &:hover {
+      padding: 0px 8px;
+      &::after {
+        content: 'X';
+        position: absolute;
+        right: 8px;
+      }
     }
   }
 
