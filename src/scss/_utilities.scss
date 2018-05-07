@@ -5,7 +5,6 @@
   * Outro's is pretty good so I'll take it and refactor it a bit.
 */
 
-
 /**
  * Add/remove floats
  */
@@ -57,35 +56,35 @@
 /**
  * Padding
  */
-.\+soft { padding: 10px!important; }
-.\+soft-double { padding: 20px!important; }
-.\+soft-top { padding-top: 20px!important; }
-.\+soft-top-double { padding-top: 40px!important; }
+.\+soft { padding: $base-spacing-double!important; }
+.\+soft-double { padding: $base-spacing-quadruple!important; }
+.\+soft-top { padding-top: $base-spacing-quadruple!important; }
+.\+soft-top-double { padding-top: $base-spacing-quadruple * 2!important; }
 .\+no-padding { padding: 0!important; }
 
 /**
  * Margins
  */
-.\+push-top { margin-top: 20px!important; }
-.\+push-double-top { margin-top: 40px!important; }
-.\+push-half-top { margin-top: 10px!important; }
-.\+push-quarter-top { margin-top: 5px!important; }
+.\+push-top { margin-top: $base-spacing-quadruple!important; }
+.\+push-double-top { margin-top: $base-spacing-quadruple * 2!important; }
+.\+push-half-top { margin-top: $base-spacing-double!important; }
+.\+push-quarter-top { margin-top: $base-spacing!important; }
 
-.\+push-bottom { margin-bottom: 20px!important; }
-.\+push-double-bottom { margin-bottom: 40px!important; }
-.\+push-half-bottom { margin-bottom: 10px!important; }
-.\+push-quarter-bottom { margin-bottom: 5px!important; }
+.\+push-bottom { margin-bottom: $base-spacing-quaduple!important; }
+.\+push-double-bottom { margin-bottom: $base-spacing-quadruple * 2!important; }
+.\+push-half-bottom { margin-bottom: $base-spacing-double!important; }
+.\+push-quarter-bottom { margin-bottom: $base-spacing!important; }
 
 
-.\+push-left { margin-left: 20px!important; }
-.\+push-double-left { margin-left: 40px!important; }
-.\+push-half-left { margin-left: 10px!important; }
-.\+push-quarter-left { margin-left: 5px!important; }
+.\+push-left { margin-left: $base-spacing-quaduple!important; }
+.\+push-double-left { margin-left: $base-spacing-quadruple * 2!important; }
+.\+push-half-left { margin-left: $base-spacing-double!important; }
+.\+push-quarter-left { margin-left: $base-spacing!important; }
 
-.\+push-right { margin-right: 20px!important; }
-.\+push-double-right { margin-right: 40px!important; }
-.\+push-half-right { margin-right: 10px!important; }
-.\+push-quarter-right { margin-right: 5px!important; }
+.\+push-right { margin-right: $base-spacing-quaduple!important; }
+.\+push-double-right { margin-right: $base-spacing-quadruple * 2!important; }
+.\+push-half-right { margin-right: $base-spacing-double!important; }
+.\+push-quarter-right { margin-right: $base-spacing!important; }
 
 .\+push-self-right { margin-left: auto!important; }
 .\+push-self-left { margin-right: auto!important; }
