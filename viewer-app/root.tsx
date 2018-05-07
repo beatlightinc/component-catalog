@@ -142,7 +142,7 @@ class Root extends React.Component<{}, {
         <Button color="red" disabled={false}>{'Upload'}</Button>
         <br/>
         <Button color="minimal" disabled={false}>{'Upload'}</Button>
-        <br/>arn
+        <br/>
         <Button color="grey" disabled={true}>{'Upload'}</Button>
         <br/>
         <Button color="white" disabled={true}>{'Upload'}</Button>
