@@ -14,7 +14,7 @@ const Pill = (props: {
   const pillWrapperClass = classnames('pill', type, className, { removeable, active });
 
   return (
-    <div className={pillWrapperClass}>
+    <div className={pillWrapperClass} onClick={onClick}>
       <span className="pill-title">{children}</span>
     </div>
   );
