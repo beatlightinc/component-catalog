@@ -4,12 +4,12 @@
   width: fit-content;
   border-radius: $border-radius-large;
   font-size: $text-medium;
-  padding: 9px 0px;
+  padding: $base-spacing-double 0px;
 
   .pill-title {
     font-weight: $font-weight-semibold;
     color: $color-white;
-    margin: 0px 16px;
+    margin: 0px $base-spacing-quad;
   }
 
   &.removeable {
@@ -21,8 +21,8 @@
       font-weight: $font-weight-semibold;
 
       .pill-title {
-        margin-left: 8px;
-        margin-right: 24px;
+        margin-left: $base-spacing-double;
+        margin-right: $base-spacing-sex;
       }
 
       &::after {

@@ -7,17 +7,17 @@
   justify-content: center;
   font-weight: $font-weight-semibold;
   border: 1px solid $color-blue;
-  font-size: 14px;
+  font-size: $text-smallest;
   height: 32px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: $base-spacing-quad;
+  padding-right: $base-spacing-quad;
   border-radius: $border-radius-small;
 
   &.medium {
     height: 40px;
-    font-size: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
+    font-size: $text-small;
+    padding-left: $base-spacing-sex;
+    padding-right: $base-spacing-sex;
   }
 
   &.red {

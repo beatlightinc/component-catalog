@@ -9,13 +9,12 @@
   font-weight: $font-weight-semibold;
   border: 1px solid $color-blue;
   opacity: 0.9;
-  font-size: 14px;
-  padding: 10px 25px;
+  font-size: $text-smallest;
+  padding: $base-spacing-double $base-spacing-quad;
   z-index: 4;
   cursor: pointer;
 
   &:hover {
-    border: 1px solid $color-white;
     opacity: 1;
     cursor: pointer;
   }

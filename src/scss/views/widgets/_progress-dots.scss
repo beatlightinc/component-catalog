@@ -2,10 +2,10 @@
   display: flex;
 
   .dot {
-    height: 8px;
-    width: 8px;
+    height: $base-spacing-double;
+    width: $base-spacing-double;
     border-radius: 100%;
-    margin-right: 24px;
+    margin-right: $base-spacing-sex;
     background-color: $color-mid-grey;
 
     &.active {

@@ -15,30 +15,30 @@ html {
 }
 
 body {
-  font-size: 14px;
+  font-size: $text-smallest;
 
   h1 {
-    font-size: 48px;
+    font-size: $text-largest;
     font-weight: $font-weight-semibold;
   }
 
   h2 {
-    font-size: 28px;
+    font-size: $text-large;
     font-weight: $font-weight-semibold;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: $text-medium;
     font-weight: $font-weight-semibold;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: $text-small;
     font-weight: $font-weight-semibold;
   }
 
   h5 {
-    font-size: 14px;
+    font-size: $text-smallest;
     font-weight: $font-weight-semibold;
   }
 }
