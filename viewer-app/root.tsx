@@ -10,7 +10,8 @@ import { Pagination,
   ToggleSwitch,
   RadioButton,
   Icon,
-  Checkbox
+  Checkbox,
+  Pill
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -171,6 +172,10 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <Checkbox label="test checkbox:" onClick={this.toggleCheckbox} checked={checkboxValue}/>
+        <br/>
+        <br/>
+        <br/>
+        <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
       </div>
     );
   }

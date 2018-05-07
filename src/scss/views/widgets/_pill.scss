@@ -1,0 +1,59 @@
+.pill {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: $border-radius-large;
+  font-size: $text-medium;
+  padding: 9px 0px;
+
+  .pill-title {
+    font-weight: $font-weight-semibold;
+    color: $color-white;
+    margin: 0px 16px;
+  }
+
+  &.removeable {
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      color: $color-white;
+      font-weight: $font-weight-semibold;
+
+      .pill-title {
+        margin-left: 8px;
+        margin-right: 24px;
+      }
+
+      &::after {
+        content: 'X';
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+
+  &.red {
+    background-color: $color-red;
+
+    &:hover {
+      background-color: $color-red-hover;
+    }
+
+    &.active {
+      background-color: $color-red-active;
+    }
+  }
+
+  &.blue {
+    background-color: $color-blue;
+
+    &:hover {
+      background-color: $color-blue-hover;
+    }
+
+    &.active {
+      background-color: $color-blue-active;
+    }
+  }
+}
