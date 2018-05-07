@@ -63,7 +63,8 @@
     "start-view": "nodemon",
     "build": "tsc",
     "build-css": "node-sass src/scss/style.scss dist/css/style.css",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "prepublish": "yarn build && yarn build-css"
   },
   "ava": {
     "files": [
