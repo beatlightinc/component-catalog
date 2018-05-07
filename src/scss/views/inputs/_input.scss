@@ -2,7 +2,7 @@
   position: relative;
 
   .input-component {
-    font-size: $text-normal;
+    font-size: $text-smallest;
     padding-left: 17px;
     background-color: $color-white;
     color: $color-black;
@@ -10,42 +10,42 @@
     border-radius: $border-radius-small;
     // margin is set to counteract the different border widths (same applies to all the margin: 0)
     margin: 1px;
-  
+
     &.invalid {
       border: 2px solid $color-red;
       margin: 0px;
-  
+
       :focus {
         border: 2px solid $color-blue;
         outline: none;
         margin: 0px;
       }
     }
-  
+
     &.valid {
       border: 2px solid $color-green;
       margin: 0px;
     }
-  
+
     &.disabled {
       opacity: 0.5;
-  
+
       ::placeholder {
         opacity: 0.3;
       }
     }
-  
+
     &:focus {
       border: 2px solid $color-blue;
       outline: none;
       margin: 0px;
-  
+
       &.valid {
         border: 2px solid $color-green;
         margin: 0px;
       }
     }
-  
+
     &.round {
       border-radius: 36px;
     }
@@ -59,7 +59,7 @@
       color: $color-grey;
       opacity: 0.6;
     }
-  
+
     &:hover::placeholder {
       opacity: 0.8;
     }
