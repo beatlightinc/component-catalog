@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: $base-spacing-double;
   height: 32px;
   width: 32px;
 
@@ -20,7 +20,7 @@
   }
 
   &.round {
-    border-radius: 50%;
+    border-radius: $border-radius-circle;
   }
 
   &.white {
