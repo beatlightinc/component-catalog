@@ -71,9 +71,9 @@ $border-radius-circle: 50%;
  * Base spacing
  */
 $base-spacing: 4px;
-$base-spacing-half: 2px;
-$base-spacing-double: 8px;
-$base-spacing-triple: 12px;
-$base-spacing-quad: 16px;
-$base-spacing-quin: 20px;
-$base-spacing-sex: 24px;
+$base-spacing-half: $base-spacing / 2;
+$base-spacing-double: $base-spacing * 2;
+$base-spacing-triple: $base-spacing * 3;
+$base-spacing-quad: $base-spacing * 4;
+$base-spacing-quin: $base-spacing * 5;
+$base-spacing-sex: $base-spacing * 6;

@@ -58,8 +58,8 @@
  */
 .\+soft { padding: $base-spacing-double!important; }
 .\+soft-double { padding: $base-spacing-quad!important; }
-.\+soft-top { padding-top: $base-spacing-quad!important; }
-.\+soft-top-double { padding-top: $base-spacing-quad * 2!important; }
+.\+soft-top { padding-top: $base-spacing-double!important; }
+.\+soft-top-double { padding-top: $base-spacing-quad!important; }
 .\+no-padding { padding: 0!important; }
 
 /**
