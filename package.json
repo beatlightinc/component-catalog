@@ -1,6 +1,6 @@
 {
-  "name": "component-catalog",
-  "version": "0.0.1",
+  "name": "outro-component-catalog",
+  "version": "0.0.4",
   "description": "A style guide for all of Outro's components",
   "main": "dist/ts/index.js",
   "types": "dist/ts/index.d.ts",
@@ -63,7 +63,8 @@
     "start-view": "nodemon",
     "build": "tsc",
     "build-css": "node-sass src/scss/style.scss dist/css/style.css",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "prepublish": "yarn build && yarn build-css"
   },
   "ava": {
     "files": [
