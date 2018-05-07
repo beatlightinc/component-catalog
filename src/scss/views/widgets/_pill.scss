@@ -1,13 +1,15 @@
 .pill {
+  display: flex;
+  align-items: center;
   width: fit-content;
   height: 32px;
   border-radius: $border-radius-large;
-  padding: 0px 16px;
   font-size: 14px;
 
   .pill-title {
     font-weight: $font-weight-semibold;
     color: $color-white;
+    margin: 0px 16px;
   }
 
   &.removeable {
@@ -19,7 +21,8 @@
       font-weight: $font-weight-semibold;
 
       .pill-title {
-        left: 4px;
+        margin-left: 8px;
+        margin-right: 24px;
       }
 
       &::after {
