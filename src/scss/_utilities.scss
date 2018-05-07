@@ -57,32 +57,32 @@
  * Padding
  */
 .\+soft { padding: $base-spacing-double!important; }
-.\+soft-double { padding: $base-spacing-quadruple!important; }
-.\+soft-top { padding-top: $base-spacing-quadruple!important; }
-.\+soft-top-double { padding-top: $base-spacing-quadruple * 2!important; }
+.\+soft-double { padding: $base-spacing-quad!important; }
+.\+soft-top { padding-top: $base-spacing-quad!important; }
+.\+soft-top-double { padding-top: $base-spacing-quad * 2!important; }
 .\+no-padding { padding: 0!important; }
 
 /**
  * Margins
  */
-.\+push-top { margin-top: $base-spacing-quadruple!important; }
-.\+push-double-top { margin-top: $base-spacing-quadruple * 2!important; }
+.\+push-top { margin-top: $base-spacing-quad!important; }
+.\+push-double-top { margin-top: $base-spacing-quad * 2!important; }
 .\+push-half-top { margin-top: $base-spacing-double!important; }
 .\+push-quarter-top { margin-top: $base-spacing!important; }
 
-.\+push-bottom { margin-bottom: $base-spacing-quaduple!important; }
-.\+push-double-bottom { margin-bottom: $base-spacing-quadruple * 2!important; }
+.\+push-bottom { margin-bottom: $base-spacing-quad!important; }
+.\+push-double-bottom { margin-bottom: $base-spacing-quad * 2!important; }
 .\+push-half-bottom { margin-bottom: $base-spacing-double!important; }
 .\+push-quarter-bottom { margin-bottom: $base-spacing!important; }
 
 
-.\+push-left { margin-left: $base-spacing-quaduple!important; }
-.\+push-double-left { margin-left: $base-spacing-quadruple * 2!important; }
+.\+push-left { margin-left: $base-spacing-quad!important; }
+.\+push-double-left { margin-left: $base-spacing-quad * 2!important; }
 .\+push-half-left { margin-left: $base-spacing-double!important; }
 .\+push-quarter-left { margin-left: $base-spacing!important; }
 
-.\+push-right { margin-right: $base-spacing-quaduple!important; }
-.\+push-double-right { margin-right: $base-spacing-quadruple * 2!important; }
+.\+push-right { margin-right: $base-spacing-quad!important; }
+.\+push-double-right { margin-right: $base-spacing-quad * 2!important; }
 .\+push-half-right { margin-right: $base-spacing-double!important; }
 .\+push-quarter-right { margin-right: $base-spacing!important; }
 
