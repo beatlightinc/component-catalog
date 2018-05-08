@@ -4,21 +4,24 @@ import * as classnames from 'classnames';
 const Image = (props: {
   className?: string,
   style?: any,
-  url: string
+  url: string,
+  height?: number,
+  width?: number
 }) => {
   const {
     className,
     style,
-    url
+    url,
+    height,
+    width
   } = props;
 
   const imageClass = classnames('image-component', className);
-  const customStyle = style || {};
-  let backgroundStyle = {};
-
-  if (url !== null) {
-    backgroundStyle = { backgroundImage: `url(${url})` };
-  }
+  const customStyle = style || {
+    height: height ? `${height}px` : '150px',
+    width: width ? `${width}px` : '200px'
+  };
+  const backgroundStyle = { backgroundImage: `url(${url})` };
 
   return (
     <div
