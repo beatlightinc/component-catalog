@@ -12,7 +12,8 @@ import { Pagination,
   Icon,
   Checkbox,
   Pill,
-  Slider
+  Slider,
+  BreadCrumbs
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -26,7 +27,8 @@ class Root extends React.Component<{}, {
   toggleValue?: boolean,
   activeRadioButtonID?: string,
   checkboxValue?: boolean,
-  sliderValue: number
+  sliderValue: number,
+  breadCrumbPath: string[]
 }> {
 
   constructor(props: any) {
@@ -41,7 +43,8 @@ class Root extends React.Component<{}, {
       tabStep: 0,
       toggleValue: false,
       activeRadioButtonID: 'One',
-      sliderValue: 2
+      sliderValue: 2,
+      breadCrumbPath: ['Level 1', 'Level 2', 'Level 3']
     };
   }
 
@@ -87,6 +90,12 @@ class Root extends React.Component<{}, {
 
   public handleSliderChange(newValue: number) {
     this.setState({ sliderValue: newValue });
+  }
+
+  public handleBreadCrumbClick(clickedCrumbIndex: number) {
+    const oldBreadCrumbPath = this.state.breadCrumbPath;
+    const newBreadCrumbPath = oldBreadCrumbPath.slice(0, clickedCrumbIndex + 1);
+    this.setState({ breadCrumbPath: newBreadCrumbPath });
   }
 
   public render() {
@@ -206,6 +215,11 @@ class Root extends React.Component<{}, {
           value={this.state.sliderValue}
           onChange={this.handleSliderChange.bind(this)}
         />
+
+        <br/>
+        <br/>
+        <br/>
+        <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
       </div>
     );
   }
