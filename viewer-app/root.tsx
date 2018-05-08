@@ -12,6 +12,7 @@ import { Pagination,
   Icon,
   Checkbox,
   Pill,
+  Modal,
   Slider
   } from '../src/ts/index';
 
@@ -26,6 +27,7 @@ class Root extends React.Component<{}, {
   toggleValue?: boolean,
   activeRadioButtonID?: string,
   checkboxValue?: boolean,
+  modalShowing?: boolean
   sliderValue: number
 }> {
 
@@ -41,6 +43,7 @@ class Root extends React.Component<{}, {
       tabStep: 0,
       toggleValue: false,
       activeRadioButtonID: 'One',
+      modalShowing: false,
       sliderValue: 2
     };
   }
@@ -85,6 +88,14 @@ class Root extends React.Component<{}, {
     : this.setState({ activeRadioButtonID: key });
   }
 
+  public closeModal() {
+    this.setState({ modalShowing: false });
+  }
+
+  public showModal() {
+    this.setState({ modalShowing: true });
+  }
+
   public handleSliderChange(newValue: number) {
     this.setState({ sliderValue: newValue });
   }
@@ -95,7 +106,14 @@ class Root extends React.Component<{}, {
       backgroundColor: '#F7F7F8'
     };
 
-    const { textareaValue, tabStep, currentStep, toggleValue, activeRadioButtonID, checkboxValue } = this.state;
+    const { textareaValue,
+      tabStep,
+      currentStep,
+      toggleValue,
+      activeRadioButtonID,
+      checkboxValue,
+      modalShowing
+    } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
@@ -141,7 +159,9 @@ class Root extends React.Component<{}, {
         <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
         <br/>
         <br/>
-        <Button color="grey" disabled={false}>{'Upload'}</Button>
+        <Button color="grey" disabled={false} onClick={this.showModal.bind(this)}>
+          {'Show modal'}
+        </Button>
         <br/>
         <Button color="white" disabled={false}>{'Upload'}</Button>
         <br/>
@@ -183,6 +203,9 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
+        <Modal showing={modalShowing} onClose={this.closeModal.bind(this)}>
+          <div>{'im in a modal'}</div>
+        </Modal>
 
         <br/>
         <br/>
