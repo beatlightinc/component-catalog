@@ -1,0 +1,39 @@
+/*
+ * Here we import the base styles from rc-slider module, and we overwrite/extend
+ * what we need to, to make it look and feel how we want.
+ */
+@import "../../node_modules/rc-slider/assets/index.css";
+
+.rc-slider {
+  .rc-slider-track {
+    background-color: $color-blue;
+  }
+
+  .rc-slider-handle {
+    background-color: $color-blue;
+    border: 2px solid $color-blue;
+    height: $base-spacing-quad;
+    width: $base-spacing-quad;
+    margin-top: 2 - $base-spacing-double;
+    margin-left: 0 - $base-spacing-double;
+
+    &:hover, &:active, &:focus {
+      border: 2px solid $color-blue;
+      box-shadow: none;
+      cursor: pointer;
+      width: $base-spacing-quin;
+      height: $base-spacing-quin;
+      margin-top: 4 - $base-spacing-triple;
+      margin-left: 2 - $base-spacing-triple;
+    }
+  }
+}
+
+.rc-slider-disabled {
+  background-color: transparent;
+  opacity: 0.5;
+  
+  .rc-slider-handle {
+    display: none;
+  }
+}

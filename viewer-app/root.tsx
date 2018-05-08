@@ -12,6 +12,7 @@ import { Pagination,
   Icon,
   Checkbox,
   Pill,
+  Slider,
   Image
   } from '../src/ts/index';
 
@@ -25,7 +26,8 @@ class Root extends React.Component<{}, {
   tabStep?: number,
   toggleValue?: boolean,
   activeRadioButtonID?: string,
-  checkboxValue?: boolean
+  checkboxValue?: boolean,
+  sliderValue: number
 }> {
 
   constructor(props: any) {
@@ -39,7 +41,8 @@ class Root extends React.Component<{}, {
       currentStep: 0,
       tabStep: 0,
       toggleValue: false,
-      activeRadioButtonID: 'One'
+      activeRadioButtonID: 'One',
+      sliderValue: 2
     };
   }
 
@@ -81,6 +84,10 @@ class Root extends React.Component<{}, {
     key === this.state.activeRadioButtonID
     ? this.setState({ activeRadioButtonID: null })
     : this.setState({ activeRadioButtonID: key });
+  }
+
+  public handleSliderChange(newValue: number) {
+    this.setState({ sliderValue: newValue });
   }
 
   public render() {
@@ -165,12 +172,12 @@ class Root extends React.Component<{}, {
         <br/>
         <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
 
-        <AudioPlayer
+        {/* <AudioPlayer
           audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
           playing={this.state.audioPlaying}
           pos={this.state.audioPos}
           handlePosChange={this.onAudioPositionChange.bind(this)}
-        />
+        /> */}
         <br/>
         <br/>
         <br/>
@@ -183,6 +190,30 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
+
+        <br/>
+        <br/>
+        <br/>
+        <Slider
+          min={0}
+          max={100}
+          disabled={false}
+          value={this.state.sliderValue}
+          onChange={this.handleSliderChange.bind(this)}
+        />
+
+        <br/>
+        <br/>
+        <br/>
+        <h3 style={{ color: 'black' }}>{'Disabled'}</h3>
+        <Slider
+          min={0}
+          max={100}
+          disabled={true}
+          value={this.state.sliderValue}
+          onChange={this.handleSliderChange.bind(this)}
+        />
+        
         <br/>
         <br/>
         <br/>
