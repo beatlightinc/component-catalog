@@ -3,7 +3,7 @@
 
   .input-component {
     font-size: $text-smallest;
-    padding-left: 17px;
+    padding-left: $base-spacing-quad;
     background-color: $color-white;
     color: $color-black;
     border: 1px solid $color-light-grey;
@@ -53,7 +53,9 @@
 
   input {
     width: 245px;
-    height: 36px;
+    padding-top: $base-spacing-triple;
+    padding-bottom: $base-spacing-triple;
+    padding-left: $base-spacing-quad;
 
     &::placeholder {
       color: $color-grey;
