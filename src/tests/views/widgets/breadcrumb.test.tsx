@@ -5,7 +5,7 @@ import test from 'ava';
 import { shallow } from 'enzyme';
 import BreadCrumbs from '../../../ts/views/widgets/breadcrumbs';
 
-test('<Pagination /> will render right amount of buttons for <= 5 total pages ', (t) => {
+test('<BreadCrumbs /> will render right amount of buttons for <= 5 total pages ', (t) => {
   const path = [
     'First Level',
     'Second Level',
@@ -27,5 +27,4 @@ test('<Pagination /> will render right amount of buttons for <= 5 total pages ',
   elementWrapper.find('.label').first().simulate('click');
 
   t.is(onClickSpy.calledWith(0), true);
-  t.pass();
 });

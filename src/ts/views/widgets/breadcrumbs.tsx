@@ -11,8 +11,10 @@ const BreadCrumbs = ({ path, onClick }: {
       <div key={i} className="breadcrumb">
         <span
           className={classnames('label', { 'is-active': i === path.length - 1 })}
-          onClick={onClick.bind(null, i)}>{label}</span
+          onClick={onClick.bind(null, i)}
         >
+          {label}
+        </span>
 
         {/* TODO: Use real icon here. */}
         {
