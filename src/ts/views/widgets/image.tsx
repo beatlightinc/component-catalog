@@ -16,7 +16,7 @@ const Image = (props: {
     width
   } = props;
 
-  const imageClass = classnames('image-component', className);
+  const imageClass = classnames('image-wrapper', className);
   const customStyle = style || {
     height: height ? `${height}px` : '150px',
     width: width ? `${width}px` : '200px'
