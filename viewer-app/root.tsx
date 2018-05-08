@@ -12,7 +12,8 @@ import { Pagination,
   Icon,
   Checkbox,
   Pill,
-  Modal
+  Modal,
+  Slider
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -27,6 +28,7 @@ class Root extends React.Component<{}, {
   activeRadioButtonID?: string,
   checkboxValue?: boolean,
   modalShowing?: boolean
+  sliderValue: number
 }> {
 
   constructor(props: any) {
@@ -41,7 +43,8 @@ class Root extends React.Component<{}, {
       tabStep: 0,
       toggleValue: false,
       activeRadioButtonID: 'One',
-      modalShowing: false
+      modalShowing: false,
+      sliderValue: 2
     };
   }
 
@@ -91,6 +94,10 @@ class Root extends React.Component<{}, {
 
   public showModal() {
     this.setState({ modalShowing: true });
+  }
+
+  public handleSliderChange(newValue: number) {
+    this.setState({ sliderValue: newValue });
   }
 
   public render() {
@@ -178,12 +185,12 @@ class Root extends React.Component<{}, {
         <br/>
         <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
 
-        <AudioPlayer
+        {/* <AudioPlayer
           audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
           playing={this.state.audioPlaying}
           pos={this.state.audioPos}
           handlePosChange={this.onAudioPositionChange.bind(this)}
-        />
+        /> */}
         <br/>
         <br/>
         <br/>
@@ -196,9 +203,35 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
+<<<<<<< HEAD
         <Modal showing={modalShowing} onClose={this.closeModal.bind(this)} >
           <div>{'im in a modal'}</div>
         </Modal>
+=======
+
+        <br/>
+        <br/>
+        <br/>
+        <Slider
+          min={0}
+          max={100}
+          disabled={false}
+          value={this.state.sliderValue}
+          onChange={this.handleSliderChange.bind(this)}
+        />
+
+        <br/>
+        <br/>
+        <br/>
+        <h3 style={{ color: 'black' }}>{'Disabled'}</h3>
+        <Slider
+          min={0}
+          max={100}
+          disabled={true}
+          value={this.state.sliderValue}
+          onChange={this.handleSliderChange.bind(this)}
+        />
+>>>>>>> 1e6ef9e235225d0bfc543c1dc27eeedbd72c4193
       </div>
     );
   }
