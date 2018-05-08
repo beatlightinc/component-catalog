@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Pagination,
+import {
+  Pagination,
   Input,
   FileButton,
   Button,
@@ -14,8 +15,9 @@ import { Pagination,
   Pill,
   Modal,
   Slider,
-  BreadCrumbs
-  } from '../src/ts/index';
+  BreadCrumbs,
+  Image
+} from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -125,6 +127,10 @@ class Root extends React.Component<{}, {
     } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
+
+    const testImageStyle = {
+      border: '2px solid red'
+    };
 
     return (
       <div style={wrapperStyle}>
@@ -243,6 +249,7 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
+        <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
       </div>
     );
   }

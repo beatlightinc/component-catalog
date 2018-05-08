@@ -25,3 +25,4 @@ export { default as Icon } from './views/widgets/icon';
 export { default as Pill } from './views/widgets/pill';
 export { default as Slider } from './views/widgets/slider';
 export { default as BreadCrumbs } from './views/widgets/breadcrumbs';
+export { default as Image } from './views/widgets/image';
