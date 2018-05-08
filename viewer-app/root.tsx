@@ -13,7 +13,8 @@ import { Pagination,
   Checkbox,
   Pill,
   Modal,
-  Slider
+  Slider,
+  Image
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -116,6 +117,10 @@ class Root extends React.Component<{}, {
     } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
+
+    const testImageStyle = {
+      border: '2px solid red'
+    };
 
     return (
       <div style={wrapperStyle}>
@@ -229,6 +234,11 @@ class Root extends React.Component<{}, {
           value={this.state.sliderValue}
           onChange={this.handleSliderChange.bind(this)}
         />
+
+        <br/>
+        <br/>
+        <br/>
+        <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
       </div>
     );
   }
