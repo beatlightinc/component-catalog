@@ -11,7 +11,8 @@ import { Pagination,
   RadioButton,
   Icon,
   Checkbox,
-  Pill
+  Pill,
+  Image
   } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -91,6 +92,12 @@ class Root extends React.Component<{}, {
     const { textareaValue, tabStep, currentStep, toggleValue, activeRadioButtonID, checkboxValue } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
+
+    const testImageStyle = {
+      border: '2px solid red',
+      height: '150px',
+      width: '350px'
+    };
 
     return (
       <div style={wrapperStyle}>
@@ -176,6 +183,10 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
+        <br/>
+        <br/>
+        <br/>
+        <Image url={`http://via.placeholder.com/350x150`} style={testImageStyle}/>
       </div>
     );
   }
