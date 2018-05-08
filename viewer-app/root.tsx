@@ -203,11 +203,9 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
-<<<<<<< HEAD
-        <Modal showing={modalShowing} onClose={this.closeModal.bind(this)} >
+        <Modal showing={modalShowing} onClose={this.closeModal.bind(this)}>
           <div>{'im in a modal'}</div>
         </Modal>
-=======
 
         <br/>
         <br/>
@@ -231,7 +229,6 @@ class Root extends React.Component<{}, {
           value={this.state.sliderValue}
           onChange={this.handleSliderChange.bind(this)}
         />
->>>>>>> 1e6ef9e235225d0bfc543c1dc27eeedbd72c4193
       </div>
     );
   }
