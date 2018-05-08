@@ -7,7 +7,7 @@ body, html {
 }
 
 html {
-  font-size: 100%;
+  font-size: $text-smallest;
   /* TODO: get proxima nova from adobe typekit */
   font-family: "proxima-nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
