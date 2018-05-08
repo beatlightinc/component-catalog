@@ -17,11 +17,12 @@ const Image = (props: {
   } = props;
 
   const imageClass = classnames('image-wrapper', className);
-  const customStyle = style || {
+  const customStyle = style || {};
+  const backgroundStyle = {
+    backgroundImage: `url(${url})`,
     height: `${height}px`,
     width: `${width}px`
   };
-  const backgroundStyle = { backgroundImage: `url(${url})` };
 
   return (
     <div
