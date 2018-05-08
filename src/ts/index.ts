@@ -3,14 +3,17 @@ export { default as Button } from './views/buttons/button';
 export { default as IconWrapper } from './views/buttons/icon-wrapper';
 export { default as FileButton } from './views/buttons/file-button';
 
-// Labels
-export { default as Label } from './views/labels/label';
-
 // Inputs
 export { default as Input } from './views/inputs/input';
 export { default as Textarea } from './views/inputs/textarea';
 export { default as Checkbox } from './views/inputs/checkbox';
 export { default as RadioButton } from './views/inputs/radio-button';
+
+// Labels
+export { default as Label } from './views/labels/label';
+
+// Modals
+export { default as Modal } from './views/modals/modal';
 
 // Widgets
 export { default as Pagination } from './views/widgets/pagination';

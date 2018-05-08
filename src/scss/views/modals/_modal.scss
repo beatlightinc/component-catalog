@@ -1,0 +1,29 @@
+.modal-wrapper {
+  display: none;
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  background-color:rgba(0,0,0,0.3);
+
+  &.showing {
+    display: block;
+  }
+
+  .modal {
+    width: 456px;
+    height: 360px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: $base-spacing-sex;
+    background-color: $color-white;
+    border-radius: $border-radius-small;
+
+    .close-button {
+      float:right;
+    }
+  }
+}
