@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Pagination,
+import {
+  Pagination,
   Input,
   FileButton,
   Button,
@@ -14,8 +15,9 @@ import { Pagination,
   Pill,
   Modal,
   Slider,
+  BreadCrumbs,
   Image
-  } from '../src/ts/index';
+} from '../src/ts/index';
 
 class Root extends React.Component<{}, {
   audioPlaying?: boolean
@@ -28,8 +30,9 @@ class Root extends React.Component<{}, {
   toggleValue?: boolean,
   activeRadioButtonID?: string,
   checkboxValue?: boolean,
+  sliderValue: number,
+  breadCrumbPath: string[],
   modalShowing?: boolean
-  sliderValue: number
 }> {
 
   constructor(props: any) {
@@ -44,8 +47,9 @@ class Root extends React.Component<{}, {
       tabStep: 0,
       toggleValue: false,
       activeRadioButtonID: 'One',
-      modalShowing: false,
-      sliderValue: 2
+      sliderValue: 2,
+      breadCrumbPath: ['Level 1', 'Level 2', 'Level 3'],
+      modalShowing: false
     };
   }
 
@@ -99,6 +103,12 @@ class Root extends React.Component<{}, {
 
   public handleSliderChange(newValue: number) {
     this.setState({ sliderValue: newValue });
+  }
+
+  public handleBreadCrumbClick(clickedCrumbIndex: number) {
+    const oldBreadCrumbPath = this.state.breadCrumbPath;
+    const newBreadCrumbPath = oldBreadCrumbPath.slice(0, clickedCrumbIndex + 1);
+    this.setState({ breadCrumbPath: newBreadCrumbPath });
   }
 
   public render() {
@@ -238,6 +248,7 @@ class Root extends React.Component<{}, {
         <br/>
         <br/>
         <br/>
+        <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
         <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
       </div>
     );

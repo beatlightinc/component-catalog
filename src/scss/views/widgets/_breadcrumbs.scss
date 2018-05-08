@@ -1,0 +1,33 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  color: $color-black;
+  font-weight: $font-weight-semibold;
+
+  .bullets {
+    @extend .\+push-right;
+    @extend .\+grey-text;
+    font-size: $text-medium;
+  }
+
+  .breadcrumb {
+    @extend .\+push-right;
+
+    .label {
+      cursor: pointer;
+
+      &.is-active {
+        @extend .\+blue-text;
+      }
+
+      &:hover {
+        @extend .\+grey-text;
+      }
+    }
+
+    .separator {
+      cursor: default;
+      @extend .\+push-left;
+    }
+  }
+}
