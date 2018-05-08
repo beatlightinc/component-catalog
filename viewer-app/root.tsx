@@ -101,9 +101,7 @@ class Root extends React.Component<{}, {
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
 
     const testImageStyle = {
-      border: '2px solid red',
-      height: '150px',
-      width: '350px'
+      border: '2px solid red'
     };
 
     return (
@@ -213,11 +211,11 @@ class Root extends React.Component<{}, {
           value={this.state.sliderValue}
           onChange={this.handleSliderChange.bind(this)}
         />
-        
+
         <br/>
         <br/>
         <br/>
-        <Image url={`http://via.placeholder.com/350x150`} style={testImageStyle}/>
+        <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
       </div>
     );
   }

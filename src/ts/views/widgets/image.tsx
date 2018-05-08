@@ -5,8 +5,8 @@ const Image = (props: {
   className?: string,
   style?: any,
   url: string,
-  height?: number,
-  width?: number
+  height: number,
+  width: number
 }) => {
   const {
     className,
@@ -18,16 +18,16 @@ const Image = (props: {
 
   const imageClass = classnames('image-wrapper', className);
   const customStyle = style || {
-    height: height ? `${height}px` : '150px',
-    width: width ? `${width}px` : '200px'
+    height: `${height}px`,
+    width: `${width}px`
   };
   const backgroundStyle = { backgroundImage: `url(${url})` };
 
   return (
     <div
-      className={imageClass}
-      style={Object.assign(customStyle, backgroundStyle)}
-      >
+     className={imageClass}
+     style={Object.assign(customStyle, backgroundStyle)}
+     >
     </div>
   );
 };
