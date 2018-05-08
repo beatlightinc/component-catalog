@@ -7,7 +7,13 @@ import Modal from '../../../ts/views/modals/modal';
 const onCloseSpy = sinon.spy();
 
 test('Modal is not displaying when its not supposed to be showing', (t) => {
-  const wrapper = shallow(<Modal onClose={onCloseSpy} showing={false} wrapperClassName="testName"/>);
+  const wrapper = shallow(
+    <Modal
+      onClose={onCloseSpy}
+      showing={false}
+      wrapperClassName="testName"
+    />
+  );
   t.is(wrapper.find('.showing').length < 1, true);
   t.is(wrapper.find('.testName').length === 1, true);
 });
@@ -22,7 +28,13 @@ test('Modal contains children passed in', (t) => {
 });
 
 test('Modal registers closeOnClick', (t) => {
-  const wrapper = shallow(<Modal onClose={onCloseSpy} showing={true} wrapperClassName="testName"/>);
+  const wrapper = shallow(
+    <Modal
+      onClose={onCloseSpy}
+      showing={true}
+      wrapperClassName="testName"
+    />
+  );
   wrapper.find('.close-button').first().simulate('click');
   t.is(onCloseSpy.called, true);
 });
