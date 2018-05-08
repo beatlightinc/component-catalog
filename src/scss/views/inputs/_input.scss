@@ -30,7 +30,11 @@
     &.disabled {
       opacity: 0.5;
 
-      ::placeholder {
+      &::placeholder {
+        opacity: 0.3;
+      }
+
+      &:hover::placeholder {
         opacity: 0.3;
       }
     }
