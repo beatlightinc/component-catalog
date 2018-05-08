@@ -2,14 +2,13 @@
   display: flex;
 
   .tab {
-    padding: $base-spacing-quad $base-spacing-quin;
+    padding: $base-spacing-triple $base-spacing-quad;
     border-bottom: 2px solid $color-light-grey;
-    font-size: $text-large;
+    font-size: $text-small;
     color: $color-mid-grey;
     opacity: 0.4;
     font-weight: $font-weight-bold;
     letter-spacing: 0.6px;
-    line-height: $base-spacing-quin;
 
     &:hover {
       opacity: 0.5;
