@@ -28,8 +28,7 @@ const Image = (props: {
     <div
      className={imageClass}
      style={Object.assign(customStyle, backgroundStyle)}
-     >
-    </div>
+    />
   );
 };
 

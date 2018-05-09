@@ -11,11 +11,13 @@ test('<Pagination /> will render right amount of buttons for <= 5 total pages ',
     <Pagination
       activePage={3}
       totalPages={5}
+      onClick={() => {}}
     />);
   const secondWrapper = shallow(
     <Pagination
       activePage={2}
       totalPages={3}
+      onClick={() => {}}
     />
   );
   const firstButtonAmount = firstWrapper.find('PageButton').length;
@@ -29,6 +31,7 @@ test('<Pagination /> will render the correct amount of buttons when active page 
     <Pagination
       activePage={0}
       totalPages={6}
+      onClick={() => {}}
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
@@ -40,6 +43,7 @@ test('<Pagination/> will render correct # of buttons when activePage !== 0 && <=
     <Pagination
       activePage={2}
       totalPages={20}
+      onClick={() => {}}
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
@@ -51,6 +55,7 @@ test('<Pagination/> will render correct # of buttons if active page is last page
     <Pagination
       activePage={10}
       totalPages={11}
+      onClick={() => {}}
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
@@ -62,6 +67,7 @@ test('<Pagination/> renders corrent # of buttons when active page is not last pa
     <Pagination
       activePage={8}
       totalPages={12}
+      onClick={() => {}}
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
@@ -74,6 +80,7 @@ test('<Pagination/> render correct # of buttons if active page is > 3 and < tota
     <Pagination
       activePage={6}
       totalPages={12}
+      onClick={() => {}}
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;

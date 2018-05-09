@@ -134,7 +134,7 @@ class Root extends React.Component<{}, {
 
     return (
       <div style={wrapperStyle}>
-        <Pagination activePage={8} totalPages={12} />
+        <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
         <Input placeholder="I'm default"
           patternString="\b[A-z]{1,2}\b"
           value={this.state.inputValue}
@@ -150,7 +150,7 @@ class Root extends React.Component<{}, {
         <br/>
         <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
         <br/>
-        <Input placeholder="I'm disabled" disabled round={true}/>
+        <Input placeholder="I'm disabled" disabled round={true} onHandleChange={() => {}}/>
         <br/>
         <br/>
         <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
