@@ -11,33 +11,38 @@ html {
   /* TODO: get proxima nova from adobe typekit */
   font-family: "proxima-nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: $color-white;
+  color: $color-black;
 }
 
 body {
   font-size: $text-smallest;
 
   h1 {
+    margin: 0;
     font-size: $text-largest;
     font-weight: $font-weight-semibold;
   }
 
   h2 {
+    margin: 0;
     font-size: $text-large;
     font-weight: $font-weight-semibold;
   }
 
   h3 {
+    margin: 0;
     font-size: $text-medium;
     font-weight: $font-weight-semibold;
   }
 
   h4 {
+    margin: 0;
     font-size: $text-small;
     font-weight: $font-weight-semibold;
   }
 
   h5 {
+    margin: 0;
     font-size: $text-smallest;
     font-weight: $font-weight-semibold;
   }

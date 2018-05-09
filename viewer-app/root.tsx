@@ -1,4 +1,6 @@
 import * as React from 'react';
+import ComponentSection from './component-section';
+
 import {
   Pagination,
   Input,
@@ -135,139 +137,143 @@ class Root extends React.Component<{}, {
 
     return (
       <div style={wrapperStyle}>
-        <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
-        <Input placeholder="I'm default"
-          patternString="\b[A-z]{1,2}\b"
-          value={this.state.inputValue}
-          onHandleChange={this.onInputChange.bind(this)} />
-        <br/>
-        <br/>
-        <Input onHandleChange={this.onRoundInputChange.bind(this)}
-          patternString="\b[A-z]{1,3}\b"
-          placeholder="I'm round"
-          value={this.state.roundInputValue}
-          round={true}/>
-        <br/>
-        <br/>
-        <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
-        <br/>
-        <Input placeholder="I'm disabled" disabled round={true} onHandleChange={() => {}}/>
-        <br/>
-        <br/>
-        <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
-          activeLabel={activeRadioButtonID}
-          label="One"/>
-        <br/>
-        <br/>
-        <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')}
-          activeLabel={activeRadioButtonID}
-          label="Two" disabled />
-        <br/>
-        <br/>
-        <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')}
-          activeLabel={activeRadioButtonID}
-          label="Three" />
-        <br/>
-        <br/>
-        <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
-        <br/>
-        <br/>
-        <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
-        <br/>
-        <br/>
-        <Button color="grey" disabled={false} onClick={this.showModal.bind(this)}>
-          {'Show modal'}
-        </Button>
-        <br/>
-        <Button color="white" disabled={false}>{'Upload'}</Button>
-        <br/>
-        <Button disabled={false}>{'Upload'}</Button>
-        <br/>
-        <Button color="red" disabled={false}>{'Upload'}</Button>
-        <br/>
-        <Button color="minimal" disabled={false}>{'Upload'}</Button>
-        <br/>
-        <Button color="grey" disabled={true}>{'Upload'}</Button>
-        <br/>
-        <Button color="white" disabled={true}>{'Upload'}</Button>
-        <br/>
-        <Button disabled={true}>{'Upload'}</Button>
-        <br/>
-        <Button color="red" disabled={true}>{'Upload'}</Button>
-        <br/>
-        <Button color="minimal" disabled={true}>{'Upload'}</Button>
-        <br/>
-        <br/>
-        <br/>
-        <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
 
-        {/* <AudioPlayer
-          audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
-          playing={this.state.audioPlaying}
-          pos={this.state.audioPos}
-          handlePosChange={this.onAudioPositionChange.bind(this)}
-        /> */}
-        <br/>
-        <br/>
-        <br/>
-        <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
-        <br/>
-        <br/>
-        <br/>
-        <Checkbox label="test checkbox:" onClick={this.toggleCheckbox} checked={checkboxValue}/>
-        <br/>
-        <br/>
-        <br/>
-        <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
-        <Modal showing={modalShowing} onClose={this.closeModal.bind(this)}>
-          <div>{'im in a modal'}</div>
-        </Modal>
+        <ComponentSection title={'Pagination'}>
+          <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
+        </ComponentSection>
 
-        <br/>
-        <br/>
-        <br/>
-        <Slider
-          min={0}
-          max={100}
-          disabled={false}
-          value={this.state.sliderValue}
-          onChange={this.handleSliderChange.bind(this)}
-        />
+        <ComponentSection title={'Inputs'}>
+          <Input placeholder="I'm default"
+            patternString="\b[A-z]{1,2}\b"
+            value={this.state.inputValue}
+            onHandleChange={this.onInputChange.bind(this)} />
 
-        <br/>
-        <br/>
-        <br/>
-        <h3 style={{ color: 'black' }}>{'Disabled'}</h3>
-        <Slider
-          min={0}
-          max={100}
-          disabled={true}
-          value={this.state.sliderValue}
-          onChange={this.handleSliderChange.bind(this)}
-        />
+          <Input onHandleChange={this.onRoundInputChange.bind(this)}
+            patternString="\b[A-z]{1,3}\b"
+            placeholder="I'm round"
+            value={this.state.roundInputValue}
+            round={true}/>
 
-        <br/>
-        <br/>
-        <br/>
-        <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
-        <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
+            <Input placeholder="I'm disabled" disabled round={true} onHandleChange={() => {}}/>
+        </ComponentSection>
 
-        <br/>
-        <br/>
-        <br/>
-        <div className="+display-flex +middle-align">
-          <CircleButton className={'small +push-right'}>
-            <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
-          </CircleButton>
+        <ComponentSection title={'Text Areas'}>
+          <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
+        </ComponentSection>
 
-          <CircleButton className={'+push-right'}>
-            <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
-          </CircleButton>
+        <ComponentSection title={'Radio Buttons'}>
+          <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
+            activeLabel={activeRadioButtonID}
+            label="One"/>
+          <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')}
+            activeLabel={activeRadioButtonID}
+            label="Two" disabled />
+          <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')}
+            activeLabel={activeRadioButtonID}
+            label="Three" />
+        </ComponentSection>
 
-          <CircleButton className={'large'}>
-            <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
-          </CircleButton>
-        </div>
+        <ComponentSection title={'Progress Dots'}>
+          <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
+        </ComponentSection>
+
+        <ComponentSection title={'Tabs'}>
+          <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
+        </ComponentSection>
+
+        <ComponentSection title={'Modals'}>
+          <Button color="grey" disabled={false} onClick={this.showModal.bind(this)}>
+            {'Show modal'}
+          </Button>
+
+          <Modal showing={modalShowing} onClose={this.closeModal.bind(this)}>
+            <div>{'im in a modal'}</div>
+          </Modal>
+        </ComponentSection>
+
+        <ComponentSection title={'Buttons'}>
+          <Button color="white" disabled={false}>{'Click'}</Button>
+          <br/>
+          <Button disabled={false}>{'Click'}</Button>
+          <br/>
+          <Button color="red" disabled={false}>{'Click'}</Button>
+          <br/>
+          <Button color="minimal" disabled={false}>{'Click'}</Button>
+          <br/>
+          <Button color="grey" disabled={true}>{'Click'}</Button>
+          <br/>
+          <Button color="white" disabled={true}>{'Click'}</Button>
+          <br/>
+          <Button disabled={true}>{'Click'}</Button>
+          <br/>
+          <Button color="red" disabled={true}>{'Click'}</Button>
+          <br/>
+          <Button color="minimal" disabled={true}>{'Click'}</Button>
+          <br/>
+          <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
+
+          <div className="+display-flex +middle-align">
+            <CircleButton className={'small +push-right'}>
+              <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+            </CircleButton>
+
+            <CircleButton className={'+push-right'}>
+              <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+            </CircleButton>
+
+            <CircleButton className={'large'}>
+              <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+            </CircleButton>
+          </div>
+        </ComponentSection>
+
+        <ComponentSection title={'Audio Player'}>
+          {/* <AudioPlayer
+            audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
+            playing={this.state.audioPlaying}
+            pos={this.state.audioPos}
+            handlePosChange={this.onAudioPositionChange.bind(this)}
+          /> */}
+        </ComponentSection>
+
+        <ComponentSection title={'Icons'}>
+          <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
+        </ComponentSection>
+
+        <ComponentSection title={'Checkboxes'}>
+          <Checkbox label="test checkbox:" onClick={this.toggleCheckbox} checked={checkboxValue}/>
+        </ComponentSection>
+
+        <ComponentSection title={'Pills'}>
+          <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
+        </ComponentSection>
+
+        <ComponentSection title={'Slider'}>
+          <Slider
+            min={0}
+            max={100}
+            disabled={false}
+            value={this.state.sliderValue}
+            onChange={this.handleSliderChange.bind(this)}
+          />
+
+          <h5 style={{ color: 'black' }}>{'Disabled'}</h5>
+          <Slider
+            min={0}
+            max={100}
+            disabled={true}
+            value={this.state.sliderValue}
+            onChange={this.handleSliderChange.bind(this)}
+          />
+        </ComponentSection>
+
+        <ComponentSection title={'Breadcrumbs'}>
+          <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
+        </ComponentSection>
+
+        <ComponentSection title={'Images'}>
+          <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
+        </ComponentSection>
       </div>
     );
   }
