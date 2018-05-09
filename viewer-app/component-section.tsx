@@ -5,8 +5,8 @@ const ComponentSection = ({ children, title }: {
   children: any
 }) => {
   return (
-    <div style={{ padding: '8px', marginBottom: '16px' }}>
-      <h2 className="+push-bottom" style={{ textDecoration: 'underline' }}>{title}</h2>
+    <div className="+soft-double +push-bottom-double">
+      <h2 className="+push-bottom +underline">{title}</h2>
       {children}
     </div>
   );
