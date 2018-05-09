@@ -16,7 +16,7 @@ const Input = (props: {
   round?: boolean,
 
   onSubmission?: () => void,
-  onHandleChange?: () => {}
+  onHandleChange: () => void
 }) => {
 
   const {
@@ -67,7 +67,8 @@ const Input = (props: {
           pattern={patternString}
           value={value}
           placeholder={placeholder ? placeholder : null}
-          style={inputStyle}/>
+          style={inputStyle}
+        />
         {iconType ? inputIcon : null}
       </div>
   );

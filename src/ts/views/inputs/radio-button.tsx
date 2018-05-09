@@ -22,7 +22,7 @@ const RadioButton = (props: {
   const wrapperClass = classnames('radio-button-wrapper', wrapperClassName, { disabled });
   const labelClass = classnames('label', { checked, disabled });
   const outerCircleClass = classnames('outer-circle', { checked, disabled });
-  const innerCircleClass = classnames('inner-circle', { checked, disabled }); 
+  const innerCircleClass = classnames('inner-circle', { checked, disabled });
 
   return (
     <div className={wrapperClass} onClick={disabled ? null : () => onClick(label)}>
@@ -34,6 +34,6 @@ const RadioButton = (props: {
       </div>
     </div>
   );
-}
+};
 
 export default RadioButton;

@@ -9,7 +9,7 @@ const Textarea = (props: {
   fixedSize?: boolean,
 
   onSubmission?: () => void,
-  onHandleChange?: () => {}
+  onHandleChange: () => {}
 }) => {
 
   const {

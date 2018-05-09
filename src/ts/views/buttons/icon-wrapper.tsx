@@ -35,7 +35,7 @@ const IconWrapper = (props: {
   return (
     <div
       className={iconWrapperClass}
-      onClick={onClick}>
+      onClick={onClick ? onClick : null}>
       {children}
     </div>
   );

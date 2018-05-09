@@ -5,7 +5,7 @@ import * as classnames from 'classnames';
 const Pagination = (props: {
   activePage: number,
   totalPages: number,
-  onClick?: () => void
+  onClick: () => void
 }) => {
     const { activePage, totalPages, onClick } = props;
     const breakElement = <div className="pagination-break">{'...'}</div>;

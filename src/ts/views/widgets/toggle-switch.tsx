@@ -3,7 +3,7 @@ import * as classnames from 'classnames';
 import Switch from 'react-switch';
 
 const ToggleSwitch = (props: {
-  onClick?: () => void,
+  onClick: () => void,
   active?: boolean,
   disabled?: boolean,
   color?: string,
