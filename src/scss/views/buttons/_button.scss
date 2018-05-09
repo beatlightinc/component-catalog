@@ -13,6 +13,26 @@
   padding-right: $base-spacing-quad;
   border-radius: $border-radius-small;
 
+  &.circle {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% 50%;
+    height: 32px;
+    width: 32px;
+
+    &.small {
+      height: 24px;
+      width: 24px;
+    }
+
+    &.large {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
   &.medium {
     height: 40px;
     font-size: $text-small;

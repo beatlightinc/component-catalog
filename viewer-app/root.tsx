@@ -16,7 +16,8 @@ import {
   Modal,
   Slider,
   BreadCrumbs,
-  Image
+  Image,
+  CircleButton
 } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -250,6 +251,23 @@ class Root extends React.Component<{}, {
         <br/>
         <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
         <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
+
+        <br/>
+        <br/>
+        <br/>
+        <div className="+display-flex +middle-align">
+          <CircleButton className={'small +push-right'}>
+            <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+          </CircleButton>
+
+          <CircleButton className={'+push-right'}>
+            <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+          </CircleButton>
+
+          <CircleButton className={'large'}>
+            <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+          </CircleButton>
+        </div>
       </div>
     );
   }
