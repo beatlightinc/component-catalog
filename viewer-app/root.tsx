@@ -19,7 +19,9 @@ import {
   Slider,
   BreadCrumbs,
   Image,
-  CircleButton
+  CircleButton,
+  ButtonGroup,
+  Avatar
 } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -137,6 +139,15 @@ class Root extends React.Component<{}, {
 
     return (
       <div style={wrapperStyle}>
+
+        <ComponentSection title={'Button Group'}>
+          <ButtonGroup>
+            <Button color="white" disabled={false}>{'Click'}</Button>
+            <Button color="white" disabled={false}>{'Click2'}</Button>
+            <Button color="white" disabled={false}>{'Click3'}</Button>
+            <Button color="white" disabled={false}>{'Click4'}</Button>
+          </ButtonGroup>
+        </ComponentSection>
 
         <ComponentSection title={'Pagination'}>
           <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
@@ -298,6 +309,7 @@ class Root extends React.Component<{}, {
 
         <ComponentSection title={'Images'}>
           <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
+          <Avatar imgSrc="http://via.placeholder.com/150x150" height={40} width={40} circle={true} />
         </ComponentSection>
       </div>
     );
