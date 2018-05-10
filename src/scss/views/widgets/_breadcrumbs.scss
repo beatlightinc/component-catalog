@@ -1,7 +1,7 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
-  color: $color-black;
+  color: $color-grey;
   font-weight: $font-weight-semibold;
 
   .bullets {
@@ -11,7 +11,7 @@
   }
 
   .breadcrumb {
-    @extend .\+push-right;
+    @extend .\+push-half-right;
 
     .label {
       cursor: pointer;
@@ -27,7 +27,7 @@
 
     .separator {
       cursor: default;
-      @extend .\+push-left;
+      @extend .\+push-half-left;
     }
   }
 }
