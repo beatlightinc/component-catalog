@@ -142,7 +142,7 @@ class Root extends React.Component<{}, {
           <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
         </ComponentSection>
 
-        <ComponentSection title={'Inputs'}>
+        <ComponentSection title={'Inputs'} className="+flex-column">
           <Input placeholder="I'm default"
             patternString="\b[A-z]{1,2}\b"
             value={this.state.inputValue}
