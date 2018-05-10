@@ -194,3 +194,22 @@
     }
   }
 }
+
+.button-group {
+  display: flex;
+
+  .button-component:first-of-type {
+    border-radius: $border-radius-small 0 0 $border-radius-small;
+    border-width: 1px 1px 1px 1px;
+  }
+
+  .button-component:last-of-type {
+    border-width: 1px 1px 1px 0px;
+    border-radius: 0 $border-radius-small $border-radius-small 0;
+  }
+
+  .button-component:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    border-left: none;
+  }
+}
