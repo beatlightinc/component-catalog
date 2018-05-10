@@ -12,6 +12,7 @@ const indexHandler = (req: any, res: any) => {
 
 app.use('/css', express.static(path.join(__dirname, '..', '..', 'static', 'css')));
 app.use('/js', express.static(path.join(__dirname, '..', '..', 'static', 'js')));
+app.use('/fonts', express.static(path.join(__dirname, '..', '..', 'static', 'fonts')));
 
 const frontendRoutes = [
   { route: '*', handler: indexHandler }
