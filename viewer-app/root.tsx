@@ -154,6 +154,22 @@ class Root extends React.Component<{}, {
             value={this.state.roundInputValue}
             round={true}/>
 
+          <Input
+            onHandleChange={this.onRoundInputChange.bind(this)}
+            patternString="\b[A-z]{1,3}\b"
+            placeholder="I've got an icon"
+            value={this.state.roundInputValue}
+            iconType="icon-search"
+          />
+
+          <Input
+            onHandleChange={this.onRoundInputChange.bind(this)}
+            patternString="\b[A-z]{1,3}\b"
+            placeholder="Enter your password..."
+            value={this.state.roundInputValue}
+            iconType="icon-lock"
+          />
+
             <Input placeholder="I'm disabled" disabled round={true} onHandleChange={() => {}}/>
         </ComponentSection>
 
