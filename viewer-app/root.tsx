@@ -192,9 +192,18 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Buttons'}>
-          <Button color="white" disabled={false}>{'Click'}</Button>
+          <Button color="white" disabled={false}>
+            {'Click'}
+            <span className="icon-arrow-down" />
+          </Button>
           <br/>
-          <Button disabled={false}>{'Click'}</Button>
+          <Button disabled={false}>
+            <span className="icon-paperclip" />
+          </Button>
+          <br/>
+          <Button disabled={false}>
+            <span className="icon-send" />
+          </Button>
           <br/>
           <Button color="red" disabled={false}>{'Click'}</Button>
           <br/>
@@ -214,15 +223,15 @@ class Root extends React.Component<{}, {
 
           <div className="+display-flex +middle-align">
             <CircleButton className={'small +push-right'}>
-              <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+              <div className="icon-upload-cloud" />
             </CircleButton>
 
             <CircleButton className={'+push-right'}>
-              <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+              <div className="icon-upload-cloud" />
             </CircleButton>
 
             <CircleButton className={'large'}>
-              <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#fff" hoverColor="#0076FF" size="min"/>
+              <div className="icon-upload-cloud" />
             </CircleButton>
           </div>
         </ComponentSection>
