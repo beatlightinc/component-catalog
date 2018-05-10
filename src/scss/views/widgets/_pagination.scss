@@ -1,0 +1,30 @@
+.pagination-container {
+  display: flex;
+  align-items: center;
+  font-weight: $font-weight-semibold;
+  font-size: $text-small;
+
+  .pagination-button {
+    font-weight: $font-weight-bold;
+    margin-right: $base-spacing-double;
+    color: $color-blue;
+    cursor: pointer;
+  }
+
+  .pagination-element-wrapper {
+    display: flex;
+    align-items: center;
+
+    .pagination-element.isActive {
+      color: $color-blue;
+      cursor: default;
+    }
+
+    .page-button, .pagination-break {
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+      color: $color-grey;
+      margin-right: $base-spacing-triple;
+    }
+  }
+}

@@ -11,11 +11,12 @@ const PageButton = (props: {
     const pageButtonClass = classnames('page-button', className, {
       disabled
     });
+
     return (
-        <button onClick={disabled ? null : onClick}
+        <div onClick={disabled ? null : onClick}
           className={pageButtonClass}>
           {pageNumber}
-        </button>
+        </div>
     );
 };
 

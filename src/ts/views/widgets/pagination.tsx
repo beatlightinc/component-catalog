@@ -8,7 +8,7 @@ const Pagination = (props: {
   onClick: () => void
 }) => {
     const { activePage, totalPages, onClick } = props;
-    const breakElement = <div className="pagination-break">{'...'}</div>;
+    const breakElement = <div className="icon-more-horizontal pagination-break"/>;
     const allPageElements = [];
     let pageRangeArr = [];
     let pageRange;
@@ -92,10 +92,10 @@ const Pagination = (props: {
     return (
       <div className="pagination-container">
         {activePage === 0 ? null
-          : <div className="pagination-button" onClick={onClick}>{'<'}</div>}
+          : <div className="pagination-button icon-chevron-left" onClick={onClick} />}
         {pageRange}
         {activePage === totalPages - 1 ? null
-          : <div className="pagination-button" onClick={onClick}>{'>'}</div>}
+          : <div className="pagination-button icon-chevron-right" onClick={onClick} />}
       </div>
   );
 };
