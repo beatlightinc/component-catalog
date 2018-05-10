@@ -1,0 +1,19 @@
+.avatar-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: $border-radius-small;
+
+  &.circle {
+    border-radius: $border-radius-circle;
+    padding: 1px;
+  }
+}
+
+.avatar {
+  border-radius: $border-radius-small;
+
+  &.circle {
+    border-radius: $border-radius-circle;
+    padding: 1px;
+  }
+}

@@ -4,8 +4,8 @@ import Image from './image';
 
 const Avatar = (props: {
   imgSrc?: string,
-  height?: number,
-  width?: number,
+  height: number,
+  width: number,
   circle?: boolean,
   avatarStyle?: any,
   wrapperClass?: string,
