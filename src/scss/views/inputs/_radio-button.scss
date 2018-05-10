@@ -18,7 +18,7 @@
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    border: 1px solid $color-light-grey;
+    border: 2px solid $color-light-grey;
     background-color: $color-white;
     display: flex;
     align-items: center;
@@ -26,12 +26,12 @@
     margin-right: 16px;
 
     &.checked {
-      margin-right: 14px;
+      // margin-right: 14px;
       border: 2px solid $color-blue;
 
       &.disabled {
         border: 2px solid $color-light-grey;
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
 

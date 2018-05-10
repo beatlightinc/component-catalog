@@ -15,11 +15,9 @@ const BreadCrumbs = ({ path, onClick }: {
         >
           {label}
         </span>
-
-        {/* TODO: Use real icon here. */}
         {
           i === path.length - 1 ? null
-          : <span className="separator">{'>'}</span>
+          : <span className="icon-chevron-right separator"/>
         }
       </div>
     );
@@ -27,8 +25,7 @@ const BreadCrumbs = ({ path, onClick }: {
 
   return (
     <div className="breadcrumbs">
-      {/* TODO: Use real icon here maybe? These look OK though */}
-      <div className="bullets">{'•••'}</div>
+      <div className="icon-more-horizontal bullets"/>
       { crumbs }
     </div>
   );

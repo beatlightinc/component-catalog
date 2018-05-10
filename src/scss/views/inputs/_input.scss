@@ -1,5 +1,17 @@
 .input-container {
   position: relative;
+  display: inline-block;
+  width: 265px;
+
+  .input-icon {
+    position: absolute;
+    right: $base-spacing-triple;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: $text-small;
+    font-weight: $font-weight-semibold;
+    color: $color-grey;
+  }
 
   .input-component {
     font-size: $text-smallest;

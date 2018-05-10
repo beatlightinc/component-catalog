@@ -55,7 +55,7 @@ const Input = (props: {
   });
 
   // TODO: Icon logic and implementation
-  const inputIcon = <div>{'ICON'}</div>;
+  const inputIcon = <div className={`${iconType} input-icon`}/>;
 
   return (
       <div className={inputContainerClass} style={containerStyle}>

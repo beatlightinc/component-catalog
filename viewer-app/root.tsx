@@ -153,7 +153,7 @@ class Root extends React.Component<{}, {
           <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
         </ComponentSection>
 
-        <ComponentSection title={'Inputs'}>
+        <ComponentSection title={'Inputs'} className="+flex-column">
           <Input placeholder="I'm default"
             patternString="\b[A-z]{1,2}\b"
             value={this.state.inputValue}
@@ -164,6 +164,22 @@ class Root extends React.Component<{}, {
             placeholder="I'm round"
             value={this.state.roundInputValue}
             round={true}/>
+
+          <Input
+            onHandleChange={this.onRoundInputChange.bind(this)}
+            patternString="\b[A-z]{1,3}\b"
+            placeholder="I've got an icon"
+            value={this.state.roundInputValue}
+            iconType="icon-search"
+          />
+
+          <Input
+            onHandleChange={this.onRoundInputChange.bind(this)}
+            patternString="\b[A-z]{1,3}\b"
+            placeholder="Enter your password..."
+            value={this.state.roundInputValue}
+            iconType="icon-lock"
+          />
 
             <Input placeholder="I'm disabled" disabled round={true} onHandleChange={() => {}}/>
         </ComponentSection>
