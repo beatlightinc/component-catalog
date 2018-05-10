@@ -28,3 +28,4 @@ export { default as BreadCrumbs } from './views/widgets/breadcrumbs';
 export { default as Image } from './views/widgets/image';
 export { default as CircleButton } from './views/buttons/circle';
 export { default as ButtonGroup } from './views/buttons/button-group';
+export { default as Avatar } from './views/widgets/avatar';

@@ -1,0 +1,18 @@
+.avatar-wrapper {
+  display: inline-block;
+  border-radius: $border-radius-small;
+
+  &.circle {
+    border-radius: $border-radius-circle;
+    padding: 1px;
+  }
+}
+
+.avatar {
+  border-radius: $border-radius-small;
+
+  &.circle {
+    border-radius: $border-radius-circle;
+    padding: 1px;
+  }
+}

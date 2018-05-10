@@ -20,7 +20,8 @@ import {
   BreadCrumbs,
   Image,
   CircleButton,
-  ButtonGroup
+  ButtonGroup,
+  Avatar
 } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -283,6 +284,7 @@ class Root extends React.Component<{}, {
 
         <ComponentSection title={'Images'}>
           <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
+          <Avatar imgSrc="http://via.placeholder.com/150x150" height={40} width={40} circle={true} />
         </ComponentSection>
       </div>
     );
