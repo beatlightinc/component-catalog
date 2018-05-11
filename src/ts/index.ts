@@ -1,6 +1,5 @@
 // Buttons
 export { default as Button } from './views/buttons/button';
-export { default as IconWrapper } from './views/buttons/icon-wrapper';
 export { default as FileButton } from './views/buttons/file-button';
 
 // Inputs
@@ -21,7 +20,6 @@ export { default as AudioPlayer } from './views/widgets/audio-player';
 export { default as ProgressDots } from './views/widgets/progress-dots';
 export { default as ProgressTabs } from './views/widgets/progress-tabs';
 export { default as ToggleSwitch } from './views/widgets/toggle-switch';
-export { default as Icon } from './views/widgets/icon';
 export { default as Pill } from './views/widgets/pill';
 export { default as Slider } from './views/widgets/slider';
 export { default as BreadCrumbs } from './views/widgets/breadcrumbs';
