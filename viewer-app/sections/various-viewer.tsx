@@ -3,7 +3,9 @@ import * as React from 'react';
 class VariousView extends React.Component<{}, {}> {
   public render() {
     return (
-      <div></div>
+      <div className="viewer-app-section">
+        <div className="page-title">{'Various'}</div>
+      </div>
     );
   }
 }

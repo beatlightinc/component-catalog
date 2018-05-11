@@ -3,7 +3,9 @@ import * as React from 'react';
 class TypographyView extends React.Component<{}, {}> {
   public render() {
     return (
-      <div></div>
+      <div className="viewer-app-section">
+        <div className="page-title">{'Typography'}</div>
+      </div>
     );
   }
 }
