@@ -63,10 +63,6 @@
 .user-pill {
   position: relative;
 
-  .user-pill-avatar {
-
-  }
-
   .pill-title {
     padding: 0px;
     margin-left: 10px;
@@ -75,8 +71,13 @@
   &.removeable {
 
     &:hover {
+      .icon-section {
+        display: inline-block;
+        margin-right: $base-spacing;
+      }
+      
       .pill-title {
-
+        margin-left: $base-spacing-double;
       }
     }
   }
