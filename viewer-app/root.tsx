@@ -12,7 +12,6 @@ import {
   ProgressTabs,
   ToggleSwitch,
   RadioButton,
-  Icon,
   Checkbox,
   Pill,
   Modal,
@@ -273,7 +272,7 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Icons'}>
-          <Icon pathName={'MIN_UPLOAD_SINGLE'} color="#14151A" hoverColor="#0076FF" size="min"/>
+          <div className="icon-upload-cloud" />
         </ComponentSection>
 
         <ComponentSection title={'Checkboxes'}>
