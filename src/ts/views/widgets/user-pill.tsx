@@ -1,18 +1,20 @@
 import * as React from 'react';
 import * as classnames from 'classnames';
 import Pill from './pill';
+import Avatar from './avatar';
 
 const UserPill = (props: {
   type?: string
   userName?: string,
-  imgSrc?: string,
+  imgSrc: string,
   removeable?: boolean
 }) => {
   const { type, userName, imgSrc, removeable } = props;
   return (
-    <Pill type={type} removeable={removeable}>
-      {/* Separately styled avatar will go here. */}
-      {userName}
+    <Pill type={type} removeable={removeable} className="user-pill" title={userName}>
+      <Avatar wrapperClass="user-pill-avatar" imgSrc={imgSrc} height={32} width={32} circle={true}/>
     </Pill>
   );
 };
+
+export default UserPill;

@@ -14,6 +14,7 @@ import {
   RadioButton,
   Checkbox,
   Pill,
+  UserPill,
   Modal,
   Slider,
   BreadCrumbs,
@@ -318,7 +319,9 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Pills'}>
-          <Pill removeable={true} active={false} type={'blue'}>{'Test Pill'}</Pill>
+          <Pill removeable={true} active={false} type={'blue'} title={'Test Pill'} />
+          <br/>
+          <UserPill removeable={true} type={'blue'} userName={'KevinB'} imgSrc="http://via.placeholder.com/150x150" />
         </ComponentSection>
 
         <ComponentSection title={'Slider'}>

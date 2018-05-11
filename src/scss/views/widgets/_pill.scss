@@ -4,31 +4,33 @@
   width: fit-content;
   border-radius: $border-radius-large;
   font-size: $text-smallest;
-  padding: $base-spacing-double 0px;
 
   .pill-title {
-    font-weight: $font-weight-semibold;
     color: $color-white;
     margin: 0px $base-spacing-quad;
+    padding: $base-spacing-double 0px;
   }
 
   &.removeable {
     position: relative;
 
+    .icon-section {
+      display: none;
+      color: $color-white;
+    }
+
     &:hover {
       cursor: pointer;
       color: $color-white;
-      font-weight: $font-weight-semibold;
+
+      .icon-section {
+        display: inline-block;
+        margin-right: 10px;
+      }
 
       .pill-title {
         margin-left: $base-spacing-double;
-        margin-right: $base-spacing-sex;
-      }
-
-      &::after {
-        content: 'X';
-        position: absolute;
-        right: 10px;
+        margin-right: 0px;
       }
     }
   }
@@ -54,6 +56,29 @@
 
     &.active {
       background-color: $color-blue-active;
+    }
+  }
+}
+
+.user-pill {
+  position: relative;
+
+  .pill-title {
+    padding: 0px;
+    margin-left: 10px;
+  }
+
+  &.removeable {
+
+    &:hover {
+      .icon-section {
+        display: inline-block;
+        margin-right: $base-spacing;
+      }
+
+      .pill-title {
+        margin-left: $base-spacing-double;
+      }
     }
   }
 }
