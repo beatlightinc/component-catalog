@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   width: 265px;
+  display: flex;
 
   .input-icon {
     position: absolute;
@@ -60,10 +61,21 @@
         border: 2px solid $color-green;
         margin: 0px;
       }
+
+      &.number {
+        border-right: 2px solid $color-blue;
+      }
     }
 
     &.round {
       border-radius: 36px;
+    }
+
+    &.number {
+      width: 230px;
+      margin-right: 0px;
+      border-right: none;
+      border-radius: $border-radius-small 0px 0px $border-radius-small;
     }
   }
 
@@ -100,6 +112,43 @@
 
     &.fixedSize {
       resize: none;
+    }
+  }
+
+  .number-input-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid transparent;
+    border-left: 0px;
+
+    .number-input-button {
+      cursor: pointer;
+      width: 32px;
+      height: 50%;
+      padding: 0px;
+      border: 1px solid $color-light-grey;
+      background-color: $color-lightest-grey;
+      color: $color-grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: lighten($color-grey, 10%);
+      }
+
+      &:active, &:hover {
+        color: $color-blue;
+      }
+
+      &.up {
+        border-radius: 0 $border-radius-small 0 0;
+      }
+
+      &.down {
+        border-radius: 0 0 $border-radius-small 0;
+        border-top: none;
+      }
     }
   }
 }

@@ -21,7 +21,8 @@ import {
   Image,
   CircleButton,
   ButtonGroup,
-  Avatar
+  Avatar,
+  NumberInput
 } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -38,6 +39,7 @@ class Root extends React.Component<{}, {
   sliderValue: number,
   breadCrumbPath: string[],
   modalShowing?: boolean
+  numberInputValue?: number
 }> {
 
   constructor(props: any) {
@@ -54,7 +56,8 @@ class Root extends React.Component<{}, {
       activeRadioButtonID: 'One',
       sliderValue: 2,
       breadCrumbPath: ['Level 1', 'Level 2', 'Level 3'],
-      modalShowing: false
+      modalShowing: false,
+      numberInputValue: 0
     };
   }
 
@@ -116,18 +119,24 @@ class Root extends React.Component<{}, {
     this.setState({ breadCrumbPath: newBreadCrumbPath });
   }
 
+  public numberInputHandleChange(newValue: number) {
+    this.setState({ numberInputValue: newValue });
+  }
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
       backgroundColor: '#F7F7F8'
     };
 
-    const { textareaValue,
+    const {
+      textareaValue,
       tabStep,
       currentStep,
       toggleValue,
       activeRadioButtonID,
       checkboxValue,
+      numberInputValue,
       modalShowing
     } = this.state;
 
@@ -154,6 +163,14 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Inputs'} className="+flex-column">
+          <NumberInput
+            placeholder="0"
+            value={numberInputValue}
+            handleChange={this.numberInputHandleChange.bind(this)}
+            max={15}
+            min={0}
+          />
+
           <Input placeholder="I'm default"
             patternString="\b[A-z]{1,2}\b"
             value={this.state.inputValue}
@@ -277,7 +294,28 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Checkboxes'}>
-          <Checkbox label="test checkbox:" onClick={this.toggleCheckbox} checked={checkboxValue}/>
+          <Checkbox
+            label="test checkbox"
+            onClick={() => {}}
+            checked={false}
+          />
+          <Checkbox
+            label="test checkbox active"
+            onClick={this.toggleCheckbox.bind(this)}
+            checked={checkboxValue}
+          />
+          <Checkbox
+            label="indeterminate test checkbox"
+            onClick={() => {}}
+            checked={false}
+            indeterminate={true}
+          />
+          <Checkbox
+            label="disabled test checkbox"
+            onClick={() => {}}
+            checked={false}
+            disabled={true}
+          />
         </ComponentSection>
 
         <ComponentSection title={'Pills'}>

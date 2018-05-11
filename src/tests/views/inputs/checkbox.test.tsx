@@ -9,7 +9,7 @@ const onClickSpy = sinon.spy();
 
 test('Clicking a disabled checkbox should not call its onclick handler', (t) => {
   const checkboxWrapper = shallow(<Checkbox onClick={onClickSpy} disabled={true} /> );
-  checkboxWrapper.find('input').simulate('click');
+  checkboxWrapper.find('.checkbox').simulate('click');
   t.is(onClickSpy.called, false);
 });
 
