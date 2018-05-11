@@ -4,7 +4,8 @@ import * as classnames from 'classnames';
 // TODO:
 // - Replace '^' with correct icons when theyre ready
 // - Handle active logic for the icons
-// - Handle logic for people typing in it, not sure how we want to yet. Dont let anything but numbers be typed? red border for invalid?
+// - Handle logic for people typing in it, not sure how we want to yet.
+// Dont let anything but numbers be typed? red border for invalid?
 
 const NumberInput = (props: {
   value?: number,
@@ -68,10 +69,10 @@ const NumberInput = (props: {
       />
       <div className="number-input-button-wrapper">
         <div className={incrementButtonName} onClick={disabled ? null : guardedIncrement}>
-          {'^'}
+          <div className="icon-chevron-up"/>
         </div>
         <div className={decrementButtonName} onClick={disabled ? null : guardedDecrement} >
-          {'^'}
+          <div className="icon-chevron-down"/>
         </div>
       </div>
     </div>
