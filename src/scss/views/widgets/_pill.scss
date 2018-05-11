@@ -20,17 +20,17 @@
     }
 
     &:hover {
-
-      .icon-section {
-        display: inline-block;
-      }
-      
       cursor: pointer;
       color: $color-white;
 
+      .icon-section {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
       .pill-title {
         margin-left: $base-spacing-double;
-        margin-right: $base-spacing-sex;
+        margin-right: 0px;
       }
     }
   }
@@ -69,6 +69,7 @@
 
   .pill-title {
     padding: 0px;
+    margin-left: 10px;
   }
 
   &.removeable {
