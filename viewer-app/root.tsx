@@ -276,7 +276,28 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Checkboxes'}>
-          <Checkbox label="test checkbox:" onClick={this.toggleCheckbox} checked={checkboxValue}/>
+          <Checkbox
+            label="test checkbox"
+            onClick={() => {}}
+            checked={false}
+          />
+          <Checkbox
+            label="test checkbox active"
+            onClick={this.toggleCheckbox.bind(this)}
+            checked={checkboxValue}
+          />
+          <Checkbox
+            label="indeterminate test checkbox"
+            onClick={() => {}}
+            checked={false}
+            indeterminate={true}
+          />
+          <Checkbox
+            label="disabled test checkbox"
+            onClick={() => {}}
+            checked={false}
+            disabled={true}
+          />
         </ComponentSection>
 
         <ComponentSection title={'Pills'}>

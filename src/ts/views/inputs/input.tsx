@@ -54,7 +54,6 @@ const Input = (props: {
     round
   });
 
-  // TODO: Icon logic and implementation
   const inputIcon = <div className={`${iconType} input-icon`}/>;
 
   return (
