@@ -11,9 +11,8 @@ const UserPill = (props: {
 }) => {
   const { type, userName, imgSrc, removeable } = props;
   return (
-    <Pill type={type} removeable={removeable} className="user-pill">
+    <Pill type={type} removeable={removeable} className="user-pill" title={userName}>
       <Avatar wrapperClass="user-pill-avatar" imgSrc={imgSrc} height={32} width={32} circle={true}/>
-      {userName}
     </Pill>
   );
 };

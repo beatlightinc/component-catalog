@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as classnames from 'classnames';
 
 const Pill = (props: {
+  title?: string,
   type?: string,
   removeable?: boolean,
   children?: any,
@@ -9,13 +10,16 @@ const Pill = (props: {
   active?: boolean,
   className?: string
 }) => {
-  const { type, removeable, children, onClick, className, active } = props;
+  const { type, removeable, children, onClick, className, active, title } = props;
 
   const pillWrapperClass = classnames('pill', type, className, { removeable, active });
+  const removeIcon = <span className="icon-x"></span>;
 
   return (
     <div className={pillWrapperClass} onClick={onClick ? onClick : null}>
-      <span className="pill-title">{children}</span>
+      {children}
+      <span className="pill-title">{title}</span>
+      { removeable ? <div className="icon-section">{removeIcon}</div> : null }
     </div>
   );
 };
