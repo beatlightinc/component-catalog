@@ -7,7 +7,6 @@
   padding: $base-spacing-double 0px;
 
   .pill-title {
-    font-weight: $font-weight-semibold;
     color: $color-white;
     margin: 0px $base-spacing-quad;
   }
@@ -18,7 +17,6 @@
     &:hover {
       cursor: pointer;
       color: $color-white;
-      font-weight: $font-weight-semibold;
 
       .pill-title {
         margin-left: $base-spacing-double;
@@ -59,8 +57,27 @@
 }
 
 .user-pill {
+  position: relative;
 
   .user-pill-avatar {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    padding: 0px;
+    margin: 0px;
+  }
 
+  .pill-title {
+    margin-left: 42px;
+  }
+
+  &.removeable {
+
+    &:hover {
+      .pill-title {
+        margin-left: 37px;
+        margin-right: 21px;
+      }
+    }
   }
 }

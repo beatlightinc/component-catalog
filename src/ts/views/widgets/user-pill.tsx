@@ -6,7 +6,7 @@ import Avatar from './avatar';
 const UserPill = (props: {
   type?: string
   userName?: string,
-  imgSrc?: string,
+  imgSrc: string,
   removeable?: boolean
 }) => {
   const { type, userName, imgSrc, removeable } = props;
