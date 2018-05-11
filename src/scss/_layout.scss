@@ -6,16 +6,19 @@ body, html {
   background-color: $color-white;
 }
 
+* {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
 html {
   font-size: $text-smallest;
-  /* TODO: get proxima nova from adobe typekit */
-  font-family: "proxima-nova", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: $color-black;
 }
 
 body {
   font-size: $text-smallest;
+  font-weight: $font-weight-regular;
 
   h1 {
     margin: 0;
