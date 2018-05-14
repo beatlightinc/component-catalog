@@ -21,9 +21,7 @@ const Modal = (props: {
   return (
     <div className={wrapperClass}>
       <div className="modal">
-        <div className="close-button" onClick={onClose}>
-          {'X'}
-        </div>
+        <div className="icon-x close-button" onClick={onClose} />
         {children}
       </div>
     </div>

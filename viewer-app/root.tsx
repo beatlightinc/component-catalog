@@ -45,7 +45,7 @@ class Root extends React.Component<{}, {
   constructor(props: any) {
     super(props);
     this.state = {
-      audioPlaying: true,
+      audioPlaying: false,
       audioPos: 0,
       inputValue: '',
       roundInputValue: '',
@@ -174,13 +174,15 @@ class Root extends React.Component<{}, {
           <Input placeholder="I'm default"
             patternString="\b[A-z]{1,2}\b"
             value={this.state.inputValue}
-            onHandleChange={this.onInputChange.bind(this)} />
+            onHandleChange={this.onInputChange.bind(this)}
+          />
 
           <Input onHandleChange={this.onRoundInputChange.bind(this)}
             patternString="\b[A-z]{1,3}\b"
             placeholder="I'm round"
             value={this.state.roundInputValue}
-            round={true}/>
+            round={true}
+          />
 
           <Input
             onHandleChange={this.onRoundInputChange.bind(this)}
@@ -281,12 +283,12 @@ class Root extends React.Component<{}, {
         </ComponentSection>
 
         <ComponentSection title={'Audio Player'}>
-          {/* <AudioPlayer
-            audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
+          <AudioPlayer
+            audioURL={'https://archive.org/download/78_burgundy-street-blues_george-lewis-his-new-orleans-music-george-lewis-elmer-talbe_gbia0029860b/_78_burgundy-street-blues_george-lewis-his-new-orleans-music-george-lewis-elmer-talbe_gbia0029860b_01_3.8_CT_EQ.mp3'}
             playing={this.state.audioPlaying}
             pos={this.state.audioPos}
             handlePosChange={this.onAudioPositionChange.bind(this)}
-          /> */}
+          />
         </ComponentSection>
 
         <ComponentSection title={'Icons'}>
