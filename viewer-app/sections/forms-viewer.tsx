@@ -10,15 +10,12 @@ class FormsView extends React.Component<{}, {}> {
             <h3>{'Text inputs'}</h3>
             <div className="viewer-app-section-content">
               <h4>{'Round'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Default'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Default with label'}</h4>
-              <div className="component-box"></div>
             </div>
           </div>
 
@@ -26,7 +23,6 @@ class FormsView extends React.Component<{}, {}> {
             <h3>{'Text Area'}</h3>
             <div className="viewer-app-section-content">
               <h4>{'Default'}</h4>
-              <div className="component-box"></div>
             </div>
           </div>
 
@@ -34,31 +30,24 @@ class FormsView extends React.Component<{}, {}> {
             <h3>{'States'}</h3>
             <div className="viewer-app-section-content">
               <h4>{'Default'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Hover'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Filled'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Active'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Disabled'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Success'}</h4>
-              <div className="component-box"></div>
             </div>
             <div className="viewer-app-section-content">
               <h4>{'Error'}</h4>
-              <div className="component-box"></div>
             </div>
           </div>
         </div>
