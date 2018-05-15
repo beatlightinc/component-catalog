@@ -99,24 +99,27 @@ class FormsView extends React.Component<{}, {
             <h3>{'States'}</h3>
             <div className="+flex-column">
               <h4>{'Default'}</h4>
-            </div>
-            <div className="+flex-column">
-              <h4>{'Hover'}</h4>
+              <Input onHandleChange={() => {}} />
             </div>
             <div className="+flex-column">
               <h4>{'Filled'}</h4>
+              <Input onHandleChange={() => {}} value={'I am filled!'} />
             </div>
             <div className="+flex-column">
               <h4>{'Active'}</h4>
+              <Input onHandleChange={() => {}} autoFocus={true} />
             </div>
             <div className="+flex-column">
-              <h4>{'Disabled'}</h4>
+              <h4>{'Disabled'}</h4>\
+              <Input onHandleChange={() => {}} disabled={true} />
             </div>
             <div className="+flex-column">
               <h4>{'Success'}</h4>
+              <Input onHandleChange={() => {}} validationState={true} />
             </div>
             <div className="+flex-column">
               <h4>{'Error'}</h4>
+              <Input onHandleChange={() => {}} validationState={false} />
             </div>
           </div>
 
