@@ -56,7 +56,8 @@ class FormsView extends React.Component<{}, {
 
   public render() {
     const {
-      textareaValue
+      textareaValue,
+      activeRadioButtonID
     } = this.state;
 
     return (
@@ -168,9 +169,15 @@ class FormsView extends React.Component<{}, {
             </div>
             <div className="+flex-column">
               <h4>{'Checked'}</h4>
+              <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
+                activeLabel={activeRadioButtonID}
+                label="One"/>
             </div>
             <div className="+flex-column">
               <h4>{'Disabled'}</h4>
+              <RadioButton key={2} onClick={() => {}}
+                disabled={true}
+                label="One"/>
             </div>
           </div>
 
@@ -178,12 +185,25 @@ class FormsView extends React.Component<{}, {
             <h3>{'Toggle Switches'}</h3>
             <div className="+flex-column">
               <h4>{'Off'}</h4>
+              <ToggleSwitch onClick={() => {}} active={false}/>
             </div>
             <div className="+flex-column">
               <h4>{'On'}</h4>
+              <ToggleSwitch onClick={() => {}} active={true}/>
             </div>
             <div className="+flex-column">
               <h4>{'Disabled'}</h4>
+              <ToggleSwitch onClick={() => {}} disabled={true}/>
+            </div>
+          </div>
+
+          <div className="+flex-column">
+            <h3>{'Text Input Groups'}</h3>
+            <div className="+flex-column">
+              <h4>{'Round with Right Icon'}</h4>
+            </div>
+            <div className="+flex-column">
+              <h4>{'Default with Right Icon'}</h4>
             </div>
           </div>
         </div>
