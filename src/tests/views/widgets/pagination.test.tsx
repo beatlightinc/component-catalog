@@ -71,7 +71,6 @@ test('<Pagination/> renders corrent # of buttons when active page is not last pa
     />
   );
   const buttonAmount = wrapper.find('PageButton').length;
-  console.log(buttonAmount);
   t.is(buttonAmount, 6);
 });
 
