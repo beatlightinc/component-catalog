@@ -22,7 +22,8 @@ import {
   CircleButton,
   ButtonGroup,
   Avatar,
-  NumberInput
+  NumberInput,
+  Toast
 } from '../src/ts/index';
 
 class Root extends React.Component<{}, {
@@ -39,7 +40,10 @@ class Root extends React.Component<{}, {
   sliderValue: number,
   breadCrumbPath: string[],
   modalShowing?: boolean
-  numberInputValue?: number
+  numberInputValue?: number,
+  toastShowing?: boolean,
+  toastTimeout?: number,
+  toastContent?: string
 }> {
 
   constructor(props: any) {
@@ -57,7 +61,10 @@ class Root extends React.Component<{}, {
       sliderValue: 2,
       breadCrumbPath: ['Level 1', 'Level 2', 'Level 3'],
       modalShowing: false,
-      numberInputValue: 0
+      numberInputValue: 0,
+      toastShowing: false,
+      toastTimeout: null,
+      toastContent: null
     };
   }
 
@@ -123,6 +130,14 @@ class Root extends React.Component<{}, {
     this.setState({ numberInputValue: newValue });
   }
 
+  public toggleToast(textContent: string, timeout?: number) {
+    this.setState({
+      toastShowing: !this.state.toastShowing,
+      toastContent: textContent,
+      toastTimeout: timeout
+    });
+  }
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
@@ -137,7 +152,10 @@ class Root extends React.Component<{}, {
       activeRadioButtonID,
       checkboxValue,
       numberInputValue,
-      modalShowing
+      modalShowing,
+      toastShowing,
+      toastTimeout,
+      toastContent
     } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
@@ -148,6 +166,32 @@ class Root extends React.Component<{}, {
 
     return (
       <div style={wrapperStyle}>
+        <ComponentSection title={'Toast Notifications'}>
+          <div className="toast-wrapper">
+            {
+              toastShowing ?
+              <Toast onClose={this.toggleToast.bind(this)} timeout={toastTimeout}>
+                {toastContent}
+              </Toast>
+              : null
+            }
+          </div>
+          <ButtonGroup>
+            <Button
+              color="white"
+              onClick={this.toggleToast.bind(this, 'open until closed', null)}
+            >
+              {'Show Notification'}
+            </Button>
+
+            <Button
+              color="white"
+              onClick={this.toggleToast.bind(this, 'auto close', 4000)}
+            >
+              {'Show Timed Notification'}
+            </Button>
+          </ButtonGroup>
+        </ComponentSection>
 
         <ComponentSection title={'Button Group'}>
           <ButtonGroup>
