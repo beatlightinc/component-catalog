@@ -55,6 +55,10 @@ class FormsView extends React.Component<{}, {
   }
 
   public render() {
+    const {
+      textareaValue
+    } = this.state;
+
     return (
       <div className="viewer-app-page">
         <div className="viewer-app-page-title">{'Forms'}</div>
@@ -63,9 +67,18 @@ class FormsView extends React.Component<{}, {
             <h3>{'Text inputs'}</h3>
             <div className="+flex-column">
               <h4>{'Round'}</h4>
+              <Input onHandleChange={this.onRoundInputChange.bind(this)}
+                patternString="\b[A-z]{1,3}\b"
+                placeholder="I'm round"
+                value={this.state.roundInputValue}
+                round={true}/>
             </div>
             <div className="+flex-column">
               <h4>{'Default'}</h4>
+              <Input placeholder="I'm default"
+                patternString="\b[A-z]{1,2}\b"
+                value={this.state.inputValue}
+                onHandleChange={this.onInputChange.bind(this)} />
             </div>
             <div className="+flex-column">
               <h4>{'Default with label'}</h4>
@@ -76,6 +89,9 @@ class FormsView extends React.Component<{}, {
             <h3>{'Text Area'}</h3>
             <div className="+flex-column">
               <h4>{'Default'}</h4>
+              <Textarea value={textareaValue}
+                placeholder="Disabled"
+                onHandleChange={this.onTextareaChange.bind(this)} />
             </div>
           </div>
 
