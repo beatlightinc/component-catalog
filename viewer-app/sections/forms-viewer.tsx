@@ -127,15 +127,37 @@ class FormsView extends React.Component<{}, {
             <h3>{'Checkboxes'}</h3>
             <div className="+flex-column">
               <h4>{'Normal'}</h4>
+              <Checkbox
+                label="test checkbox"
+                onClick={() => {}}
+                checked={false}
+              />
             </div>
             <div className="+flex-column">
               <h4>{'Checked'}</h4>
+              <Checkbox
+                label="test checkbox active"
+                onClick={this.toggleCheckbox.bind(this)}
+                checked={true}
+              />
             </div>
             <div className="+flex-column">
               <h4>{'Indeterminate'}</h4>
+              <Checkbox
+                label="indeterminate test checkbox"
+                onClick={() => {}}
+                checked={false}
+                indeterminate={true}
+              />
             </div>
             <div className="+flex-column">
               <h4>{'Disabled'}</h4>
+              <Checkbox
+                label="disabled test checkbox"
+                onClick={() => {}}
+                checked={false}
+                disabled={true}
+              />
             </div>
           </div>
 
