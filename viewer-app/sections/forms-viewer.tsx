@@ -22,6 +22,38 @@ class FormsView extends React.Component<{}, {
     };
   }
 
+  public onInputChange(e: React.FormEvent<HTMLInputElement>) {
+    this.setState({ inputValue: e.currentTarget.value });
+  }
+
+  public onRoundInputChange(e: React.FormEvent<HTMLInputElement>) {
+    this.setState({ roundInputValue: e.currentTarget.value });
+  }
+
+  public onTextareaChange(e: React.FormEvent<HTMLTextAreaElement>) {
+    this.setState({ textareaValue: e.currentTarget.value });
+  }
+
+  public toggleCheckbox() {
+    const { checkboxValue } = this.state;
+    this.setState({ checkboxValue: !checkboxValue });
+  }
+
+  public toggleSwitch() {
+    const { toggleValue } = this.state;
+    this.setState({ toggleValue: !toggleValue });
+  }
+
+  public radioOnClick(key: string) {
+    key === this.state.activeRadioButtonID
+    ? this.setState({ activeRadioButtonID: null })
+    : this.setState({ activeRadioButtonID: key });
+  }
+
+  public numberInputHandleChange(newValue: number) {
+    this.setState({ numberInputValue: newValue });
+  }
+
   public render() {
     return (
       <div className="viewer-app-page">
