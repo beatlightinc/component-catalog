@@ -42,7 +42,8 @@ class Root extends React.Component<{}, {
   modalShowing?: boolean
   numberInputValue?: number,
   toastShowing?: boolean,
-  toastTimeout?: number
+  toastTimeout?: number,
+  toastContent?: string
 }> {
 
   constructor(props: any) {
@@ -62,7 +63,8 @@ class Root extends React.Component<{}, {
       modalShowing: false,
       numberInputValue: 0,
       toastShowing: false,
-      toastTimeout: null
+      toastTimeout: null,
+      toastContent: null
     };
   }
 
@@ -128,9 +130,10 @@ class Root extends React.Component<{}, {
     this.setState({ numberInputValue: newValue });
   }
 
-  public toggleToast(timeout?) {
+  public toggleToast(textContent: string, timeout?: number) {
     this.setState({
       toastShowing: !this.state.toastShowing,
+      toastContent: textContent,
       toastTimeout: timeout
     });
   }
@@ -151,7 +154,8 @@ class Root extends React.Component<{}, {
       numberInputValue,
       modalShowing,
       toastShowing,
-      toastTimeout
+      toastTimeout,
+      toastContent
     } = this.state;
 
     const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
@@ -167,14 +171,26 @@ class Root extends React.Component<{}, {
             {
               toastShowing ?
               <Toast onClose={this.toggleToast.bind(this)} timeout={toastTimeout}>
-                {'Action Successful'}
+                {toastContent}
               </Toast>
               : null
             }
           </div>
+          <ButtonGroup>
+            <Button
+              color="white"
+              onClick={this.toggleToast.bind(this, 'open until closed', null)}
+            >
+              {'Show Notification'}
+            </Button>
 
-          <Button color="white" onClick={this.toggleToast.bind(this, null)}>{'Show Notification'}</Button>
-          <Button color="white" onClick={this.toggleToast.bind(this, 4000)}>{'Show Timed Notification'}</Button>
+            <Button
+              color="white"
+              onClick={this.toggleToast.bind(this, 'auto close', 4000)}
+            >
+              {'Show Timed Notification'}
+            </Button>
+          </ButtonGroup>
         </ComponentSection>
 
         <ComponentSection title={'Button Group'}>

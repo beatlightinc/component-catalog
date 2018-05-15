@@ -6,12 +6,14 @@ class Toast extends React.Component<{
   timeout?: number,
   onClose?: () => void
 }, {
-  isClosing?: boolean
+  isClosing?: boolean,
+  timeoutInterval?: any
 }> {
   constructor(props: any) {
     super(props);
     this.state = {
-      isClosing: false
+      isClosing: false,
+      timeoutInterval: null
     };
   }
 
@@ -20,12 +22,22 @@ class Toast extends React.Component<{
     const { timeout } = this.props;
 
     if (timeout) {
-      setTimeout(this.onClose.bind(this), timeout);
+      const timeoutInterval = setTimeout(this.onClose.bind(this), timeout);
+      this.setState({ timeoutInterval });
     }
   }
 
   public onClose() {
     const { onClose } = this.props;
+    const { timeoutInterval } = this.state;
+
+    // Check to see if this notification is already set up to be closed
+    // automatically. if it is and the user is pre-emptively closing it,
+    // then cancel the timer.
+    if (timeoutInterval) {
+      clearInterval(timeoutInterval);
+    }
+
     // set thet state to "isClosing" and then kick off a timer for a half second.
     // this allows us to set a classname on the component to animate it out.
     this.setState({ isClosing: true });
