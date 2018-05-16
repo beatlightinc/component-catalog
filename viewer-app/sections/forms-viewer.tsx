@@ -225,16 +225,29 @@ class FormsView extends React.Component<{}, {
             </div>
           </div>
 
-          <div className="+flex-column">
-            <h3>{'Numberic Inputs'}</h3>
+          <div className="+display-flex">
             <div className="+flex-column">
-              <h4>{'Default'}</h4>
+              <h3>{'Numberic Inputs'}</h3>
+              <div className="+flex-column">
+                <h4>{'Default'}</h4>
+                <NumberInput
+                  placeholder="0"
+                  value={numberInputValue}
+                  handleChange={this.numberInputHandleChange.bind(this)}
+                  max={15}
+                  min={0}
+                />
+              </div>
+            </div>
+            <div className="+flex-column">
+              <h4>{'Disabled'}</h4>
               <NumberInput
                 placeholder="0"
                 value={numberInputValue}
                 handleChange={this.numberInputHandleChange.bind(this)}
                 max={15}
                 min={0}
+                disabled={true}
               />
             </div>
           </div>
