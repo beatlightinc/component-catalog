@@ -39,6 +39,22 @@ class ButtonsView extends React.Component<{}, {}> {
           <h4>{'Large'}</h4>
           <div className="+display-flex"></div>
         </div>
+
+        <div className="+display-flex">
+          <div className="+flex-column">
+            <h3>{'Button Groups'}</h3>
+            <h4>{'Default with Icons'}</h4>
+            <div></div>
+            <h4>{'Icon'}</h4>
+          </div>
+          <div className="+flex-column">
+            <h3>{'Minimal'}</h3>
+            <h4>{'Default'}</h4>
+            <div></div>
+            <h4>{'Default with Icon'}</h4>
+            <div></div>
+          </div>
+        </div>
       </div>
     );
   }
