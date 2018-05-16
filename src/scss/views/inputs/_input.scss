@@ -14,6 +14,10 @@
     color: $color-grey;
   }
 
+  .input-component:focus + .input-icon {
+    color: $color-blue;
+  }
+
   .input-component {
     font-size: $text-smallest;
     padding-left: $base-spacing-quad;
