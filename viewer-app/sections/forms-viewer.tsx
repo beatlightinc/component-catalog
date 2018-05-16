@@ -250,6 +250,16 @@ class FormsView extends React.Component<{}, {
                 disabled={true}
               />
             </div>
+            <div className="+flex-column">
+              <h4>{'With Value'}</h4>
+              <NumberInput
+                placeholder="0"
+                value={10}
+                handleChange={this.numberInputHandleChange.bind(this)}
+                max={15}
+                min={0}
+              />
+            </div>
           </div>
         </div>
       </div>
