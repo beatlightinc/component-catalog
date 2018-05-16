@@ -227,7 +227,7 @@ class FormsView extends React.Component<{}, {
 
           <div className="+display-flex">
             <div className="+flex-column">
-              <h3>{'Numberic Inputs'}</h3>
+              <h3>{'Numeric Inputs'}</h3>
               <div className="+flex-column">
                 <h4>{'Default'}</h4>
                 <NumberInput
