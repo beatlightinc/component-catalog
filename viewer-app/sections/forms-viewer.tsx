@@ -57,32 +57,63 @@ class FormsView extends React.Component<{}, {
   public render() {
     const {
       textareaValue,
-      activeRadioButtonID
+      activeRadioButtonID,
+      numberInputValue
     } = this.state;
 
     return (
       <div className="viewer-app-page">
         <div className="viewer-app-page-title">{'Forms'}</div>
         <div className="viewer-app-content-wrapper">
-          <div className="+flex-column">
-            <h3>{'Text inputs'}</h3>
+          <div className="+display-flex">
             <div className="+flex-column">
-              <h4>{'Round'}</h4>
-              <Input onHandleChange={this.onRoundInputChange.bind(this)}
-                patternString="\b[A-z]{1,3}\b"
-                placeholder="I'm round"
-                value={this.state.roundInputValue}
-                round={true}/>
+              <h3>{'Text inputs'}</h3>
+              <div className="+flex-column">
+                <h4>{'Round'}</h4>
+                <Input onHandleChange={this.onRoundInputChange.bind(this)}
+                  patternString="\b[A-z]{1,3}\b"
+                  placeholder="I'm round"
+                  value={this.state.roundInputValue}
+                  round={true}/>
+              </div>
+              <div className="+flex-column">
+                <h4>{'Default'}</h4>
+                <Input placeholder="I'm default"
+                  patternString="\b[A-z]{1,2}\b"
+                  value={this.state.inputValue}
+                  onHandleChange={this.onInputChange.bind(this)} />
+              </div>
+              <div className="+flex-column">
+                <h4>{'Default with label'}</h4>
+              </div>
             </div>
+
             <div className="+flex-column">
-              <h4>{'Default'}</h4>
-              <Input placeholder="I'm default"
-                patternString="\b[A-z]{1,2}\b"
-                value={this.state.inputValue}
-                onHandleChange={this.onInputChange.bind(this)} />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Default with label'}</h4>
+              <h3>{'States'}</h3>
+              <div className="+flex-column">
+                <h4>{'Default'}</h4>
+                <Input onHandleChange={() => {}} />
+              </div>
+              <div className="+flex-column">
+                <h4>{'Filled'}</h4>
+                <Input onHandleChange={() => {}} value={'I am filled!'} />
+              </div>
+              <div className="+flex-column">
+                <h4>{'Active'}</h4>
+                <Input onHandleChange={() => {}} autoFocus={true} />
+              </div>
+              <div className="+flex-column">
+                <h4>{'Disabled'}</h4>\
+                <Input onHandleChange={() => {}} disabled={true} />
+              </div>
+              <div className="+flex-column">
+                <h4>{'Success'}</h4>
+                <Input onHandleChange={() => {}} validationState={true} />
+              </div>
+              <div className="+flex-column">
+                <h4>{'Error'}</h4>
+                <Input onHandleChange={() => {}} validationState={false} />
+              </div>
             </div>
           </div>
 
@@ -93,34 +124,6 @@ class FormsView extends React.Component<{}, {
               <Textarea value={textareaValue}
                 placeholder="Disabled"
                 onHandleChange={this.onTextareaChange.bind(this)} />
-            </div>
-          </div>
-
-          <div className="+flex-column">
-            <h3>{'States'}</h3>
-            <div className="+flex-column">
-              <h4>{'Default'}</h4>
-              <Input onHandleChange={() => {}} />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Filled'}</h4>
-              <Input onHandleChange={() => {}} value={'I am filled!'} />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Active'}</h4>
-              <Input onHandleChange={() => {}} autoFocus={true} />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Disabled'}</h4>\
-              <Input onHandleChange={() => {}} disabled={true} />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Success'}</h4>
-              <Input onHandleChange={() => {}} validationState={true} />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Error'}</h4>
-              <Input onHandleChange={() => {}} validationState={false} />
             </div>
           </div>
 
@@ -218,6 +221,20 @@ class FormsView extends React.Component<{}, {
                 placeholder="I've got an icon"
                 value={this.state.roundInputValue}
                 iconType="icon-search"
+              />
+            </div>
+          </div>
+
+          <div className="+flex-column">
+            <h3>{'Numberic Inputs'}</h3>
+            <div className="+flex-column">
+              <h4>{'Default'}</h4>
+              <NumberInput
+                placeholder="0"
+                value={numberInputValue}
+                handleChange={this.numberInputHandleChange.bind(this)}
+                max={15}
+                min={0}
               />
             </div>
           </div>
