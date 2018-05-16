@@ -18,6 +18,10 @@
     color: $color-blue;
   }
 
+  .input-component:focus + .number-input-button-wrapper > .number-input-button {
+    color: $color-blue;
+  }
+
   .input-component {
     font-size: $text-smallest;
     padding-left: $base-spacing-quad;
