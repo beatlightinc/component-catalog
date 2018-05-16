@@ -201,9 +201,24 @@ class FormsView extends React.Component<{}, {
             <h3>{'Text Input Groups'}</h3>
             <div className="+flex-column">
               <h4>{'Round with Right Icon'}</h4>
+              <Input
+                onHandleChange={this.onRoundInputChange.bind(this)}
+                patternString="\b[A-z]{1,3}\b"
+                placeholder="I've got an icon"
+                value={this.state.roundInputValue}
+                iconType="icon-search"
+                round={true}
+              />
             </div>
             <div className="+flex-column">
               <h4>{'Default with Right Icon'}</h4>
+              <Input
+                onHandleChange={this.onRoundInputChange.bind(this)}
+                patternString="\b[A-z]{1,3}\b"
+                placeholder="I've got an icon"
+                value={this.state.roundInputValue}
+                iconType="icon-search"
+              />
             </div>
           </div>
         </div>
