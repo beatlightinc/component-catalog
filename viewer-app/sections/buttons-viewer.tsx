@@ -29,6 +29,16 @@ class ButtonsView extends React.Component<{}, {}> {
             <div className="+display-flex"></div>
           </div>
         </div>
+
+        <div className="+flex-column">
+          <h3>{'Round'}</h3>
+          <h4>{'Default'}</h4>
+          <div className="+display-flex"></div>
+          <h4>{'Small'}</h4>
+          <div className="+display-flex"></div>
+          <h4>{'Large'}</h4>
+          <div className="+display-flex"></div>
+        </div>
       </div>
     );
   }
