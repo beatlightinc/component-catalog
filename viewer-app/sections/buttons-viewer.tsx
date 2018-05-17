@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, CircleButton } from '../../src/ts/index';
+import { Button, CircleButton, ButtonGroup } from '../../src/ts/index';
 
 class ButtonsView extends React.Component<{}, {}> {
   public render() {
@@ -129,15 +129,34 @@ class ButtonsView extends React.Component<{}, {}> {
           <div className="+flex-column">
             <h3>{'Button Groups'}</h3>
             <h4>{'Default with Icons'}</h4>
-            <div></div>
+            <ButtonGroup>
+              <Button color="white" disabled={false}>{'Click'}<span className="icon-paperclip" /></Button>
+              <Button color="white" disabled={false}>{'Click2'}<span className="icon-paperclip" /></Button>
+              <Button color="white" disabled={false}>{'Click3'}<span className="icon-paperclip" /></Button>
+              <Button color="white" disabled={false}>{'Click4'}<span className="icon-paperclip" /></Button>
+            </ButtonGroup>
             <h4>{'Icon'}</h4>
+            <Button color="white" disabled={false}><span className="icon-paperclip" /></Button>
+            <Button color="white" disabled={false}><span className="icon-paperclip" /></Button>
+            <Button color="white" disabled={false}><span className="icon-paperclip" /></Button>
+            <Button color="white" disabled={false}><span className="icon-paperclip" /></Button>
           </div>
           <div className="+flex-column">
             <h3>{'Minimal'}</h3>
             <h4>{'Default'}</h4>
-            <div></div>
+            <ButtonGroup>
+              <Button color="minimal" disabled={false}>{'Click'}</Button>
+              <Button color="minimal" disabled={false}>{'Click2'}</Button>
+              <Button color="minimal" disabled={false}>{'Click3'}</Button>
+              <Button color="minimal" disabled={false}>{'Click4'}</Button>
+            </ButtonGroup>
             <h4>{'Default with Icon'}</h4>
-            <div></div>
+            <ButtonGroup>
+              <Button color="minimal" disabled={false}>{'Click'}<span className="icon-paperclip" /></Button>
+              <Button color="minimal" disabled={false}>{'Click2'}<span className="icon-paperclip" /></Button>
+              <Button color="minimal" disabled={false}>{'Click3'}<span className="icon-paperclip" /></Button>
+              <Button color="minimal" disabled={false}>{'Click4'}<span className="icon-paperclip" /></Button>
+            </ButtonGroup>
           </div>
         </div>
       </div>
