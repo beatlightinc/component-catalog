@@ -39,7 +39,8 @@ class Root extends React.Component<{}, {
   sliderValue: number,
   breadCrumbPath: string[],
   modalShowing?: boolean
-  numberInputValue?: number
+  numberInputValue?: number,
+  currentTab?: string
 }> {
 
   constructor(props: any) {
@@ -57,8 +58,15 @@ class Root extends React.Component<{}, {
       sliderValue: 2,
       breadCrumbPath: ['Level 1', 'Level 2', 'Level 3'],
       modalShowing: false,
-      numberInputValue: 0
+      numberInputValue: 0,
+      currentTab: 'inputs'
     };
+  }
+
+  public changeContentTab(tabName: string) {
+    this.setState({
+      currentTab: tabName
+    });
   }
 
   public toggleCheckbox() {
@@ -121,6 +129,15 @@ class Root extends React.Component<{}, {
 
   public numberInputHandleChange(newValue: number) {
     this.setState({ numberInputValue: newValue });
+  }
+
+  public renderHeaderTabs() {
+    return (
+      <div className="root-header-tabs">
+        <span onClick={this.changeContentTab.bind(this, 'inputs')}>{'Inputs'}</span>
+        <span onClick={this.changeContentTab.bind(this, 'buttons')}>{'Buttons'}</span>
+      </div>
+    );
   }
 
   public render() {
