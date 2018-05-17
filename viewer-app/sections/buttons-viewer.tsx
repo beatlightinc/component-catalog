@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from '../../src/ts/index';
+import { Button, CircleButton } from '../../src/ts/index';
 
 class ButtonsView extends React.Component<{}, {}> {
   public render() {
@@ -13,16 +13,16 @@ class ButtonsView extends React.Component<{}, {}> {
 
             <h4>{'Default'}</h4>
             <div className="+display-flex">
-              <Button disabled={true}>{'Click'}</Button>
-              <Button color="grey" disabled={true}>{'Click'}</Button>
-              <Button color="white" disabled={true}>{'Click'}</Button>
+              <Button disabled={false}>{'Click'}</Button>
+              <Button color="grey" disabled={false}>{'Click'}</Button>
+              <Button color="white" disabled={false}>{'Click'}</Button>
             </div>
 
             <h4>{'Medium'}</h4>
             <div className="+display-flex">
-              <Button size="medium" disabled={true}>{'Click'}</Button>
-              <Button size="medium" color="grey" disabled={true}>{'Click'}</Button>
-              <Button size="medium" color="white" disabled={true}>{'Click'}</Button>
+              <Button size="medium" disabled={false}>{'Click'}</Button>
+              <Button size="medium" color="grey" disabled={false}>{'Click'}</Button>
+              <Button size="medium" color="white" disabled={false}>{'Click'}</Button>
             </div>
 
             <h4>{'Default with Icon'}</h4>
@@ -58,22 +58,71 @@ class ButtonsView extends React.Component<{}, {}> {
           <div className="+flex-column">
             <h3>{'States'}</h3>
             <h4>{'Default'}</h4>
-            <div className="+display-flex"></div>
-            <h4>{'Active'}</h4>
-            <div className="+display-flex"></div>
+            <div className="+display-flex">
+              <Button>{'Click'}</Button>
+              <Button color="grey">{'Click'}</Button>
+              <Button color="white">{'Click'}</Button>
+              <Button color="red">{'Click'}</Button>
+            </div>
             <h4>{'Disabled'}</h4>
-            <div className="+display-flex"></div>
+            <div className="+display-flex">
+              <Button disabled={true}>{'Click'}</Button>
+              <Button disabled={true} color="grey">{'Click'}</Button>
+              <Button disabled={true} color="white">{'Click'}</Button>
+              <Button disabled={true} color="red">{'Click'}</Button>
+            </div>
           </div>
         </div>
 
         <div className="+flex-column">
           <h3>{'Round'}</h3>
           <h4>{'Default'}</h4>
-          <div className="+display-flex"></div>
+          <div className="+display-flex">
+            <CircleButton className={'+push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'grey +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'white +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'red +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+          </div>
+
           <h4>{'Small'}</h4>
-          <div className="+display-flex"></div>
+          <div className="+display-flex">
+            <CircleButton className={'small +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'grey small +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'white small +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'red small +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+          </div>
+
           <h4>{'Large'}</h4>
-          <div className="+display-flex"></div>
+          <div className="+display-flex">
+            <CircleButton className={'large +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'grey large +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'white large +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+            <CircleButton className={'red large +push-right'}>
+              <div className="icon-upload-cloud" />
+            </CircleButton>
+          </div>
         </div>
 
         <div className="+display-flex">
