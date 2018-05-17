@@ -40,7 +40,7 @@ class Root extends React.Component<{}, {
   breadCrumbPath: string[],
   modalShowing?: boolean
   numberInputValue?: number,
-  currentTab?: string
+  currentTab?: number
 }> {
 
   constructor(props: any) {
@@ -59,7 +59,7 @@ class Root extends React.Component<{}, {
       breadCrumbPath: ['Level 1', 'Level 2', 'Level 3'],
       modalShowing: false,
       numberInputValue: 0,
-      currentTab: 'inputs'
+      currentTab: 0
     };
   }
 
@@ -132,11 +132,10 @@ class Root extends React.Component<{}, {
   }
 
   public renderHeaderTabs() {
+    const { currentTab } = this.state;
+    const tabNames = ['inputs', 'buttons'];
     return (
-      <div className="root-header-tabs">
-        <span onClick={this.changeContentTab.bind(this, 'inputs')}>{'Inputs'}</span>
-        <span onClick={this.changeContentTab.bind(this, 'buttons')}>{'Buttons'}</span>
-      </div>
+      <ProgressTabs tabNames={tabNames} currentTab={currentTab} tabOnClick={this.changeContentTab.bind(this)} />
     );
   }
 
