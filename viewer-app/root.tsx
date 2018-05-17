@@ -149,72 +149,8 @@ class Root extends React.Component<{}, {
     return (
       <div style={wrapperStyle}>
 
-        <ComponentSection title={'Button Group'}>
-          <ButtonGroup>
-            <Button color="white" disabled={false}>{'Click'}</Button>
-            <Button color="white" disabled={false}>{'Click2'}</Button>
-            <Button color="white" disabled={false}>{'Click3'}</Button>
-            <Button color="white" disabled={false}>{'Click4'}</Button>
-          </ButtonGroup>
-        </ComponentSection>
-
         <ComponentSection title={'Pagination'}>
           <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
-        </ComponentSection>
-
-        <ComponentSection title={'Inputs'} className="+flex-column">
-          <NumberInput
-            placeholder="0"
-            value={numberInputValue}
-            handleChange={this.numberInputHandleChange.bind(this)}
-            max={15}
-            min={0}
-          />
-
-          <Input placeholder="I'm default"
-            patternString="\b[A-z]{1,2}\b"
-            value={this.state.inputValue}
-            onHandleChange={this.onInputChange.bind(this)} />
-
-          <Input onHandleChange={this.onRoundInputChange.bind(this)}
-            patternString="\b[A-z]{1,3}\b"
-            placeholder="I'm round"
-            value={this.state.roundInputValue}
-            round={true}/>
-
-          <Input
-            onHandleChange={this.onRoundInputChange.bind(this)}
-            patternString="\b[A-z]{1,3}\b"
-            placeholder="I've got an icon"
-            value={this.state.roundInputValue}
-            iconType="icon-search"
-          />
-
-          <Input
-            onHandleChange={this.onRoundInputChange.bind(this)}
-            patternString="\b[A-z]{1,3}\b"
-            placeholder="Enter your password..."
-            value={this.state.roundInputValue}
-            iconType="icon-lock"
-          />
-
-            <Input placeholder="I'm disabled" disabled round={true} onHandleChange={() => {}}/>
-        </ComponentSection>
-
-        <ComponentSection title={'Text Areas'}>
-          <Textarea value={textareaValue} placeholder="Disabled" onHandleChange={this.onTextareaChange.bind(this)} />
-        </ComponentSection>
-
-        <ComponentSection title={'Radio Buttons'}>
-          <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
-            activeLabel={activeRadioButtonID}
-            label="One"/>
-          <RadioButton key={2} onClick={this.radioOnClick.bind(this, 'Two')}
-            activeLabel={activeRadioButtonID}
-            label="Two" disabled />
-          <RadioButton key={3} onClick={this.radioOnClick.bind(this, 'Three')}
-            activeLabel={activeRadioButtonID}
-            label="Three" />
         </ComponentSection>
 
         <ComponentSection title={'Progress Dots'}>
@@ -235,51 +171,6 @@ class Root extends React.Component<{}, {
           </Modal>
         </ComponentSection>
 
-        <ComponentSection title={'Buttons'}>
-          <Button color="white" disabled={false}>
-            {'Click'}
-            <span className="icon-arrow-down" />
-          </Button>
-          <br/>
-          <Button disabled={false}>
-            <span className="icon-paperclip" />
-          </Button>
-          <br/>
-          <Button disabled={false}>
-            <span className="icon-send" />
-          </Button>
-          <br/>
-          <Button color="red" disabled={false}>{'Click'}</Button>
-          <br/>
-          <Button color="minimal" disabled={false}>{'Click'}</Button>
-          <br/>
-          <Button color="grey" disabled={true}>{'Click'}</Button>
-          <br/>
-          <Button color="white" disabled={true}>{'Click'}</Button>
-          <br/>
-          <Button disabled={true}>{'Click'}</Button>
-          <br/>
-          <Button color="red" disabled={true}>{'Click'}</Button>
-          <br/>
-          <Button color="minimal" disabled={true}>{'Click'}</Button>
-          <br/>
-          <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
-
-          <div className="+display-flex +middle-align">
-            <CircleButton className={'small +push-right'}>
-              <div className="icon-upload-cloud" />
-            </CircleButton>
-
-            <CircleButton className={'+push-right'}>
-              <div className="icon-upload-cloud" />
-            </CircleButton>
-
-            <CircleButton className={'large'}>
-              <div className="icon-upload-cloud" />
-            </CircleButton>
-          </div>
-        </ComponentSection>
-
         <ComponentSection title={'Audio Player'}>
           {/* <AudioPlayer
             audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
@@ -287,35 +178,6 @@ class Root extends React.Component<{}, {
             pos={this.state.audioPos}
             handlePosChange={this.onAudioPositionChange.bind(this)}
           /> */}
-        </ComponentSection>
-
-        <ComponentSection title={'Icons'}>
-          <div className="icon-upload-cloud" />
-        </ComponentSection>
-
-        <ComponentSection title={'Checkboxes'}>
-          <Checkbox
-            label="test checkbox"
-            onClick={() => {}}
-            checked={false}
-          />
-          <Checkbox
-            label="test checkbox active"
-            onClick={this.toggleCheckbox.bind(this)}
-            checked={checkboxValue}
-          />
-          <Checkbox
-            label="indeterminate test checkbox"
-            onClick={() => {}}
-            checked={false}
-            indeterminate={true}
-          />
-          <Checkbox
-            label="disabled test checkbox"
-            onClick={() => {}}
-            checked={false}
-            disabled={true}
-          />
         </ComponentSection>
 
         <ComponentSection title={'Pills'}>
