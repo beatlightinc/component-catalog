@@ -309,7 +309,7 @@ class Root extends React.Component<{}, {
           <br/>
           <Button color="minimal" disabled={true}>{'Click'}</Button>
           <br/>
-          <FileButton onChange={() => { /**/ }}>{'Upload'}</FileButton>
+          <FileButton inputID={'uploadFileTest'} onChange={() => { /**/ }}>{'Upload'}</FileButton>
 
           <div className="+display-flex +middle-align">
             <CircleButton className={'small +push-right'}>
