@@ -4,7 +4,8 @@ class VariousView extends React.Component<{}, {}> {
   public render() {
     return (
       <div className="viewer-app-section">
-        <div className="page-title">{'Various'}</div>
+        <h2>{'Various'}</h2>
+        
       </div>
     );
   }
