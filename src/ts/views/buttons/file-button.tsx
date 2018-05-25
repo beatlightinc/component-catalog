@@ -3,6 +3,7 @@ import * as classnames from 'classnames';
 import Button from './button';
 
 const FileButton = (props: {
+  inputID: string,
   children?: any,
   accept?: string,
   single?: boolean,
@@ -11,7 +12,16 @@ const FileButton = (props: {
   onChange?: () =>  void,
   onClick?: () => void
 }) => {
-  const { children, accept, single, onChange, onClick, disabled } = props;
+  const {
+    children,
+    accept,
+    single,
+    onChange,
+    onClick,
+    disabled,
+    inputID
+  } = props;
+
   const wrapperClass = classnames('file-button', {
     disabled: props.disabled
   });
@@ -20,11 +30,11 @@ const FileButton = (props: {
   });
 
   return (
-    <label htmlFor="load-file" className={wrapperClass}>
+    <label htmlFor={inputID} className={wrapperClass}>
       <div>{children}</div>
       <input className={inputClass}
         type="file"
-        id="load-file"
+        id={inputID}
         multiple={single ? false : true}
         onChange={disabled ? null : onChange}
         onClick={disabled ? null : onClick}

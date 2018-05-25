@@ -11,6 +11,7 @@ test('<FileButton/> functions work properly', (t) => {
   const onChangeSpy = sinon.spy();
   const wrapper = shallow(
     <FileButton
+      inputID={'uploadFile'}
       onClick={onClickSpy}
       onChange={onChangeSpy}>
       {'test upload'}
@@ -24,7 +25,7 @@ test('<FileButton/> functions work properly', (t) => {
 
 test('<FileButton /> gets proper classnames if disabled', (t) => {
   const wrapper = shallow(
-    <FileButton disabled={true}>
+    <FileButton inputID={'uploadFile'} disabled={true}>
       {'test upload'}
     </FileButton>
   );
@@ -37,6 +38,7 @@ test('<FileButton /> functions do not get called if disabled', (t) => {
   const onClickSpy = sinon.spy();
   const wrapper = shallow(
     <FileButton
+      inputID={'uploadFile'}
       onChange={onChangeSpy}
       onClick={onClickSpy}
       disabled={true}/>

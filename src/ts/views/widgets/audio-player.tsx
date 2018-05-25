@@ -20,6 +20,7 @@ const AudioPlayer = (props: {
   } = props;
 
   const wavesurferOptions = {
+    barWidth: 1
     // http://wavesurfer-js.org/docs/options.html
     // We can style the colours and stuff when we're ready
   };
