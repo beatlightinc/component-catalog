@@ -13,43 +13,43 @@ class ButtonsView extends React.Component<{}, {}> {
 
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Default'}</h4>
             <div className="+display-flex +push-bottom">
-              <Button disabled={false}>{'Click'}</Button>
-              <Button color="grey" disabled={false}>{'Click'}</Button>
-              <Button color="white" disabled={false}>{'Click'}</Button>
+              <Button disabled={false} className="+push-half-right">{'Click'}</Button>
+              <Button color="grey" disabled={false} className="+push-half-right">{'Click'}</Button>
+              <Button color="white" disabled={false} className="+push-half-right">{'Click'}</Button>
             </div>
 
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Medium'}</h4>
             <div className="+display-flex +push-bottom">
-              <Button size="medium" disabled={false}>{'Click'}</Button>
-              <Button size="medium" color="grey" disabled={false}>{'Click'}</Button>
-              <Button size="medium" color="white" disabled={false}>{'Click'}</Button>
+              <Button size="medium" disabled={false} className="+push-half-right">{'Click'}</Button>
+              <Button size="medium" color="grey" disabled={false} className="+push-half-right">{'Click'}</Button>
+              <Button size="medium" color="white" disabled={false} className="+push-half-right">{'Click'}</Button>
             </div>
 
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Default with Icon'}</h4>
             <div className="+display-flex +push-bottom">
-              <Button disabled={false}>
-                {'Click'}
+              <Button disabled={false} className="+push-half-right">
+                <span className="+push-quarter-right">{'Click'}</span>
                 <span className="icon-arrow-down" />
               </Button>
-              <Button color="grey" disabled={false}>
-                {'Click'}
+              <Button color="grey" disabled={false} className="+push-half-right">
+                <span className="+push-quarter-right">{'Click'}</span>
                 <span className="icon-arrow-down" />
               </Button>
-              <Button color="white" disabled={false}>
-                {'Click'}
+              <Button color="white" disabled={false} className="+push-half-right">
+                <span className="+push-quarter-right">{'Click'}</span>
                 <span className="icon-arrow-down" />
               </Button>
             </div>
 
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Icon'}</h4>
             <div className="+display-flex +push-bottom">
-              <Button disabled={false}>
+              <Button disabled={false} className="+push-half-right">
                 <span className="icon-paperclip" />
               </Button>
-              <Button color="grey" disabled={false}>
+              <Button color="grey" disabled={false} className="+push-half-right">
                 <span className="icon-paperclip" />
               </Button>
-              <Button color="white" disabled={false}>
+              <Button color="white" disabled={false} className="+push-half-right">
                 <span className="icon-paperclip" />
               </Button>
             </div>
@@ -59,16 +59,16 @@ class ButtonsView extends React.Component<{}, {}> {
             <h3 className="+push-bottom +black-text +font-weight-bold">{'States'}</h3>
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Default'}</h4>
             <div className="+display-flex +push-bottom">
-              <Button>{'Click'}</Button>
-              <Button color="grey">{'Click'}</Button>
-              <Button color="white">{'Click'}</Button>
+              <Button className="+push-half-right">{'Click'}</Button>
+              <Button color="grey" className="+push-half-right">{'Click'}</Button>
+              <Button color="white" className="+push-half-right">{'Click'}</Button>
               <Button color="red">{'Click'}</Button>
             </div>
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Disabled'}</h4>
             <div className="+display-flex +push-bottom">
-              <Button disabled={true}>{'Click'}</Button>
-              <Button disabled={true} color="grey">{'Click'}</Button>
-              <Button disabled={true} color="white">{'Click'}</Button>
+              <Button disabled={true} className="+push-half-right">{'Click'}</Button>
+              <Button disabled={true} color="grey" className="+push-half-right">{'Click'}</Button>
+              <Button disabled={true} color="white" className="+push-half-right">{'Click'}</Button>
               <Button disabled={true} color="red">{'Click'}</Button>
             </div>
           </div>
@@ -130,10 +130,22 @@ class ButtonsView extends React.Component<{}, {}> {
             <h3 className="+push-bottom +black-text +font-weight-bold">{'Button Groups'}</h3>
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Default with Icons'}</h4>
             <ButtonGroup>
-              <Button color="white" disabled={false}>{'Click'}<span className="icon-paperclip" /></Button>
-              <Button color="white" disabled={false}>{'Click2'}<span className="icon-paperclip" /></Button>
-              <Button color="white" disabled={false}>{'Click3'}<span className="icon-paperclip" /></Button>
-              <Button color="white" disabled={false}>{'Click4'}<span className="icon-paperclip" /></Button>
+              <Button color="white" disabled={false}>
+                <span className="+push-quarter-right">{'Click'}</span>
+                <span className="icon-paperclip" />
+              </Button>
+              <Button color="white" disabled={false}>
+                <span className="+push-quarter-right">{'Click2'}</span>
+                <span className="icon-paperclip" />
+              </Button>
+              <Button color="white" disabled={false}>
+                <span className="+push-quarter-right">{'Click3'}</span>
+                <span className="icon-paperclip" />
+              </Button>
+              <Button color="white" disabled={false}>
+                <span className="+push-quarter-right">{'Click4'}</span>
+                <span className="icon-paperclip" />
+              </Button>
             </ButtonGroup>
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Icon'}</h4>
             <ButtonGroup>
@@ -154,10 +166,22 @@ class ButtonsView extends React.Component<{}, {}> {
             </ButtonGroup>
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Default with Icon'}</h4>
             <ButtonGroup>
-              <Button color="minimal" disabled={false}>{'Click'}<span className="icon-paperclip" /></Button>
-              <Button color="minimal" disabled={false}>{'Click2'}<span className="icon-paperclip" /></Button>
-              <Button color="minimal" disabled={false}>{'Click3'}<span className="icon-paperclip" /></Button>
-              <Button color="minimal" disabled={false}>{'Click4'}<span className="icon-paperclip" /></Button>
+              <Button color="minimal" disabled={false}>
+                <span className="+push-quarter-right">{'Click'}</span>
+                <span className="icon-paperclip" />
+              </Button>
+              <Button color="minimal" disabled={false}>
+                <span className="+push-quarter-right">{'Click2'}</span>
+                <span className="icon-paperclip" />
+              </Button>
+              <Button color="minimal" disabled={false}>
+                <span className="+push-quarter-right">{'Click3'}</span>
+                <span className="icon-paperclip" />
+              </Button>
+              <Button color="minimal" disabled={false}>
+                <span className="+push-quarter-right">{'Click4'}</span>
+                <span className="icon-paperclip" />
+              </Button>
             </ButtonGroup>
           </div>
         </div>
