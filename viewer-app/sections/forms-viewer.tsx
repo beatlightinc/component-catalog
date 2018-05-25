@@ -65,11 +65,11 @@ class FormsView extends React.Component<{}, {
       <div className="viewer-app-page">
         <div className="viewer-app-page-title">{'Forms'}</div>
         <div className="viewer-app-content-wrapper">
-          <div className="+display-flex">
-            <div className="+flex-column">
-              <h3>{'Text inputs'}</h3>
+          <div className="+display-flex +push-bottom">
+            <div className="+flex-column +push-right">
+              <h3 className="+push-bottom">{'Text inputs'}</h3>
               <div className="+flex-column">
-                <h4>{'Round'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Round'}</h4>
                 <Input onHandleChange={this.onRoundInputChange.bind(this)}
                   patternString="\b[A-z]{1,3}\b"
                   placeholder="I'm round"
@@ -77,133 +77,137 @@ class FormsView extends React.Component<{}, {
                   round={true}/>
               </div>
               <div className="+flex-column">
-                <h4>{'Default'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                 <Input placeholder="I'm default"
                   patternString="\b[A-z]{1,2}\b"
                   value={this.state.inputValue}
                   onHandleChange={this.onInputChange.bind(this)} />
               </div>
               <div className="+flex-column">
-                <h4>{'Default with label'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Default with label'}</h4>
               </div>
             </div>
 
             <div className="+flex-column">
-              <h3>{'States'}</h3>
+              <h3 className="+push-bottom">{'States'}</h3>
               <div className="+flex-column">
-                <h4>{'Default'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                 <Input onHandleChange={() => {}} />
               </div>
               <div className="+flex-column">
-                <h4>{'Filled'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Filled'}</h4>
                 <Input onHandleChange={() => {}} value={'I am filled!'} />
               </div>
               <div className="+flex-column">
-                <h4>{'Active'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Active'}</h4>
                 <Input onHandleChange={() => {}} autoFocus={true} />
               </div>
               <div className="+flex-column">
-                <h4>{'Disabled'}</h4>\
+                <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
                 <Input onHandleChange={() => {}} disabled={true} />
               </div>
               <div className="+flex-column">
-                <h4>{'Success'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Success'}</h4>
                 <Input onHandleChange={() => {}} validationState={true} />
               </div>
               <div className="+flex-column">
-                <h4>{'Error'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Error'}</h4>
                 <Input onHandleChange={() => {}} validationState={false} />
               </div>
             </div>
           </div>
 
-          <div className="+flex-column">
-            <h3>{'Text Area'}</h3>
-            <div className="+flex-column">
-              <h4>{'Default'}</h4>
-              <Textarea value={textareaValue}
-                placeholder="Disabled"
-                onHandleChange={this.onTextareaChange.bind(this)} />
+          <div className="+display-flex +push-bottom">
+            <div className="+flex-column +push-bottom +push-right">
+              <h3 className="+push-bottom">{'Text Area'}</h3>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                <Textarea value={textareaValue}
+                  placeholder="Disabled"
+                  onHandleChange={this.onTextareaChange.bind(this)} />
+              </div>
+            </div>
+
+            <div className="+flex-column +push-bottom">
+              <h3 className="+push-bottom">{'Checkboxes'}</h3>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Normal'}</h4>
+                <Checkbox
+                  label="test checkbox"
+                  onClick={() => {}}
+                  checked={false}
+                />
+              </div>
+              <div className="+flex-column">
+                <h4 className="+push-bottom">{'Checked'}</h4>
+                <Checkbox
+                  label="test checkbox active"
+                  onClick={this.toggleCheckbox.bind(this)}
+                  checked={true}
+                />
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Indeterminate'}</h4>
+                <Checkbox
+                  label="indeterminate test checkbox"
+                  onClick={() => {}}
+                  checked={false}
+                  indeterminate={true}
+                />
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
+                <Checkbox
+                  label="disabled test checkbox"
+                  onClick={() => {}}
+                  checked={false}
+                  disabled={true}
+                />
+              </div>
             </div>
           </div>
 
-          <div className="+flex-column">
-            <h3>{'Checkboxes'}</h3>
-            <div className="+flex-column">
-              <h4>{'Normal'}</h4>
-              <Checkbox
-                label="test checkbox"
-                onClick={() => {}}
-                checked={false}
-              />
+          <div className="+display-flex +push-bottom">
+            <div className="+flex-column +push-bottom +push-right">
+              <h3 className="+push-bottom">{'Radio Buttons'}</h3>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Normal'}</h4>
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Checked'}</h4>
+                <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
+                  activeLabel={activeRadioButtonID}
+                  label="One"/>
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
+                <RadioButton key={2} onClick={() => {}}
+                  disabled={true}
+                  label="One"/>
+              </div>
             </div>
-            <div className="+flex-column">
-              <h4>{'Checked'}</h4>
-              <Checkbox
-                label="test checkbox active"
-                onClick={this.toggleCheckbox.bind(this)}
-                checked={true}
-              />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Indeterminate'}</h4>
-              <Checkbox
-                label="indeterminate test checkbox"
-                onClick={() => {}}
-                checked={false}
-                indeterminate={true}
-              />
-            </div>
-            <div className="+flex-column">
-              <h4>{'Disabled'}</h4>
-              <Checkbox
-                label="disabled test checkbox"
-                onClick={() => {}}
-                checked={false}
-                disabled={true}
-              />
+
+            <div className="+flex-column +push-bottom">
+              <h3 className="+push-bottom">{'Toggle Switches'}</h3>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Off'}</h4>
+                <ToggleSwitch onClick={() => {}} active={false}/>
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'On'}</h4>
+                <ToggleSwitch onClick={() => {}} active={true}/>
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
+                <ToggleSwitch onClick={() => {}} disabled={true}/>
+              </div>
             </div>
           </div>
 
-          <div className="+flex-column">
-            <h3>{'Radio Buttons'}</h3>
+          <div className="+flex-column +push-bottom">
+            <h3 className="+push-bottom">{'Text Input Groups'}</h3>
             <div className="+flex-column">
-              <h4>{'Normal'}</h4>
-            </div>
-            <div className="+flex-column">
-              <h4>{'Checked'}</h4>
-              <RadioButton key={1} onClick={this.radioOnClick.bind(this, 'One')}
-                activeLabel={activeRadioButtonID}
-                label="One"/>
-            </div>
-            <div className="+flex-column">
-              <h4>{'Disabled'}</h4>
-              <RadioButton key={2} onClick={() => {}}
-                disabled={true}
-                label="One"/>
-            </div>
-          </div>
-
-          <div className="+flex-column">
-            <h3>{'Toggle Switches'}</h3>
-            <div className="+flex-column">
-              <h4>{'Off'}</h4>
-              <ToggleSwitch onClick={() => {}} active={false}/>
-            </div>
-            <div className="+flex-column">
-              <h4>{'On'}</h4>
-              <ToggleSwitch onClick={() => {}} active={true}/>
-            </div>
-            <div className="+flex-column">
-              <h4>{'Disabled'}</h4>
-              <ToggleSwitch onClick={() => {}} disabled={true}/>
-            </div>
-          </div>
-
-          <div className="+flex-column">
-            <h3>{'Text Input Groups'}</h3>
-            <div className="+flex-column">
-              <h4>{'Round with Right Icon'}</h4>
+              <h4 className="+grey-text +push-bottom">{'Round with Right Icon'}</h4>
               <Input
                 onHandleChange={this.onRoundInputChange.bind(this)}
                 patternString="\b[A-z]{1,3}\b"
@@ -214,7 +218,7 @@ class FormsView extends React.Component<{}, {
               />
             </div>
             <div className="+flex-column">
-              <h4>{'Default with Right Icon'}</h4>
+              <h4 className="+grey-text +push-bottom">{'Default with Right Icon'}</h4>
               <Input
                 onHandleChange={this.onRoundInputChange.bind(this)}
                 patternString="\b[A-z]{1,3}\b"
@@ -225,40 +229,42 @@ class FormsView extends React.Component<{}, {
             </div>
           </div>
 
-          <div className="+display-flex">
-            <div className="+flex-column">
-              <h3>{'Numeric Inputs'}</h3>
+          <div className="+flex-column">
+            <h3 className="+push-bottom">{'Numeric Inputs'}</h3>
+            <div className="+display-flex +push-bottom">
               <div className="+flex-column">
-                <h4>{'Default'}</h4>
+                <div className="+flex-column">
+                  <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                  <NumberInput
+                    placeholder="0"
+                    value={numberInputValue}
+                    handleChange={this.numberInputHandleChange.bind(this)}
+                    max={15}
+                    min={0}
+                  />
+                </div>
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
                 <NumberInput
                   placeholder="0"
                   value={numberInputValue}
                   handleChange={this.numberInputHandleChange.bind(this)}
                   max={15}
                   min={0}
+                  disabled={true}
                 />
               </div>
-            </div>
-            <div className="+flex-column">
-              <h4>{'Disabled'}</h4>
-              <NumberInput
-                placeholder="0"
-                value={numberInputValue}
-                handleChange={this.numberInputHandleChange.bind(this)}
-                max={15}
-                min={0}
-                disabled={true}
-              />
-            </div>
-            <div className="+flex-column">
-              <h4>{'With Value'}</h4>
-              <NumberInput
-                placeholder="0"
-                value={10}
-                handleChange={this.numberInputHandleChange.bind(this)}
-                max={15}
-                min={0}
-              />
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'With Value'}</h4>
+                <NumberInput
+                  placeholder="0"
+                  value={10}
+                  handleChange={this.numberInputHandleChange.bind(this)}
+                  max={15}
+                  min={0}
+                />
+              </div>
             </div>
           </div>
         </div>
