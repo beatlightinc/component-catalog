@@ -2,6 +2,7 @@ import * as React from 'react';
 import ComponentSection from './component-section';
 import ButtonsView from './sections/buttons-viewer';
 import FormsView from './sections/forms-viewer';
+import VariousView from './sections/various-viewer';
 
 import {
   ProgressTabs
@@ -76,6 +77,8 @@ class Root extends React.Component<{}, {
         break;
       case 2:
         mainContent = this.renderVariousView();
+        break;
+      default:
         break;
     }
 
