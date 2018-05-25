@@ -229,7 +229,7 @@ class FormsView extends React.Component<{}, {
           <div className="+flex-column">
             <h3 className="+push-bottom">{'Numeric Inputs'}</h3>
             <div className="+display-flex +push-bottom">
-              <div className="+flex-column">
+              <div className="+flex-column +push-right">
                 <div className="+flex-column">
                   <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                   <NumberInput
@@ -241,7 +241,7 @@ class FormsView extends React.Component<{}, {
                   />
                 </div>
               </div>
-              <div className="+flex-column">
+              <div className="+flex-column +push-right">
                 <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
                 <NumberInput
                   placeholder="0"
@@ -252,7 +252,7 @@ class FormsView extends React.Component<{}, {
                   disabled={true}
                 />
               </div>
-              <div className="+flex-column">
+              <div className="+flex-column +push-right">
                 <h4 className="+grey-text +push-bottom">{'With Value'}</h4>
                 <NumberInput
                   placeholder="0"
