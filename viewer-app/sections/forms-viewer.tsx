@@ -10,7 +10,7 @@ class FormsView extends React.Component<{}, {
   activeRadioButtonID?: string,
   checkboxValue?: boolean
 }> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       numberInputValue: 0,

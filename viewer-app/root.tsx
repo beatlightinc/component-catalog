@@ -1,5 +1,7 @@
 import * as React from 'react';
 import ComponentSection from './component-section';
+import ButtonsView from './sections/buttons-viewer';
+import FormsView from './sections/forms-viewer';
 
 import {
   Pagination,
@@ -39,8 +41,7 @@ class Root extends React.Component<{}, {
   sliderValue: number,
   breadCrumbPath: string[],
   modalShowing?: boolean
-  numberInputValue?: number,
-  currentTab?: number
+  numberInputValue?: number
 }> {
 
   constructor(props: any) {
@@ -58,15 +59,8 @@ class Root extends React.Component<{}, {
       sliderValue: 2,
       breadCrumbPath: ['Level 1', 'Level 2', 'Level 3'],
       modalShowing: false,
-      numberInputValue: 0,
-      currentTab: 0
+      numberInputValue: 0
     };
-  }
-
-  public changeContentTab(tabName: string) {
-    this.setState({
-      currentTab: tabName
-    });
   }
 
   public toggleCheckbox() {
@@ -132,10 +126,26 @@ class Root extends React.Component<{}, {
   }
 
   public renderHeaderTabs() {
-    const { currentTab } = this.state;
+    const { tabStep } = this.state;
     const tabNames = ['inputs', 'buttons'];
     return (
-      <ProgressTabs tabNames={tabNames} currentTab={currentTab} tabOnClick={this.changeContentTab.bind(this)} />
+      <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
+    );
+  }
+
+  public renderButtonsView() {
+    return (
+      <div>
+        <ButtonsView />
+      </div>
+    );
+  }
+
+  public renderFormsView() {
+    return (
+      <div>
+        <FormsView />
+      </div>
     );
   }
 
@@ -156,79 +166,26 @@ class Root extends React.Component<{}, {
       modalShowing
     } = this.state;
 
-    const tabNames = ['tab 1', 'this is getting out of hand', 'tab 3', 'tab 4'];
-
     const testImageStyle = {
       border: '2px solid red'
     };
 
+    let mainContent;
+    if (tabStep === 0) {
+      mainContent = this.renderFormsView();
+    }
+    else if (tabStep === 1) {
+      mainContent = this.renderButtonsView();
+    }
+
     return (
       <div style={wrapperStyle}>
 
-        <ComponentSection title={'Pagination'}>
-          <Pagination activePage={8} totalPages={12} onClick={() => {}}/>
-        </ComponentSection>
-
-        <ComponentSection title={'Progress Dots'}>
-          <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onStepClick.bind(this)} />
-        </ComponentSection>
-
         <ComponentSection title={'Tabs'}>
-          <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
+          {this.renderHeaderTabs()}
         </ComponentSection>
 
-        <ComponentSection title={'Modals'}>
-          <Button color="grey" disabled={false} onClick={this.showModal.bind(this)}>
-            {'Show modal'}
-          </Button>
-
-          <Modal showing={modalShowing} onClose={this.closeModal.bind(this)}>
-            <div>{'im in a modal'}</div>
-          </Modal>
-        </ComponentSection>
-
-        <ComponentSection title={'Audio Player'}>
-          {/* <AudioPlayer
-            audioURL={'http://files.platform.test/audio/1/1c31d054ed9c7420.mp3'}
-            playing={this.state.audioPlaying}
-            pos={this.state.audioPos}
-            handlePosChange={this.onAudioPositionChange.bind(this)}
-          /> */}
-        </ComponentSection>
-
-        <ComponentSection title={'Pills'}>
-          <Pill removeable={true} active={false} type={'blue'} title={'Test Pill'} />
-          <br/>
-          <UserPill removeable={true} type={'blue'} userName={'KevinB'} imgSrc="http://via.placeholder.com/150x150" />
-        </ComponentSection>
-
-        <ComponentSection title={'Slider'}>
-          <Slider
-            min={0}
-            max={100}
-            disabled={false}
-            value={this.state.sliderValue}
-            onChange={this.handleSliderChange.bind(this)}
-          />
-
-          <h5 style={{ color: 'black' }}>{'Disabled'}</h5>
-          <Slider
-            min={0}
-            max={100}
-            disabled={true}
-            value={this.state.sliderValue}
-            onChange={this.handleSliderChange.bind(this)}
-          />
-        </ComponentSection>
-
-        <ComponentSection title={'Breadcrumbs'}>
-          <BreadCrumbs path={this.state.breadCrumbPath} onClick={this.handleBreadCrumbClick.bind(this)}/>
-        </ComponentSection>
-
-        <ComponentSection title={'Images'}>
-          <Image url="http://via.placeholder.com/350x150" style={testImageStyle} height={150} width={350}/>
-          <Avatar imgSrc="http://via.placeholder.com/150x150" height={40} width={40} circle={true} />
-        </ComponentSection>
+        {mainContent}
       </div>
     );
   }
