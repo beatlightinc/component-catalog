@@ -63,10 +63,10 @@ class FormsView extends React.Component<{}, {
 
     return (
       <div className="viewer-app-page">
-        <div className="viewer-app-page-title">{'Forms'}</div>
+        <h2 className="+push-double-bottom">{'Forms'}</h2>
         <div className="viewer-app-content-wrapper">
-          <div className="+display-flex +push-bottom">
-            <div className="+flex-column +push-right">
+          <div className="+display-flex +push-double-bottom">
+            <div className="+flex-column +push-double-right">
               <h3 className="+push-bottom">{'Text inputs'}</h3>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Round'}</h4>
@@ -82,9 +82,6 @@ class FormsView extends React.Component<{}, {
                   patternString="\b[A-z]{1,2}\b"
                   value={this.state.inputValue}
                   onHandleChange={this.onInputChange.bind(this)} />
-              </div>
-              <div className="+flex-column">
-                <h4 className="+grey-text +push-bottom">{'Default with label'}</h4>
               </div>
             </div>
 
@@ -117,13 +114,13 @@ class FormsView extends React.Component<{}, {
             </div>
           </div>
 
-          <div className="+display-flex +push-bottom">
-            <div className="+flex-column +push-bottom +push-right">
+          <div className="+display-flex +push-double-bottom">
+            <div className="+flex-column +push-bottom +push-double-right">
               <h3 className="+push-bottom">{'Text Area'}</h3>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                 <Textarea value={textareaValue}
-                  placeholder="Disabled"
+                  placeholder="Text area"
                   onHandleChange={this.onTextareaChange.bind(this)} />
               </div>
             </div>
@@ -167,8 +164,8 @@ class FormsView extends React.Component<{}, {
             </div>
           </div>
 
-          <div className="+display-flex +push-bottom">
-            <div className="+flex-column +push-bottom +push-right">
+          <div className="+display-flex +push-double-bottom">
+            <div className="+flex-column +push-bottom +push-double-right">
               <h3 className="+push-bottom">{'Radio Buttons'}</h3>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Normal'}</h4>
@@ -204,7 +201,7 @@ class FormsView extends React.Component<{}, {
             </div>
           </div>
 
-          <div className="+flex-column +push-bottom">
+          <div className="+flex-column +push-double-bottom">
             <h3 className="+push-bottom">{'Text Input Groups'}</h3>
             <div className="+flex-column">
               <h4 className="+grey-text +push-bottom">{'Round with Right Icon'}</h4>
