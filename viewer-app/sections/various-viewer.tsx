@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   AudioPlayer,
   ProgressDots,
+  ProgressTabs,
   Pagination,
   Pill,
   UserPill,
@@ -13,7 +14,10 @@ import {
 class VariousView extends React.Component<{}, {
   currentStep?: number,
   currentPage?: number,
-  breadCrumbIndex?: number
+  breadcrumbPath?: string[],
+  unchangingPath?: string[],
+  currentTab?: number,
+  sliderValue?: number
 }> {
 
   constructor(props: any) {
@@ -21,7 +25,10 @@ class VariousView extends React.Component<{}, {
     this.state = {
       currentStep: 3,
       currentPage: 6,
-      breadCrumbIndex: 2
+      breadcrumbPath: ['Level 1', 'Level 2', 'Level 3', 'Level 4'],
+      unchangingPath: ['Level 1', 'Level 2', 'Level 3', 'Level 4'],
+      currentTab: 0,
+      sliderValue: 2
     };
   }
 
@@ -38,8 +45,21 @@ class VariousView extends React.Component<{}, {
   }
 
   public onBreadcrumbClick(i: number) {
+    const { breadcrumbPath } = this.state;
     this.setState({
-      breadCrumbIndex: i
+      breadcrumbPath: breadcrumbPath.slice(0, i + 1)
+    });
+  }
+
+  public onTabClick(tabIndex: number) {
+    this.setState({
+      currentTab: tabIndex
+    });
+  }
+
+  public onChangeSlider(i: number) {
+    this.setState({
+      sliderValue: i
     });
   }
 
@@ -47,10 +67,14 @@ class VariousView extends React.Component<{}, {
 
     const {
       currentStep,
-      currentPage
+      currentPage,
+      breadcrumbPath,
+      unchangingPath,
+      currentTab,
+      sliderValue
     } = this.state;
 
-    const breadcrumbPath = ['Level 1', 'Level 2', 'Level 3', 'Level 4'];
+    const tabNames = ['Tab One', 'Tab Two', 'Tab Three', 'Tab Four'];
 
     return (
       <div className="viewer-app-section">
@@ -70,9 +94,11 @@ class VariousView extends React.Component<{}, {
               </div>
               <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Breadcrumbs'}</h4>
+                <BreadCrumbs path={unchangingPath} />
               </div>
               <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Tabs'}</h4>
+                <ProgressTabs tabNames={tabNames} />
               </div>
             </div>
 
@@ -84,25 +110,39 @@ class VariousView extends React.Component<{}, {
                   <ProgressDots totalSteps={5} />
                 </div>
                 <div className="+flex-column +push-bottom">
-                  <h4 className="+grey-text +push-bottom">{'Active'}</h4>
+                  <h4 className="+grey-text +push-bottom">{'Active (Clickable)'}</h4>
                   <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onDotClick.bind(this)}/>
                 </div>
               </div>
               <div className="+display-flex">
-                <div className="+flex-column +push-bottom">
+                <div className="+flex-column +push-bottom +push-double-right">
                   <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                   <Pagination activePage={6} totalPages={12} onClick={() => {}}/>
                 </div>
                 <div className="+flex-column +push-bottom">
-                  <h4 className="+grey-text +push-bottom">{'Clickable'}</h4>
+                  <h4 className="+grey-text +push-bottom">{'Active (Clickable)'}</h4>
                   <Pagination activePage={currentPage} totalPages={12} onClick={this.onPageClick.bind(this)}/>
                 </div>
               </div>
-              <div className="+flex-column +push-bottom">
-                <h4 className="+grey-text +push-bottom">{'Breadcrumbs'}</h4>
+              <div className="+display-flex">
+                <div className="+flex-column +push-bottom +push-double-right">
+                  <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                  <BreadCrumbs path={unchangingPath} />
+                </div>
+                <div className="+flex-column +push-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Active (Clickable)'}</h4>
+                  <BreadCrumbs path={breadcrumbPath} onClick={this.onBreadcrumbClick.bind(this)}/>
+                </div>
               </div>
-              <div className="+flex-column +push-bottom">
-                <h4 className="+grey-text +push-bottom">{'Tabs'}</h4>
+              <div className="+display-flex">
+                <div className="+flex-column +push-bottom +push-double-right">
+                  <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                  <ProgressTabs tabNames={tabNames} currentTab={2} />
+                </div>
+                <div className="+flex-column +push-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Active (Clickable)'}</h4>
+                  <ProgressTabs tabNames={tabNames} currentTab={currentTab} tabOnClick={this.onTabClick.bind(this)} />
+                </div>
               </div>
             </div>
           </div>
@@ -112,12 +152,27 @@ class VariousView extends React.Component<{}, {
               <h3 className="+push-double-bottom">{'Controls'}</h3>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Slider'}</h4>
+                <Slider
+                  min={0}
+                  max={100}
+                  disabled={false}
+                  value={sliderValue}
+                  onChange={() => {}}
+                />
               </div>
             </div>
             <div className="+flex-column">
               <h3 className="+push-double-bottom">{'States'}</h3>
               <div className="+display-flex">
-                {/* Slider states go here! */}
+                <div className="+flex-column +push-double-right +push-double-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                </div>
+                <div className="+flex-column +push-double-right +push-double-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Active (Clickable)'}</h4>
+                </div>
+                <div className="+flex-column +push-double-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
+                </div>
               </div>
             </div>
           </div>
