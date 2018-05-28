@@ -3,7 +3,7 @@ import * as classnames from 'classnames';
 
 const BreadCrumbs = ({ path, onClick }: {
   path: string[],
-  onClick: (clickedCrumbIndex: number) => void
+  onClick?: (clickedCrumbIndex: number) => void
 }) => {
 
   const crumbs = path.map((label, i) => {
@@ -11,7 +11,7 @@ const BreadCrumbs = ({ path, onClick }: {
       <div key={i} className="breadcrumb">
         <span
           className={classnames('label', { 'is-active': i === path.length - 1 })}
-          onClick={onClick.bind(null, i)}
+          onClick={onClick ? onClick.bind(null, i) : null}
         >
           {label}
         </span>

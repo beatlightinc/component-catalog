@@ -12,14 +12,16 @@ import {
 
 class VariousView extends React.Component<{}, {
   currentStep?: number,
-  currentPage?: number
+  currentPage?: number,
+  breadCrumbIndex?: number
 }> {
 
   constructor(props: any) {
     super(props);
     this.state = {
       currentStep: 3,
-      currentPage: 6
+      currentPage: 6,
+      breadCrumbIndex: 2
     };
   }
 
@@ -35,12 +37,20 @@ class VariousView extends React.Component<{}, {
     });
   }
 
+  public onBreadcrumbClick(i: number) {
+    this.setState({
+      breadCrumbIndex: i
+    });
+  }
+
   public render() {
 
     const {
       currentStep,
       currentPage
     } = this.state;
+
+    const breadcrumbPath = ['Level 1', 'Level 2', 'Level 3', 'Level 4'];
 
     return (
       <div className="viewer-app-section">
