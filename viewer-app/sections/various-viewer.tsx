@@ -12,12 +12,14 @@ import {
 
 class VariousView extends React.Component<{}, {
   currentStep?: number,
+  currentPage?: number
 }> {
 
   constructor(props: any) {
     super(props);
     this.state = {
-      currentStep: 3
+      currentStep: 3,
+      currentPage: 6
     };
   }
 
@@ -27,10 +29,17 @@ class VariousView extends React.Component<{}, {
     });
   }
 
+  public onPageClick(i: number) {
+    this.setState({
+      currentPage: i
+    });
+  }
+
   public render() {
 
     const {
-      currentStep
+      currentStep,
+      currentPage
     } = this.state;
 
     return (
@@ -41,40 +50,48 @@ class VariousView extends React.Component<{}, {
           <div className="+display-flex +push-double-bottom">
             <div className="+flex-column +push-double-right">
               <h3 className="+push-double-bottom">{'Navigation'}</h3>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Steps'}</h4>
-                <ProgressDots totalSteps={5} />
+                <ProgressDots totalSteps={5} currentStep={2} />
               </div>
-              <div className="+flex-column">
-                <h4 className="+grey-text +push-bottom">{'Pages'}</h4>
+              <div className="+flex-column +push-bottom">
+                <h4 className="+grey-text +push-bottom">{'Pagination'}</h4>
+                <Pagination activePage={6} totalPages={12} onClick={() => {}}/>
               </div>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Breadcrumbs'}</h4>
               </div>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Tabs'}</h4>
               </div>
             </div>
 
-            <div className="+flex-column">
+            <div className="+flex-column +push-bottom">
               <h3 className="+push-double-bottom">{'States'}</h3>
               <div className="+display-flex">
-                <div className="+flex-column +push-double-right">
+                <div className="+flex-column +push-bottom +push-double-right">
                   <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                   <ProgressDots totalSteps={5} />
                 </div>
-                <div className="+flex-column">
+                <div className="+flex-column +push-bottom">
                   <h4 className="+grey-text +push-bottom">{'Active'}</h4>
                   <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onDotClick.bind(this)}/>
                 </div>
               </div>
-              <div className="+flex-column">
-                <h4 className="+grey-text +push-bottom">{'Pages'}</h4>
+              <div className="+display-flex">
+                <div className="+flex-column +push-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                  <Pagination activePage={6} totalPages={12} onClick={() => {}}/>
+                </div>
+                <div className="+flex-column +push-bottom">
+                  <h4 className="+grey-text +push-bottom">{'Clickable'}</h4>
+                  <Pagination activePage={currentPage} totalPages={12} onClick={this.onPageClick.bind(this)}/>
+                </div>
               </div>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Breadcrumbs'}</h4>
               </div>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Tabs'}</h4>
               </div>
             </div>
