@@ -65,6 +65,7 @@ class FormsView extends React.Component<{}, {
       <div className="viewer-app-page">
         <h2 className="+push-double-bottom">{'Forms'}</h2>
         <div className="viewer-app-content-wrapper">
+
           <div className="+display-flex +push-double-bottom">
             <div className="+flex-column +push-double-right">
               <h3 className="+push-bottom">{'Text inputs'}</h3>
