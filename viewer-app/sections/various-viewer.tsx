@@ -166,12 +166,33 @@ class VariousView extends React.Component<{}, {
               <div className="+display-flex">
                 <div className="+flex-column +push-double-right +push-double-bottom">
                   <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                  <Slider
+                    min={0}
+                    max={100}
+                    disabled={false}
+                    value={sliderValue}
+                    onChange={() => {}}
+                  />
                 </div>
                 <div className="+flex-column +push-double-right +push-double-bottom">
                   <h4 className="+grey-text +push-bottom">{'Active (Clickable)'}</h4>
+                  <Slider
+                    min={0}
+                    max={100}
+                    disabled={false}
+                    value={sliderValue}
+                    onChange={this.onChangeSlider.bind(this)}
+                  />
                 </div>
                 <div className="+flex-column +push-double-bottom">
                   <h4 className="+grey-text +push-bottom">{'Disabled'}</h4>
+                  <Slider
+                    min={0}
+                    max={100}
+                    disabled={true}
+                    value={sliderValue}
+                    onChange={() => {}}
+                  />
                 </div>
               </div>
             </div>
