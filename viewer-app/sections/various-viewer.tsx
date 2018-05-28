@@ -60,11 +60,11 @@ class VariousView extends React.Component<{}, {
               <h3 className="+push-double-bottom">{'States'}</h3>
               <div className="+display-flex">
                 <div className="+flex-column +push-double-right">
-                  <h4 className="+grey-text">{'Default'}</h4>
+                  <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                   <ProgressDots totalSteps={5} />
                 </div>
                 <div className="+flex-column">
-                  <h4 className="+grey-text">{'Active'}</h4>
+                  <h4 className="+grey-text +push-bottom">{'Active'}</h4>
                   <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onDotClick.bind(this)}/>
                 </div>
               </div>

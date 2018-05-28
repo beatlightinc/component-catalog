@@ -49,7 +49,9 @@ class Root extends React.Component<{}, {
 
   public renderVariousView() {
     return (
-      <div></div>
+      <div>
+        <VariousView />
+      </div>
     );
   }
 
