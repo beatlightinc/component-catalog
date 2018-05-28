@@ -137,7 +137,7 @@ class FormsView extends React.Component<{}, {
                 />
               </div>
               <div className="+flex-column">
-                <h4 className="+push-bottom">{'Checked'}</h4>
+                <h4 className="+grey-text +push-bottom">{'Checked'}</h4>
                 <Checkbox
                   label="test checkbox active"
                   onClick={this.toggleCheckbox.bind(this)}

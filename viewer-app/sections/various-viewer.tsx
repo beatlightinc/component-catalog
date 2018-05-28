@@ -17,8 +17,14 @@ class VariousView extends React.Component<{}, {
   constructor(props: any) {
     super(props);
     this.state = {
-      currentStep: 0
+      currentStep: 3
     };
+  }
+
+  public onDotClick(i: number) {
+    this.setState({
+      currentStep: i
+    });
   }
 
   public render() {
@@ -37,6 +43,7 @@ class VariousView extends React.Component<{}, {
               <h3 className="+push-double-bottom">{'Navigation'}</h3>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Steps'}</h4>
+                <ProgressDots totalSteps={5} />
               </div>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Pages'}</h4>
@@ -51,8 +58,15 @@ class VariousView extends React.Component<{}, {
 
             <div className="+flex-column">
               <h3 className="+push-double-bottom">{'States'}</h3>
-              <div className="+flex-column">
-                <h4 className="+grey-text +push-bottom">{'Steps'}</h4>
+              <div className="+display-flex">
+                <div className="+flex-column +push-double-right">
+                  <h4 className="+grey-text">{'Default'}</h4>
+                  <ProgressDots totalSteps={5} />
+                </div>
+                <div className="+flex-column">
+                  <h4 className="+grey-text">{'Active'}</h4>
+                  <ProgressDots totalSteps={5} currentStep={currentStep} stepOnClick={this.onDotClick.bind(this)}/>
+                </div>
               </div>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Pages'}</h4>
@@ -85,14 +99,23 @@ class VariousView extends React.Component<{}, {
             <div className="+flex-column +push-double-right">
               <h3 className="+push-double-bottom">{'Pills'}</h3>
               <div className="+flex-column">
-                <h4 className="+grey-text +push-bottom"></h4>
+                <h4 className="+grey-text +push-bottom">{'Tags'}</h4>
               </div>
               <div className="+flex-column">
-                <h4 className="+grey-text +push-bottom"></h4>
+                <h4 className="+grey-text +push-bottom">{'User-Pill'}</h4>
               </div>
             </div>
+
             <div className="+flex-column">
               <h3 className="+push-double-bottom">{'States'}</h3>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Default'}</h4>
+                <div className="+display-flex"></div>
+              </div>
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Removeable'}</h4>
+                <div className="+display-flex"></div>
+              </div>
             </div>
           </div>
         </div>
