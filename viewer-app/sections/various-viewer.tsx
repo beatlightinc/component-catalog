@@ -201,7 +201,7 @@ class VariousView extends React.Component<{}, {
           <div className="+display-flex">
             <div className="+flex-column +push-double-right">
               <h3 className="+push-double-bottom">{'Pills'}</h3>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Tags'}</h4>
                 <Pill removeable={false} active={false} type={'blue'} title={'Test Pill'} />
               </div>
@@ -218,7 +218,7 @@ class VariousView extends React.Component<{}, {
 
             <div className="+flex-column">
               <h3 className="+push-double-bottom">{'States'}</h3>
-              <div className="+flex-column">
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                 <div className="+display-flex">
                   <Pill removeable={false} active={false} type={'blue'} title={'Test Pill'} className="+push-right" />
@@ -232,13 +232,30 @@ class VariousView extends React.Component<{}, {
                   </div>
                 </div>
               </div>
-              <div className="+flex-column">
+
+              <div className="+flex-column +push-bottom">
                 <h4 className="+grey-text +push-bottom">{'Removeable'}</h4>
                 <div className="+display-flex">
                   <Pill removeable={true} active={false} type={'blue'} title={'Test Pill'} className="+push-right" />
                   <div>
                     <UserPill
                       removeable={true}
+                      type={'blue'}
+                      userName={'KevinB'}
+                      imgSrc="http://via.placeholder.com/150x150"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="+flex-column +push-bottom">
+                <h4 className="+grey-text +push-bottom">{'Active'}</h4>
+                <div className="+display-flex">
+                  <Pill removeable={false} active={true} type={'blue'} title={'Test Pill'} className="+push-right" />
+                  <div>
+                    <UserPill
+                      active={true}
+                      removeable={false}
                       type={'blue'}
                       userName={'KevinB'}
                       imgSrc="http://via.placeholder.com/150x150"
