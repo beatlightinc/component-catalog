@@ -78,7 +78,7 @@ class VariousView extends React.Component<{}, {
 
     return (
       <div className="viewer-app-section">
-        <h2>{'Various'}</h2>
+        <h2 className="+push-double-bottom">{'Various'}</h2>
 
         <div>
           <div className="+display-flex +push-double-bottom">
