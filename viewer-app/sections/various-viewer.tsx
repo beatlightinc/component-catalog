@@ -222,24 +222,28 @@ class VariousView extends React.Component<{}, {
                 <h4 className="+grey-text +push-bottom">{'Default'}</h4>
                 <div className="+display-flex">
                   <Pill removeable={false} active={false} type={'blue'} title={'Test Pill'} className="+push-right" />
-                  <UserPill
-                    removeable={false}
-                    type={'blue'}
-                    userName={'KevinB'}
-                    imgSrc="http://via.placeholder.com/150x150"
-                  />
+                  <div>
+                    <UserPill
+                      removeable={false}
+                      type={'blue'}
+                      userName={'KevinB'}
+                      imgSrc="http://via.placeholder.com/150x150"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Removeable'}</h4>
                 <div className="+display-flex">
                   <Pill removeable={true} active={false} type={'blue'} title={'Test Pill'} className="+push-right" />
-                  <UserPill
-                    removeable={true}
-                    type={'blue'}
-                    userName={'KevinB'}
-                    imgSrc="http://via.placeholder.com/150x150"
-                  />
+                  <div>
+                    <UserPill
+                      removeable={true}
+                      type={'blue'}
+                      userName={'KevinB'}
+                      imgSrc="http://via.placeholder.com/150x150"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
