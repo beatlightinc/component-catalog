@@ -7,6 +7,7 @@ export { default as Input } from './views/inputs/input';
 export { default as Textarea } from './views/inputs/textarea';
 export { default as Checkbox } from './views/inputs/checkbox';
 export { default as RadioButton } from './views/inputs/radio-button';
+export { default as Dropdown } from './views/inputs/dropdown';
 
 // Labels
 export { default as Label } from './views/labels/label';
