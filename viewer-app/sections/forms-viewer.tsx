@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input, Textarea, ToggleSwitch, RadioButton, Checkbox, NumberInput } from '../../src/ts/index';
+import { Input, Textarea, ToggleSwitch, RadioButton, Checkbox, NumberInput, Dropdown } from '../../src/ts/index';
 
 class FormsView extends React.Component<{}, {
   numberInputValue?: number,
@@ -54,6 +54,10 @@ class FormsView extends React.Component<{}, {
     this.setState({ numberInputValue: newValue });
   }
 
+  public onDropdownSelect(e: any) {
+    // debugger;
+  }
+
   public render() {
     const {
       textareaValue,
@@ -69,6 +73,15 @@ class FormsView extends React.Component<{}, {
           <div className="+display-flex +push-double-bottom">
             <div className="+flex-column +push-double-right">
               <h3 className="+push-bottom">{'Text inputs'}</h3>
+
+              <div className="+flex-column">
+                <h4 className="+grey-text +push-bottom">{'Dropdown'}</h4>
+                <Dropdown
+                  options={['Bounce', 'Stem']}
+                  onOptionSelected={this.onDropdownSelect.bind(this)}
+                />
+              </div>
+
               <div className="+flex-column">
                 <h4 className="+grey-text +push-bottom">{'Round'}</h4>
                 <Input onHandleChange={this.onRoundInputChange.bind(this)}
