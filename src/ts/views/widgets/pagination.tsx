@@ -5,7 +5,7 @@ import * as classnames from 'classnames';
 const Pagination = (props: {
   activePage: number,
   totalPages: number,
-  onClick: () => void
+  onClick: (pageNumber: number) => void
 }) => {
     const { activePage, totalPages, onClick } = props;
     const breakElement = <div className="icon-more-horizontal pagination-break"/>;
@@ -20,7 +20,7 @@ const Pagination = (props: {
       });
       allPageElements.push(
         <PageButton
-          onClick={onClick}
+          onClick={() => onClick(i)}
           pageNumber={i}
           className={pageClass}
           key={i} />
@@ -92,10 +92,10 @@ const Pagination = (props: {
     return (
       <div className="pagination-container">
         {activePage === 0 ? null
-          : <div className="pagination-button icon-chevron-left" onClick={onClick} />}
+          : <div className="pagination-button icon-chevron-left" onClick={() => onClick(activePage - 1)} />}
         {pageRange}
         {activePage === totalPages - 1 ? null
-          : <div className="pagination-button icon-chevron-right" onClick={onClick} />}
+          : <div className="pagination-button icon-chevron-right" onClick={() => onClick(activePage + 1)} />}
       </div>
   );
 };

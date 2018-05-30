@@ -2,6 +2,7 @@ import * as React from 'react';
 import ComponentSection from './component-section';
 import ButtonsView from './sections/buttons-viewer';
 import FormsView from './sections/forms-viewer';
+import VariousView from './sections/various-viewer';
 
 import {
   ProgressTabs
@@ -24,7 +25,7 @@ class Root extends React.Component<{}, {
 
   public renderHeaderTabs() {
     const { tabStep } = this.state;
-    const tabNames = ['forms', 'buttons'];
+    const tabNames = ['forms', 'buttons', 'various'];
     return (
       <ProgressTabs tabNames={tabNames} currentTab={tabStep} tabOnClick={this.onTabClick.bind(this)} />
     );
@@ -46,6 +47,14 @@ class Root extends React.Component<{}, {
     );
   }
 
+  public renderVariousView() {
+    return (
+      <div>
+        <VariousView />
+      </div>
+    );
+  }
+
   public render() {
     const wrapperStyle = {
       padding: '15px',
@@ -61,11 +70,18 @@ class Root extends React.Component<{}, {
     };
 
     let mainContent;
-    if (tabStep === 0) {
-      mainContent = this.renderFormsView();
-    }
-    else if (tabStep === 1) {
-      mainContent = this.renderButtonsView();
+    switch (tabStep) {
+      case 0:
+        mainContent = this.renderFormsView();
+        break;
+      case 1:
+        mainContent = this.renderButtonsView();
+        break;
+      case 2:
+        mainContent = this.renderVariousView();
+        break;
+      default:
+        break;
     }
 
     return (

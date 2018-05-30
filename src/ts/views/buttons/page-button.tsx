@@ -3,7 +3,7 @@ import * as classnames from 'classnames';
 
 const PageButton = (props: {
   pageNumber: number,
-  onClick?: () => void,
+  onClick?: (pageNumber: number) => void,
   disabled?: boolean,
   className?: string
 }) => {
@@ -13,7 +13,7 @@ const PageButton = (props: {
     });
 
     return (
-        <div onClick={disabled ? null : onClick}
+        <div onClick={disabled ? null : () => onClick(pageNumber)}
           className={pageButtonClass}>
           {pageNumber}
         </div>
