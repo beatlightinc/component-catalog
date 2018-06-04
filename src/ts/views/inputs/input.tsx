@@ -16,7 +16,7 @@ const Input = (props: {
   round?: boolean,
 
   onSubmission?: () => void,
-  onHandleChange: () => void
+  onHandleChange: (evt: any) => void
 }) => {
 
   const {

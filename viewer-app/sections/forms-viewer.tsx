@@ -80,6 +80,14 @@ class FormsView extends React.Component<{}, {
                   options={['Bounce', 'Stem']}
                   onOptionSelected={this.onDropdownSelect.bind(this)}
                 />
+                <Dropdown
+                  options={['Tomato', 'Toemahto']}
+                  onOptionSelected={this.onDropdownSelect.bind(this)}
+                />
+                <Dropdown
+                  options={['This', 'That']}
+                  onOptionSelected={this.onDropdownSelect.bind(this)}
+                />
               </div>
 
               <div className="+flex-column">

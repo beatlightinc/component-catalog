@@ -15,16 +15,10 @@ class Dropdown extends React.Component<{
   constructor(props: any) {
     super(props);
     this.state = {
-      searchText: props.value,
+      searchText: '',
       results: props.options,
       isCollapsed: true
     };
-  }
-
-  public componentWillReceiveProps(nextProps: any) {
-    if (nextProps.value !== this.state.searchText) {
-      this.setState({ searchText: nextProps.value });
-    }
   }
 
   public onTextUpdate(evt: any) {
@@ -60,11 +54,6 @@ class Dropdown extends React.Component<{
     if (onOptionSelected) {
       onOptionSelected(option);
     }
-  }
-
-  public onClick() {
-    const elem: any = this.refs['dropdown-input'];
-    elem.focus();
   }
 
   public onFocus() {
@@ -125,16 +114,14 @@ class Dropdown extends React.Component<{
     return (
       <div className={classnames('dropdown-wrapper', wrapperClassName)}>
         <input
-          ref="dropdown-input"
           className={classnames('dropdown', { 'is-collapsed': isCollapsed })}
           value={searchText}
           placeholder="Dropdown ..."
-          onClick={this.onClick.bind(this)}
           onChange={this.onTextUpdate.bind(this)}
           onFocus={this.onFocus.bind(this)}
           onBlur={this.onBlur.bind(this)}
         />
-        <div className="dropdown-down-carat" onClick={this.onClick.bind(this)}>
+        <div className="dropdown-down-carat">
           <div className="icon-chevron-down">
           </div>
         </div>

@@ -12,8 +12,8 @@
   }
 
   .modal {
-    width: 456px;
-    height: 360px;
+    min-width: 456px;
+    min-height: 360px;
     position: fixed;
     left: 50%;
     top: 50%;
