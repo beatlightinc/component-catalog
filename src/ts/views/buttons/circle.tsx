@@ -3,7 +3,7 @@ import Button from './button';
 import * as classnames from 'classnames';
 
 const CircleButton = (props: {
-  children: any,
+  children?: any | undefined,
   className: string
 }) => {
   return (
