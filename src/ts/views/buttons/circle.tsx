@@ -4,10 +4,11 @@ import * as classnames from 'classnames';
 
 const CircleButton = (props: {
   children?: any | undefined,
-  className: string
+  className: string,
+  onClick?: () => void
 }) => {
   return (
-    <Button {...props} className={classnames('circle', props.className)}>
+    <Button {...props} onClick={props.onClick} className={classnames('circle', props.className)}>
       {props.children}
     </Button>
   );
