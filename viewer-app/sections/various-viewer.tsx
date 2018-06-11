@@ -17,7 +17,9 @@ class VariousView extends React.Component<{}, {
   breadcrumbPath?: string[],
   unchangingPath?: string[],
   currentTab?: number,
-  sliderValue?: number
+  sliderValue?: number,
+  audioPlaying?: boolean,
+  audioPos?: number
 }> {
 
   constructor(props: any) {
@@ -28,8 +30,14 @@ class VariousView extends React.Component<{}, {
       breadcrumbPath: ['Level 1', 'Level 2', 'Level 3', 'Level 4'],
       unchangingPath: ['Level 1', 'Level 2', 'Level 3', 'Level 4'],
       currentTab: 0,
-      sliderValue: 2
+      sliderValue: 2,
+      audioPlaying: true,
+      audioPos: 0
     };
+  }
+
+  public onAudioPositionChange(audioPos: number) {
+    this.setState({ audioPos });
   }
 
   public onDotClick(i: number) {
@@ -79,6 +87,12 @@ class VariousView extends React.Component<{}, {
     return (
       <div className="viewer-app-section">
         <h2 className="+push-double-bottom">{'Various'}</h2>
+
+        <AudioPlayer
+          audioURL={'files.platform.test/2/1d381ae9b3b89698.mp3'}
+          waveformSvg={'something'}
+          playing={false}
+        />
 
         <div>
           <div className="+display-flex +push-double-bottom">
