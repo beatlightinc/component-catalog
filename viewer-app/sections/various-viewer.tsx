@@ -79,7 +79,9 @@ class VariousView extends React.Component<{}, {
       breadcrumbPath,
       unchangingPath,
       currentTab,
-      sliderValue
+      sliderValue,
+      audioPos,
+      audioPlaying
     } = this.state;
 
     const tabNames = ['Tab One', 'Tab Two', 'Tab Three', 'Tab Four'];
@@ -91,7 +93,9 @@ class VariousView extends React.Component<{}, {
         <AudioPlayer
           audioURL={'files.platform.test/2/1d381ae9b3b89698.mp3'}
           waveformSvg={'something'}
-          playing={false}
+          playing={audioPlaying}
+          pos={audioPos}
+          handlePosChange={this.onAudioPositionChange.bind(this)}
         />
 
         <div>
