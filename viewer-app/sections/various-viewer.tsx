@@ -1,4 +1,5 @@
 import * as React from 'react';
+import svgString from './test-svg';
 import {
   AudioPlayer,
   ProgressDots,
@@ -92,7 +93,7 @@ class VariousView extends React.Component<{}, {
 
         <AudioPlayer
           audioURL={'files.platform.test/2/1d381ae9b3b89698.mp3'}
-          waveformSvg={'something'}
+          waveformSvg={}
           playing={audioPlaying}
           pos={audioPos}
           handlePosChange={this.onAudioPositionChange.bind(this)}
