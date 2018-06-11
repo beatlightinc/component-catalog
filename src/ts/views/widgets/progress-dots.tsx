@@ -4,13 +4,17 @@ import * as classnames from 'classnames';
 const ProgressDots = (props: {
   currentStep?: number,
   totalSteps: number,
+  className?: string,
+  style?: any
 
   stepOnClick?: (step: number) => void;
 }) => {
   const {
     currentStep,
     totalSteps,
-    stepOnClick
+    stepOnClick,
+    className,
+    style
   } = props;
 
   const dotElements = [];
@@ -25,9 +29,12 @@ const ProgressDots = (props: {
         className={dotClass}
         key={i}
         onClick={i === currentStep ? null : () => stepOnClick(i)}
+        style={style}
       />
     );
   }
+
+  const containerClass = classnames('progress-dots-wrapper', className);
 
   return (
     <div className="progress-dots-wrapper">

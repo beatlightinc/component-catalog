@@ -8,15 +8,19 @@ const Pill = (props: {
   children?: any,
   onClick?: () => void,
   active?: boolean,
-  className?: string
+  className?: string,
+  style?: any
 }) => {
-  const { type, removeable, children, onClick, className, active, title } = props;
+  const { type, removeable, children, onClick, className, active, title, style } = props;
 
   const pillWrapperClass = classnames('pill', type, className, { removeable, active });
   const removeIcon = <span className="icon-x"></span>;
 
   return (
-    <div className={pillWrapperClass} onClick={onClick ? onClick : null}>
+    <div className={pillWrapperClass}
+      onClick={onClick ? onClick : null}
+      style={style}
+    >
       {children}
       <span className="pill-title">{title}</span>
       { removeable ? <div className="icon-section">{removeIcon}</div> : null }
