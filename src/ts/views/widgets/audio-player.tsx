@@ -8,6 +8,7 @@ const AudioPlayer = (props: {
   playing: boolean,
   audioURL: string,
   pos: number,
+  waveformSvg: string,
   handlePosChange: (newPositon: number) => void
 }) => {
 
@@ -16,7 +17,8 @@ const AudioPlayer = (props: {
     audioURL,
     playing,
     pos,
-    handlePosChange
+    handlePosChange,
+    waveformSvg
   } = props;
 
   const wavesurferOptions = {
@@ -27,6 +29,9 @@ const AudioPlayer = (props: {
 
   return (
     <div className={classnames('audio-player-wrapper', className)}>
+      <div className="waveform"
+        dangerouslySetInnerHTML={{__html: waveformSvg}}
+      />
       <Wavesurfer
         volume={1}
         responsive={true}

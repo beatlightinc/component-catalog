@@ -1,4 +1,19 @@
 .audio-player-wrapper {
   max-width: 600px;
   padding: $base-spacing-quin;
+
+  .waveform, .waveform svg {
+    display: block;
+    position: relative;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 600px;
+    height: 128px;
+    overflow: hidden;
+  }
+
+  .waveform, .waveform svg * {
+    fill: $color-green;
+  }
 }
