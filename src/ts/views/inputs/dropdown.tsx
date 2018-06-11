@@ -2,7 +2,10 @@ import * as React from 'react';
 import * as classnames from 'classnames';
 
 class Dropdown extends React.Component<{
-  wrapperClassName?: string;
+  wrapperClassName?: string,
+  wrapperStyle?: any,
+  inputClassName?: string,
+  inputStyle?: any
   options: any,
   onOptionSelected: (newOption: string) => void,
   resultRenderer?: (result: string) => any;
@@ -108,13 +111,16 @@ class Dropdown extends React.Component<{
   }
 
   public render() {
-    const { wrapperClassName } = this.props;
+    const { wrapperClassName, wrapperStyle, inputClassName, inputStyle } = this.props;
     const { searchText, isCollapsed } = this.state;
 
     return (
-      <div className={classnames('dropdown-wrapper', wrapperClassName)}>
+      <div className={classnames('dropdown-wrapper', wrapperClassName)}
+        style={wrapperStyle}
+      >
         <input
-          className={classnames('dropdown', { 'is-collapsed': isCollapsed })}
+          className={classnames('dropdown', inputClassName, { 'is-collapsed': isCollapsed })}
+          style={inputStyle}
           value={searchText}
           placeholder="Dropdown ..."
           onChange={this.onTextUpdate.bind(this)}

@@ -7,6 +7,8 @@ const Textarea = (props: {
   placeholder?: string,
   maxLength?: number,
   fixedSize?: boolean,
+  className?: string,
+  style?: any,
 
   onSubmission?: () => void,
   onHandleChange: () => {}
@@ -20,9 +22,11 @@ const Textarea = (props: {
     fixedSize,
     onSubmission,
     onHandleChange,
+    className,
+    style
   } = props;
 
-  const inputContainerClass = classnames('input-container', { disabled });
+  const inputContainerClass = classnames('input-container', className, { disabled });
   const textareaClassname = classnames('input-component', {
     disabled,
     fixedSize
@@ -37,6 +41,7 @@ const Textarea = (props: {
           onChange={disabled ? null : onHandleChange}
           placeholder={placeholder ? placeholder : null}
           value={value}
+          style={style}
         />
       </div>
   );

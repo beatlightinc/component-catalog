@@ -9,14 +9,22 @@ const CircleButton = (props: {
   onClick?: () => void,
   disabled?: boolean
 }) => {
+  const {
+    className,
+    style,
+    onClick,
+    disabled,
+    children
+  } = this.props;
+
   return (
     <Button {...props}
-      onClick={props.onClick}
-      className={classnames('circle', props.className)}
-      style={props.style}
-      disabled={props.disabled}
+      onClick={onClick}
+      className={classnames('circle', className)}
+      style={style}
+      disabled={disabled}
     >
-      {props.children}
+      {children}
     </Button>
   );
 };

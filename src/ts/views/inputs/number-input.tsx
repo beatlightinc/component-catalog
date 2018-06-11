@@ -13,6 +13,8 @@ const NumberInput = (props: {
   max?: number,
   min?: number,
   placeholder?: string,
+  className?: string,
+  style?: any,
 
   handleChange: (newValue: number) => void
 }) => {
@@ -22,13 +24,15 @@ const NumberInput = (props: {
     max,
     min,
     placeholder,
-    handleChange
+    handleChange,
+    className,
+    style
   } = props;
 
   const isValid = (max && min) && (value >= min) && (value <= max);
   const isInvalid = (max && min) && !isValid;
 
-  const inputContainerClass = classnames('input-container number', { disabled });
+  const inputContainerClass = classnames('input-container number', className, { disabled });
 
   const inputClass = classnames('input-component number', {
     disabled,
@@ -66,6 +70,7 @@ const NumberInput = (props: {
         value={value}
         placeholder={placeholder}
         disabled={disabled}
+        style={style}
       />
       <div className="number-input-button-wrapper">
         <div className={incrementButtonName} onClick={disabled ? null : guardedIncrement}>

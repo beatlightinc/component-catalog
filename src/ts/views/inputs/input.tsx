@@ -14,6 +14,8 @@ const Input = (props: {
   containerStyle?: any,
   inputStyle?: any,
   round?: boolean,
+  wrapperClassName?: string,
+  inputClassName?: string,
 
   onSubmission?: () => void,
   onHandleChange: (evt: any) => void
@@ -33,7 +35,9 @@ const Input = (props: {
     maxLength,
     containerStyle,
     inputStyle,
-    round
+    round,
+    wrapperClassName,
+    inputClassName
   } = props;
 
   // If a pattern AND a validation state get passed in the pattern takes priority. (Shouldnt ever pass it both)
@@ -45,9 +49,9 @@ const Input = (props: {
   else if (validationState) {
     isValid = validationState;
   }
-  const inputContainerClass = classnames('input-container', { disabled });
+  const inputContainerClass = classnames('input-container', wrapperClassName, { disabled });
 
-  const inputClass = classnames('input-component', {
+  const inputClass = classnames('input-component', inputClassName, {
     disabled,
     valid: isValid,
     invalid: isValid === false && value.length > 0,
