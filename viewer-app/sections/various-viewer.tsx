@@ -93,7 +93,7 @@ class VariousView extends React.Component<{}, {
 
         <AudioPlayer
           audioURL={'files.platform.test/2/1d381ae9b3b89698.mp3'}
-          waveformSvg={JSON.stringify(svgString)}
+          waveformSvg={svgString}
           playing={audioPlaying}
           pos={audioPos}
           handlePosChange={this.onAudioPositionChange.bind(this)}
