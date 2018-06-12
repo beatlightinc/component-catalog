@@ -5,6 +5,7 @@ const ProgressDots = (props: {
   currentStep?: number,
   totalSteps: number,
   className?: string,
+  // Style is for the dots themselves
   style?: any
 
   stepOnClick?: (step: number) => void;

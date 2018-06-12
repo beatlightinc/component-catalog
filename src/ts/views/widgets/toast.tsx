@@ -4,6 +4,8 @@ import * as classnames from 'classnames';
 class Toast extends React.Component<{
   children: any,
   timeout?: number,
+  className?: string,
+  style?: any,
   onClose?: () => void
 }, {
   isClosing?: boolean,
@@ -45,10 +47,11 @@ class Toast extends React.Component<{
   }
 
   public render() {
-    const { children, onClose } = this.props;
+    const { children, onClose, className, style } = this.props;
     const { isClosing } = this.state;
+    const toastClass = classnames('toast', className, { isClosing });
     return (
-      <div className={classnames('toast', { isClosing })}>
+      <div className={toastClass} style={style}>
         <div className="toast-content">
           { children }
         </div>
