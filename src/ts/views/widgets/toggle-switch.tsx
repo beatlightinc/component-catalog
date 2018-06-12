@@ -8,7 +8,9 @@ const ToggleSwitch = (props: {
   disabled?: boolean,
   color?: string,
   children?: any,
-  className?: string
+  className?: string,
+  // Style is for the wrapper
+  style?: any
 }) => {
 
   const {
@@ -17,17 +19,19 @@ const ToggleSwitch = (props: {
     disabled,
     color,
     children,
-    className
+    className,
+    style
   } = props;
 
   // These give us the option to customize a bit more, but they won't override the defaults for now
-  const wrapperClass = classnames('toggle-switch-wrapper', className);
+  const wrapperClass = classnames('toggle-switch-wrapper');
   const handleStyle = classnames('react-switch-handle', { active });
 
   return (
-    <div className={wrapperClass}>
+    <div className={wrapperClass} style={style}>
       <Switch
         checked={props.active}
+        className={className}
         onChange={props.onClick}
         disabled={disabled}
         onColor={color ? color : '#0076FF'}

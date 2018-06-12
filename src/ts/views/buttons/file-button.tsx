@@ -8,6 +8,8 @@ const FileButton = (props: {
   accept?: string,
   single?: boolean,
   disabled?: boolean,
+  className?: string,
+  style?: any
 
   onChange?: () =>  void,
   onClick?: () => void
@@ -19,10 +21,12 @@ const FileButton = (props: {
     onChange,
     onClick,
     disabled,
-    inputID
+    inputID,
+    className,
+    style
   } = props;
 
-  const wrapperClass = classnames('file-button', {
+  const wrapperClass = classnames('file-button', className, {
     disabled: props.disabled
   });
   const inputClass = classnames('file-button-input', {
@@ -33,6 +37,7 @@ const FileButton = (props: {
     <label htmlFor={inputID} className={wrapperClass}>
       <div>{children}</div>
       <input className={inputClass}
+        style={style}
         type="file"
         id={inputID}
         multiple={single ? false : true}

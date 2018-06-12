@@ -5,6 +5,7 @@ import Wavesurfer from 'react-wavesurfer';
 
 const AudioPlayer = (props: {
   className?: string,
+  style?: any,
   playing: boolean,
   audioURL: string,
   pos: number,
@@ -13,6 +14,7 @@ const AudioPlayer = (props: {
 
   const {
     className,
+    style,
     audioURL,
     playing,
     pos,
@@ -26,7 +28,9 @@ const AudioPlayer = (props: {
   };
 
   return (
-    <div className={classnames('audio-player-wrapper', className)}>
+    <div className={classnames('audio-player-wrapper', className)}
+      style={style}
+    >
       <Wavesurfer
         volume={1}
         responsive={true}

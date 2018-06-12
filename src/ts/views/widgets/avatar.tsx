@@ -8,6 +8,7 @@ const Avatar = (props: {
   width: number,
   circle?: boolean,
   avatarStyle?: any,
+  wrapperStyle?: any,
   wrapperClass?: string,
   avatarClass?: string
 }) => {
@@ -18,6 +19,7 @@ const Avatar = (props: {
     width,
     circle,
     avatarStyle,
+    wrapperStyle,
     wrapperClass,
     avatarClass
   } = props;
@@ -31,7 +33,7 @@ const Avatar = (props: {
   });
 
   return (
-    <div className={avatarWrapperClass}>
+    <div className={avatarWrapperClass} style={wrapperStyle}>
       <Image
         url={imgSrc}
         height={height}

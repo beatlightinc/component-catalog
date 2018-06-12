@@ -5,6 +5,7 @@ const RadioButton = (props: {
   activeLabel?: string,
   label?: string,
   wrapperClassName?: string,
+  style?: any,
   disabled?: boolean,
 
   onClick: (key: number | string) => void
@@ -14,7 +15,8 @@ const RadioButton = (props: {
     label,
     wrapperClassName,
     disabled,
-    onClick
+    onClick,
+    style
   } = props;
 
   const checked = label === activeLabel;
@@ -25,7 +27,10 @@ const RadioButton = (props: {
   const innerCircleClass = classnames('inner-circle', { checked, disabled });
 
   return (
-    <div className={wrapperClass} onClick={disabled ? null : () => onClick(label)}>
+    <div className={wrapperClass}
+      onClick={disabled ? null : () => onClick(label)}
+      style={style}
+    >
       <div className={outerCircleClass}>
         <div className={innerCircleClass} />
       </div>

@@ -5,9 +5,11 @@ import * as classnames from 'classnames';
 const Pagination = (props: {
   activePage: number,
   totalPages: number,
-  onClick: (pageNumber: number) => void
+  onClick: (pageNumber: number) => void,
+  className?: string,
+  style?: any
 }) => {
-    const { activePage, totalPages, onClick } = props;
+    const { activePage, totalPages, onClick, className, style } = props;
     const breakElement = <div className="icon-more-horizontal pagination-break"/>;
     const allPageElements = [];
     let pageRangeArr = [];
@@ -89,8 +91,12 @@ const Pagination = (props: {
       );
     }
 
+    const wrapperClass = classnames('pagination-container', className);
+
     return (
-      <div className="pagination-container">
+      <div className={wrapperClass}
+        style={style}
+      >
         {activePage === 0 ? null
           : <div className="pagination-button icon-chevron-left" onClick={() => onClick(activePage - 1)} />}
         {pageRange}

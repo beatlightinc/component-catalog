@@ -6,7 +6,9 @@ const Checkbox = (props: {
   checked?: boolean,
   indeterminate?: boolean,
   label?: string,
-  disabled?: boolean
+  disabled?: boolean,
+  className?: string,
+  style?: any
 }) => {
 
   const {
@@ -14,13 +16,18 @@ const Checkbox = (props: {
     checked,
     indeterminate,
     label,
-    disabled
+    disabled,
+    className,
+    style
   } = props;
 
-  const checkboxClass = classnames('checkbox-component-wrapper', { disabled });
+  const checkboxClass = classnames('checkbox-component-wrapper', className, { disabled });
 
   return (
-      <div className={checkboxClass}>
+      <div
+        className={checkboxClass}
+        style={style}
+      >
         <div className={classnames('psuedo-box', { checked: checked || indeterminate })}>
           <div
             className={classnames('checkbox', { checked: checked || indeterminate })}

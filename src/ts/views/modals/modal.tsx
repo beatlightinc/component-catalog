@@ -5,6 +5,7 @@ const Modal = (props: {
   children?: any,
   showing?: boolean,
   wrapperClassName?: string,
+  style?: any,
 
   onClose: () => void
 }) => {
@@ -12,14 +13,15 @@ const Modal = (props: {
     children,
     showing,
     wrapperClassName,
-    onClose
+    onClose,
+    style
   } = props;
 
   const wrapperClass = classnames('modal-wrapper', wrapperClassName, { showing });
 
   // TODO: X to icon
   return (
-    <div className={wrapperClass}>
+    <div className={wrapperClass} style={style}>
       <div className="modal">
         <div className="icon-x close-button" onClick={onClose} />
         {children}
