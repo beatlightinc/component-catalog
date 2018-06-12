@@ -24,7 +24,8 @@ const Checkbox = (props: {
   const checkboxClass = classnames('checkbox-component-wrapper', className, { disabled });
 
   return (
-      <div className={checkboxClass}
+      <div
+        className={checkboxClass}
         style={style}
       >
         <div className={classnames('psuedo-box', { checked: checked || indeterminate })}>

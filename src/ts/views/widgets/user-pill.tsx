@@ -15,7 +15,8 @@ const UserPill = (props: {
   const { type, userName, imgSrc, removeable, active, className, style } = props;
   const userPillClass = classnames('user-pill', className);
   return (
-    <Pill type={type}
+    <Pill
+      type={type}
       removeable={removeable}
       style={style}
       className={userPillClass}

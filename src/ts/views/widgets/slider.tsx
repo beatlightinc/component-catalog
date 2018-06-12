@@ -19,7 +19,7 @@ export default (props: {
     className,
     style,
     onChange
-  } = this.props;
+  } = props;
 
   return (
     <div style={style}>

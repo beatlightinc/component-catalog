@@ -15,7 +15,7 @@ const CircleButton = (props: {
     onClick,
     disabled,
     children
-  } = this.props;
+  } = props;
 
   return (
     <Button {...props}
