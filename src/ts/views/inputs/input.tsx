@@ -56,10 +56,17 @@ const Input = (props: {
 
   const inputIcon = <div className={`${iconType} input-icon`}/>;
 
+  const onKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      onSubmission();
+    }
+  };
+
   return (
       <div className={inputContainerClass} style={containerStyle}>
         <input type={inputType}
           onChange={disabled ? null : onHandleChange}
+          onKeyPress={onKeyPress}
           className={inputClass}
           maxLength={150}
           disabled={disabled}
