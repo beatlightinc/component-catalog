@@ -7,11 +7,12 @@ const Pill = (props: {
   removeable?: boolean,
   children?: any,
   onClick?: () => void,
+  onRemove?: () => void,
   active?: boolean,
   className?: string,
   style?: any
 }) => {
-  const { type, removeable, children, onClick, className, active, title, style } = props;
+  const { type, removeable, children, onClick, onRemove, className, active, title, style } = props;
 
   const pillWrapperClass = classnames('pill', type, className, { removeable, active });
   const removeIcon = <span className="icon-x"></span>;
@@ -23,7 +24,7 @@ const Pill = (props: {
     >
       {children}
       <span className="pill-title">{title}</span>
-      { removeable ? <div className="icon-section">{removeIcon}</div> : null }
+      { removeable ? <div className="icon-section" onClick={onRemove}>{removeIcon}</div> : null }
     </div>
   );
 };
