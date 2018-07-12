@@ -16,6 +16,7 @@ class ButtonsView extends React.Component<{}, {}> {
               <Button disabled={false} className="+push-half-right">{'Click'}</Button>
               <Button color="grey" disabled={false} className="+push-half-right">{'Click'}</Button>
               <Button color="white" disabled={false} className="+push-half-right">{'Click'}</Button>
+              <Button color="dark-grey" disabled={false} className="+push-half-right">{'Click'}</Button>
             </div>
 
             <h4 className="+push-bottom +grey-text +font-weight-bold">{'Medium'}</h4>

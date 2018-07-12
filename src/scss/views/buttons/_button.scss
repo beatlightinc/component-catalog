@@ -134,6 +134,33 @@
     }
   }
 
+  &.dark-grey {
+    color: $color-white;
+    opacity: 0.8;
+    background-color: $color-dark-grey;
+    border: 1px solid $color-dark-grey;
+
+    &.disabled {
+      opacity: 0.1;
+
+      &:hover {
+        cursor: not-allowed;
+        background-color: $color-dark-grey;
+        border: 1px solid $color-dark-grey;
+      }
+    }
+
+    &:hover {
+      opacity: 1;
+      background-color: $color-dark-grey;
+      border: 1px solid $color-dark-grey;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   // note on all the rgba values here, they are the color-blue variation rgba equivalents with opacity applied
   // you can't just apply opacity to the background-color in css, it'll hit the text-color too
   &.minimal {
