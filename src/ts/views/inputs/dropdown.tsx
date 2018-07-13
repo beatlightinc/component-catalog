@@ -8,7 +8,8 @@ class Dropdown extends React.Component<{
   inputStyle?: any
   options: any,
   onOptionSelected: (newOption: string) => void,
-  resultRenderer?: (result: string) => any;
+  resultRenderer?: (result: string) => any,
+  placeholder?: string
 }, {
   searchText?: string;
   results?: any[];
@@ -111,7 +112,7 @@ class Dropdown extends React.Component<{
   }
 
   public render() {
-    const { wrapperClassName, wrapperStyle, inputClassName, inputStyle } = this.props;
+    const { wrapperClassName, wrapperStyle, inputClassName, inputStyle, placeholder } = this.props;
     const { searchText, isCollapsed } = this.state;
 
     return (
@@ -122,7 +123,7 @@ class Dropdown extends React.Component<{
           className={classnames('dropdown', inputClassName, { 'is-collapsed': isCollapsed })}
           style={inputStyle}
           value={searchText}
-          placeholder="Dropdown ..."
+          placeholder={placeholder ? placeholder : 'Dropdown...'}
           onChange={this.onTextUpdate.bind(this)}
           onFocus={this.onFocus.bind(this)}
           onBlur={this.onBlur.bind(this)}
