@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as classnames from 'classnames';
 
 class Dropdown extends React.Component<{
+  initialValue?: string,
   wrapperClassName?: string,
   wrapperStyle?: any,
   inputClassName?: string,
@@ -19,7 +20,7 @@ class Dropdown extends React.Component<{
   constructor(props: any) {
     super(props);
     this.state = {
-      searchText: '',
+      searchText: props.initialValue || '',
       results: props.options,
       isCollapsed: true
     };
