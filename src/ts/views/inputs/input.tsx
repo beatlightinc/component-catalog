@@ -61,7 +61,7 @@ const Input = (props: {
   const inputIcon = <div className={`${iconType} input-icon`}/>;
 
   const onKeyPress = (e: any) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && onSubmission) {
       onSubmission();
     }
   };
