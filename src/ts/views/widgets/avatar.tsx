@@ -39,7 +39,8 @@ const Avatar = (props: {
         height={height}
         width={width}
         className={innerWrapper}
-        style={avatarStyle}/>
+        style={avatarStyle}
+      />
     </div>
   );
 };
