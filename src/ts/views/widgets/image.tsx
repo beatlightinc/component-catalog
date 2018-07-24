@@ -18,11 +18,18 @@ const Image = (props: {
 
   const imageClass = classnames('image-wrapper', className);
   const customStyle = style || {};
-  const backgroundStyle = {
-    backgroundImage: `url(${url})`,
+  const backgroundStyle: any = {
     height: `${height}px`,
     width: `${width}px`
   };
+
+  if (url) {
+    backgroundStyle.backgroundImage = `url(${url})`;
+  }
+
+  else {
+    backgroundStyle.background = '#E5E5E5';
+  }
 
   return (
     <div
