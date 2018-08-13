@@ -18,7 +18,8 @@ const Input = (props: {
   inputClassName?: string,
 
   onSubmission?: () => void,
-  onHandleChange: (evt: any) => void
+  onHandleChange: (evt: any) => void,
+  onBlur?: () => void
 }) => {
 
   const {
@@ -27,6 +28,7 @@ const Input = (props: {
     iconType,
     onSubmission,
     onHandleChange,
+    onBlur,
     value,
     disabled,
     patternString,
@@ -71,6 +73,7 @@ const Input = (props: {
         <input type={inputType}
           onChange={disabled ? null : onHandleChange}
           onKeyPress={onKeyPress}
+          onBlur={onBlur ? onBlur : () => 0}
           className={inputClass}
           maxLength={150}
           disabled={disabled}
