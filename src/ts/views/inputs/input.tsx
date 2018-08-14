@@ -17,9 +17,9 @@ const Input = (props: {
   wrapperClassName?: string,
   inputClassName?: string,
 
-  onSubmission?: () => void,
+  onSubmission?: (evt: any) => void,
   onHandleChange: (evt: any) => void,
-  onBlur?: () => void
+  onBlur?: (evt: any) => void
 }) => {
 
   const {
@@ -64,7 +64,7 @@ const Input = (props: {
 
   const onKeyPress = (e: any) => {
     if (e.key === 'Enter' && onSubmission) {
-      onSubmission();
+      onSubmission(e);
     }
   };
 
