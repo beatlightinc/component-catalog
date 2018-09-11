@@ -43,22 +43,22 @@
   }
 
   .rect2 {
-    -webkit-animation-delay: -1.1s;
+    @include vendor(animation-delay, -1.1s);
     animation-delay: -1.1s;
   }
 
   .rect3 {
-    -webkit-animation-delay: -1.0s;
+    @include vendor(animation-delay, -1.0s);
     animation-delay: -1.0s;
   }
 
   .rect4 {
-    -webkit-animation-delay: -0.9s;
+    @include vendor(animation-delay, -0.9s);
     animation-delay: -0.9s;
   }
 
   .rect5 {
-    -webkit-animation-delay: -0.8s;
+    @include vendor(animation-delay, -0.8s);
     animation-delay: -0.8s;
   }
 }
