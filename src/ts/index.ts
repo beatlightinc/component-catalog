@@ -31,3 +31,4 @@ export { default as Avatar } from './views/widgets/avatar';
 export { default as NumberInput } from './views/inputs/number-input';
 export { default as UserPill } from './views/widgets/user-pill';
 export { default as Toast } from './views/widgets/toast';
+export { default as Spinner } from './views/widgets/spinner';
