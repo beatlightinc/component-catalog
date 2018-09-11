@@ -64,16 +64,16 @@
 }
 
 @-webkit-keyframes sk-stretchdelay {
-  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-  20% { -webkit-transform: scaleY(1.0) }
+  0%, 40%, 100% { @include vendor(transform, scaleY(0.4)) }
+  20% { @include vendor(transform, scaleY(1.0)) }
 }
 
 @keyframes sk-stretchdelay {
   0%, 40%, 100% {
     transform: scaleY(0.4);
-    -webkit-transform: scaleY(0.4);
+    @include vendor(transform, scaleY(0.4));
   }  20% {
     transform: scaleY(1.0);
-    -webkit-transform: scaleY(1.0);
+    @include vendor(transform, scaleY(1.0))
   }
 }
