@@ -8,7 +8,8 @@ import {
   UserPill,
   Slider,
   BreadCrumbs,
-  Toast
+  Toast,
+  Spinner
 } from '../../src/ts/index';
 
 class VariousView extends React.Component<{}, {
@@ -263,6 +264,8 @@ class VariousView extends React.Component<{}, {
                   </div>
                 </div>
               </div>
+
+              <Spinner className="large blue" />
             </div>
           </div>
         </div>
