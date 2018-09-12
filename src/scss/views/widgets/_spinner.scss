@@ -1,0 +1,79 @@
+.spinner {
+  min-width: 50px;
+  height: 20px;
+  text-align: center;
+  font-size: 10px;
+
+  & > div {
+    background-color: $color-white;
+    height: 100%;
+    width: 3px;
+    margin-right: 1px;
+    display: inline-block;
+
+    @include vendor(sk-stretchdelay, 1.2s infinie ease-in-out);
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+
+  &.blue > div {
+    background-color: $color-blue-active;
+  }
+
+  &.black > div {
+    background-color: $color-black;
+  }
+
+  &.large {
+    height: 100px;
+    width: 250px;
+
+    & > div {
+      width: 10px;
+    }
+  }
+
+  &.mobile-large {
+    height: 16vh;
+    width: 16vh;
+
+    & > div {
+      width: 2vh;
+      margin-right: 0.5vh;
+    }
+  }
+
+  .rect2 {
+    @include vendor(animation-delay, -1.1s);
+    animation-delay: -1.1s;
+  }
+
+  .rect3 {
+    @include vendor(animation-delay, -1.0s);
+    animation-delay: -1.0s;
+  }
+
+  .rect4 {
+    @include vendor(animation-delay, -0.9s);
+    animation-delay: -0.9s;
+  }
+
+  .rect5 {
+    @include vendor(animation-delay, -0.8s);
+    animation-delay: -0.8s;
+  }
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { @include vendor(transform, scaleY(0.4)) }
+  20% { @include vendor(transform, scaleY(1.0)) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    @include vendor(transform, scaleY(0.4));
+  }  20% {
+    transform: scaleY(1.0);
+    @include vendor(transform, scaleY(1.0))
+  }
+}
