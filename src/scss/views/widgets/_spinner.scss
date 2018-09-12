@@ -11,7 +11,7 @@
     margin-right: 1px;
     display: inline-block;
 
-    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    @include vendor(sk-stretchdelay, 1.2s infinie ease-in-out);
     animation: sk-stretchdelay 1.2s infinite ease-in-out;
   }
 
