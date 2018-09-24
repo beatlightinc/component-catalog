@@ -37,7 +37,7 @@ const Textarea = (props: {
         <textarea
           className={textareaClassname}
           disabled={disabled}
-          maxLength={150}
+          maxLength={maxLength || 150}
           onChange={disabled ? null : onHandleChange}
           placeholder={placeholder ? placeholder : null}
           value={value}
