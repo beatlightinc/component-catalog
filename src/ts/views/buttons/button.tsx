@@ -9,6 +9,7 @@ const Button = (props: {
   children?: any,
   size?: string, // medium
   color?: string // red, white, grey, minimal (don't use for blue(default))
+  type?: string
 }) => {
 
   const {
@@ -18,7 +19,8 @@ const Button = (props: {
     style,
     children,
     size,
-    color
+    color,
+    type
   } = props;
 
   const buttonClass = classnames('button-component', className, size, color, {
@@ -30,6 +32,7 @@ const Button = (props: {
         onClick={disabled ? null : onClick}
         className={buttonClass}
         style={style}
+        type={type}
       >
         {children}
       </button>
